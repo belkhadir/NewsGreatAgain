@@ -48,7 +48,7 @@ extension LoginViewController: LoginDelegate {
     }
     
     func didLoginIn(user: User, token: String) {
-        UserDefaults.standard.set(token, forKey: Key.token.rawValue)
+        UserDefaults.standard.set(token, forKey: UserDefaultKey.token.rawValue)
     }
     
     

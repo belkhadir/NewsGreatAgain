@@ -9,41 +9,23 @@
 import UIKit
 import GoogleMobileAds
 
-class AdsCollectionViewCell: UICollectionViewCell {
-    /// The ad unit ID from the AdMob UI.
-    let adUnitID = "ca-app-pub-3940256099942544/3986624511"
+class AdsCollectionViewCell: CardCollectionViewCell, Configurable {
+    typealias T = AdloaderHelp
     
-    /// The number of native ads to load (between 1 and 5 for this example).
-    let numAdsToLoad = 5
-    
-    /// The ad loader that loads the native ads.
-    var adLoader: GADAdLoader!
-    
-    let request = GADRequest()
+    func configure(cell with: AdloaderHelp) {
+        adloader = with
+    }
     
     var nativeAdView: GADUnifiedNativeAdView!
+    
+    
+    fileprivate var adloader: AdloaderHelp?
     
     weak var viewController: UIViewController?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let options = GADMultipleAdsAdLoaderOptions()
-        options.numberOfAds = numAdsToLoad
         
-        // Prepare the ad loader and start loading ads.
-        adLoader = GADAdLoader(adUnitID: adUnitID,
-                               rootViewController: viewController,
-                               adTypes: [.unifiedNative],
-                               options: [options])
-        adLoader.delegate = self
-        
-
-//        if let currentLocation = locationManager.location {
-//            request.setLocationWithLatitude(CGFloat(currentLocation.coordinate.latitude),
-//                                            longitude: CGFloat(currentLocation.coordinate.longitude),
-//                                            accuracy: CGFloat(currentLocation.horizontalAccuracy))
-//        }
-        adLoader.load(request)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,7 +34,7 @@ class AdsCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        nativeAdView.nativeAd = nil
+//        nativeAdView.nativeAd = nil
     }
     
     func setAdView(_ view: GADUnifiedNativeAdView) {

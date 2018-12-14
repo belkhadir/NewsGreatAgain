@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Key: String {
+enum UserDefaultKey: String {
     case token
     case userID
 }

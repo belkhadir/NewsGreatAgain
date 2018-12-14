@@ -15,10 +15,7 @@ class NewService {
                         completion: @escaping (Result<ResponseData<Article>, DataResponseError>)-> Void) {
         
         let query = [URLQueryItem(name: "page", value: "\(page.next)")]
-        sendGetRequest(for: ResponseData<Article>.self, host: "localhost",path: "/news", port: 8080, query: query) {
-            completion($0)
-        }
-        
+        sendRequest(for: ResponseData<Article>.self, host: "localhost", path: EndPath.news, port: 8080, query: query, httpMethod: .get, bear: nil) { completion($0) }
     }
     
 }

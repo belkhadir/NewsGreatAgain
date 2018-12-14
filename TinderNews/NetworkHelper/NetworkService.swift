@@ -9,9 +9,10 @@
 
 import Foundation
 
-struct ForHTTPHeaderField {
-    static let Accept = "Accept"
-    static let ContentType = "Content-Type"
+enum ForHTTPHeaderField: String {
+    case accept = "Accept"
+    case contentType = "Content-Type"
+    case authorization = "Authorization"
 }
 
 
@@ -27,19 +28,21 @@ enum HTTPMethod: String{
 
 let baseURL = "https://api.darksky.net/forecast/"
 
-
-func sendGetRequest<T: Decodable>(for type: T.Type,
-                           host: String,
-                           path: String,
-                           port: Int,
-                           query: [URLQueryItem],
-                           completion: @escaping (Result<T, DataResponseError>) -> Void) {
+func sendRequest<T: Decodable>(for type: T.Type,
+                                  host: String,
+                                  path: EndPath,
+                                  port: Int,
+                                  query: [URLQueryItem],
+                                  httpMethod: HTTPMethod,
+                                  bear: String? = nil,
+                                  json: [String: Any]? = nil,
+                                  completion: @escaping (Result<T, DataResponseError>) -> Void) {
     
     var compenents = URLComponents()
     compenents.scheme = "http"
     compenents.host = host //"api.coinmarketcap.com"
     compenents.port = port
-    compenents.path = path
+    compenents.path = "/" + path.rawValue
     compenents.queryItems = query
     
     guard let url = compenents.url else {
@@ -48,13 +51,22 @@ func sendGetRequest<T: Decodable>(for type: T.Type,
     }
     
     var request = URLRequest(url: url)
-    request.httpMethod = HTTPMethod.get.rawValue
-    request.addValue("application/json", forHTTPHeaderField: ForHTTPHeaderField.ContentType)
-    request.addValue("application/json", forHTTPHeaderField: ForHTTPHeaderField .Accept)
-        
-    sendRequest(request, completion, type)
+    request.httpMethod = httpMethod.rawValue
+    request.addValue("application/json", forHTTPHeaderField: ForHTTPHeaderField.contentType.rawValue)
+    request.addValue("application/json", forHTTPHeaderField: ForHTTPHeaderField.accept.rawValue)
     
+    if let json = json {
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        request.httpBody = jsonData
+    }
+    
+    if let userToken = bear {
+        let tokenString = "Bearer " + userToken
+        request.addValue(tokenString, forHTTPHeaderField: ForHTTPHeaderField.authorization.rawValue)
+    }
+    sendRequest(request, completion, type)
 }
+
 
 func convertToArticles() -> ResponseData<Article>? {
     if let path = Bundle.main.path(forResource: "file", ofType: "json") {
@@ -87,13 +99,6 @@ func convertToDictionary(data: Data) -> [String: Any]? {
 }
 
 
-func sendPostRequest(bear: String?,
-                     host: String,
-                     port: Int,
-                     path: String
-                     ) {
-    
-}
 
 fileprivate func sendRequest<T: Decodable>(_ request: URLRequest, _ completion: @escaping (Result<T, DataResponseError>) -> Void, _ type: T.Type) {
     let config = URLSessionConfiguration.default

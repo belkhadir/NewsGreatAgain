@@ -21,7 +21,7 @@ class UserService {
     }
     
     static func addTofavorite(article: Article) {
-        if let token = UserDefaults.standard.string(forKey: Key.token.rawValue), let userID = UserDefaults.standard.string(forKey: Key.userID.rawValue) {
+        if let token = UserDefaults.standard.string(forKey: UserDefaultKey.token.rawValue), let userID = UserDefaults.standard.string(forKey: UserDefaultKey.userID.rawValue) {
             
             
         }

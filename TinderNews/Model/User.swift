@@ -18,3 +18,9 @@ class User: Codable {
         self.password = password
     }
 }
+
+extension User {
+    var json: [String: Any] {
+        return []
+    }
+}

@@ -45,7 +45,7 @@ class NewsCollectionViewController: UICollectionViewController {
         
         collectionView.backgroundColor = UIColor.groupTableViewBackground
         collectionView.register(NewsCollectionViewCell.self, forCellWithReuseIdentifier: NewsCollectionViewCell.reuseIdentifier)
-        collectionView.register(AdsCollectionViewCell.self, forCellWithReuseIdentifier: AdsCollectionViewCell.reuseIdentifier)
+//        collectionView.register(AdsCollectionViewCell.self, forCellWithReuseIdentifier: AdsCollectionViewCell.reuseIdentifier)
         collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier)
         collectionView.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterCollectionReusableView.reuseIdentifier)
     }
@@ -54,7 +54,7 @@ class NewsCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
 
@@ -63,15 +63,15 @@ class NewsCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if articles.count == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdsCollectionViewCell.reuseIdentifier, for: indexPath) as! AdsCollectionViewCell
-            cell.viewController = self
-            return cell
-        }else {
+//        if articles.count == 1 {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdsCollectionViewCell.reuseIdentifier, for: indexPath) as! AdsCollectionViewCell
+//            cell.viewController = self
+//            return cell
+//        }else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.reuseIdentifier, for: indexPath) as! NewsCollectionViewCell
             cell.configure(cell: articles[indexPath.item])
             return cell
-        }
+//        }
     }
 
     // Mark: fetch more news

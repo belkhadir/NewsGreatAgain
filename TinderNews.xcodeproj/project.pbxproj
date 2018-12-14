@@ -35,11 +35,20 @@
 		A97C5E9321C26AE700BBB3EB /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E9221C26AE700BBB3EB /* LoginDelegate.swift */; };
 		A97C5E9521C26B3200BBB3EB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E9421C26B3200BBB3EB /* User.swift */; };
 		A97C5E9721C26CD000BBB3EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E9621C26CCF00BBB3EB /* LoginViewController.swift */; };
-		A97C5E9921C26DAA00BBB3EB /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E9821C26DAA00BBB3EB /* Key.swift */; };
+		A97C5E9921C26DAA00BBB3EB /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E9821C26DAA00BBB3EB /* UserDefaultKey.swift */; };
 		A97C5E9D21C26E4B00BBB3EB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E9C21C26E4B00BBB3EB /* UserService.swift */; };
 		A97C5E9F21C26EC300BBB3EB /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E9E21C26EC300BBB3EB /* UserResponse.swift */; };
 		A97C61C921C28AC200BBB3EB /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97C61C821C28AC200BBB3EB /* UnifiedNativeAdView.xib */; };
 		A97C61CC21C2E59C00BBB3EB /* DetailNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61CB21C2E59C00BBB3EB /* DetailNewsTableViewController.swift */; };
+		A97C61CE21C3C80800BBB3EB /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61CD21C3C80800BBB3EB /* CardCollectionViewCell.swift */; };
+		A97C61D021C3CC3A00BBB3EB /* AdloaderHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61CF21C3CC3A00BBB3EB /* AdloaderHelp.swift */; };
+		A97C61D221C3D12600BBB3EB /* EndPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61D121C3D12600BBB3EB /* EndPath.swift */; };
+		A97C61D421C3D1C100BBB3EB /* EndURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61D321C3D1C100BBB3EB /* EndURL.swift */; };
+		A97C61D721C3D6A800BBB3EB /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61D621C3D6A700BBB3EB /* Keys.swift */; };
+		A97C61D921C3D70200BBB3EB /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61D821C3D70200BBB3EB /* Extension+UIViewController.swift */; };
+		A97C61DB21C3D72100BBB3EB /* Extension+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61DA21C3D72100BBB3EB /* Extension+Encodable.swift */; };
+		A97C61DF21C3D76400BBB3EB /* FromBackgroundToMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61DE21C3D76400BBB3EB /* FromBackgroundToMain.swift */; };
+		A97C61E121C3D79400BBB3EB /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E021C3D79400BBB3EB /* Extension+String.swift */; };
 		A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */; };
 		A9F9FF6B21A436C300197766 /* TinderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6A21A436C300197766 /* TinderLayout.swift */; };
 		A9F9FF6D21A43D8000197766 /* TinderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6C21A43D8000197766 /* TinderDelegate.swift */; };
@@ -76,11 +85,20 @@
 		A97C5E9221C26AE700BBB3EB /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
 		A97C5E9421C26B3200BBB3EB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A97C5E9621C26CCF00BBB3EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A97C5E9821C26DAA00BBB3EB /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		A97C5E9821C26DAA00BBB3EB /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		A97C5E9C21C26E4B00BBB3EB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A97C5E9E21C26EC300BBB3EB /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		A97C61C821C28AC200BBB3EB /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
 		A97C61CB21C2E59C00BBB3EB /* DetailNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewsTableViewController.swift; sourceTree = "<group>"; };
+		A97C61CD21C3C80800BBB3EB /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		A97C61CF21C3CC3A00BBB3EB /* AdloaderHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdloaderHelp.swift; sourceTree = "<group>"; };
+		A97C61D121C3D12600BBB3EB /* EndPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPath.swift; sourceTree = "<group>"; };
+		A97C61D321C3D1C100BBB3EB /* EndURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndURL.swift; sourceTree = "<group>"; };
+		A97C61D621C3D6A700BBB3EB /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		A97C61D821C3D70200BBB3EB /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		A97C61DA21C3D72100BBB3EB /* Extension+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Encodable.swift"; sourceTree = "<group>"; };
+		A97C61DE21C3D76400BBB3EB /* FromBackgroundToMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromBackgroundToMain.swift; sourceTree = "<group>"; };
+		A97C61E021C3D79400BBB3EB /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9F9FF6A21A436C300197766 /* TinderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderLayout.swift; sourceTree = "<group>"; };
 		A9F9FF6C21A43D8000197766 /* TinderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +150,7 @@
 		A928958B21A183540051EBC5 /* TinderNews */ = {
 			isa = PBXGroup;
 			children = (
+				A97C61DD21C3D74A00BBB3EB /* HelperMethod */,
 				A97C5E9A21C26E1F00BBB3EB /* NetworkHelper */,
 				A9F9FF6921A4368E00197766 /* Layout */,
 				A92895A721A1F83D0051EBC5 /* Extension */,
@@ -163,12 +182,12 @@
 		A928959F21A1F8000051EBC5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A97C61D521C3D68F00BBB3EB /* Constant */,
 				A92895AA21A1F87F0051EBC5 /* Article.swift */,
 				A924ECA721B3F95800321D2C /* Page.swift */,
 				A924ECA921B3F9EA00321D2C /* ResponseData.swift */,
 				A97C5E9421C26B3200BBB3EB /* User.swift */,
 				A97C5E9021C26A8800BBB3EB /* Login.swift */,
-				A97C5E9821C26DAA00BBB3EB /* Key.swift */,
 				A97C5E9E21C26EC300BBB3EB /* UserResponse.swift */,
 			);
 			path = Model;
@@ -208,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				A92895A821A1F8470051EBC5 /* UIView.swift */,
+				A97C61D821C3D70200BBB3EB /* Extension+UIViewController.swift */,
+				A97C61DA21C3D72100BBB3EB /* Extension+Encodable.swift */,
+				A97C61E021C3D79400BBB3EB /* Extension+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -243,6 +265,8 @@
 				A92895C821A1FEC20051EBC5 /* NewsCollectionViewCell.swift */,
 				A97C61C821C28AC200BBB3EB /* UnifiedNativeAdView.xib */,
 				A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */,
+				A97C61CD21C3C80800BBB3EB /* CardCollectionViewCell.swift */,
+				A97C61CF21C3CC3A00BBB3EB /* AdloaderHelp.swift */,
 			);
 			path = UICollectionViewCell;
 			sourceTree = "<group>";
@@ -253,6 +277,8 @@
 				A92895B721A1F9B70051EBC5 /* DataResponceError.swift */,
 				A92895B621A1F9B60051EBC5 /* NetworkService.swift */,
 				A92895B821A1F9B70051EBC5 /* Result.swift */,
+				A97C61D121C3D12600BBB3EB /* EndPath.swift */,
+				A97C61D321C3D1C100BBB3EB /* EndURL.swift */,
 			);
 			path = NetworkHelper;
 			sourceTree = "<group>";
@@ -263,6 +289,23 @@
 				A97C61CB21C2E59C00BBB3EB /* DetailNewsTableViewController.swift */,
 			);
 			path = DetailNews;
+			sourceTree = "<group>";
+		};
+		A97C61D521C3D68F00BBB3EB /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				A97C5E9821C26DAA00BBB3EB /* UserDefaultKey.swift */,
+				A97C61D621C3D6A700BBB3EB /* Keys.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		A97C61DD21C3D74A00BBB3EB /* HelperMethod */ = {
+			isa = PBXGroup;
+			children = (
+				A97C61DE21C3D76400BBB3EB /* FromBackgroundToMain.swift */,
+			);
+			path = HelperMethod;
 			sourceTree = "<group>";
 		};
 		A9F9FF6921A4368E00197766 /* Layout */ = {
@@ -449,23 +492,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				A97C5E9D21C26E4B00BBB3EB /* UserService.swift in Sources */,
+				A97C61D721C3D6A800BBB3EB /* Keys.swift in Sources */,
 				A92895C221A1FBB80051EBC5 /* PageViewController.swift in Sources */,
 				A92895C021A1FB550051EBC5 /* OnboardingViewController.swift in Sources */,
 				A924ECAA21B3F9EA00321D2C /* ResponseData.swift in Sources */,
 				A97C5E9521C26B3200BBB3EB /* User.swift in Sources */,
 				A9F9FF6D21A43D8000197766 /* TinderDelegate.swift in Sources */,
+				A97C61D021C3CC3A00BBB3EB /* AdloaderHelp.swift in Sources */,
+				A97C61D921C3D70200BBB3EB /* Extension+UIViewController.swift in Sources */,
 				A92895A921A1F8470051EBC5 /* UIView.swift in Sources */,
 				A92895A521A1F8330051EBC5 /* Configurable.swift in Sources */,
 				A911232021A6EFFF000F46C7 /* FooterCollectionReusableView.swift in Sources */,
 				A92895AB21A1F87F0051EBC5 /* Article.swift in Sources */,
 				A92895B921A1F9B70051EBC5 /* NetworkService.swift in Sources */,
 				A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */,
-				A97C5E9921C26DAA00BBB3EB /* Key.swift in Sources */,
+				A97C5E9921C26DAA00BBB3EB /* UserDefaultKey.swift in Sources */,
 				A97C5E9321C26AE700BBB3EB /* LoginDelegate.swift in Sources */,
+				A97C61DB21C3D72100BBB3EB /* Extension+Encodable.swift in Sources */,
+				A97C61DF21C3D76400BBB3EB /* FromBackgroundToMain.swift in Sources */,
 				A92895BA21A1F9B70051EBC5 /* DataResponceError.swift in Sources */,
 				A91E93A121BD4B2700AF4B77 /* NewsSerrvice.swift in Sources */,
 				A9F9FF6B21A436C300197766 /* TinderLayout.swift in Sources */,
+				A97C61D221C3D12600BBB3EB /* EndPath.swift in Sources */,
 				A911231E21A6EFF6000F46C7 /* HeaderCollectionReusableView.swift in Sources */,
+				A97C61E121C3D79400BBB3EB /* Extension+String.swift in Sources */,
+				A97C61D421C3D1C100BBB3EB /* EndURL.swift in Sources */,
 				A924ECA821B3F95800321D2C /* Page.swift in Sources */,
 				A97C61CC21C2E59C00BBB3EB /* DetailNewsTableViewController.swift in Sources */,
 				A97C5E9F21C26EC300BBB3EB /* UserResponse.swift in Sources */,
@@ -476,6 +527,7 @@
 				A911231B21A6E566000F46C7 /* NewsCollectionViewController.swift in Sources */,
 				A928958D21A183540051EBC5 /* AppDelegate.swift in Sources */,
 				A97C5E9721C26CD000BBB3EB /* LoginViewController.swift in Sources */,
+				A97C61CE21C3C80800BBB3EB /* CardCollectionViewCell.swift in Sources */,
 				A92895BB21A1F9B70051EBC5 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,7 +670,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8GJLLZVYS;
 				INFOPLIST_FILE = TinderNews/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newsgreatagain.newsgreatagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -634,7 +689,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8GJLLZVYS;
 				INFOPLIST_FILE = TinderNews/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newsgreatagain.newsgreatagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
