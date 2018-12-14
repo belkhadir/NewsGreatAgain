@@ -12,6 +12,6 @@ import Foundation
 
 protocol LoginDelegate {
     func didStart()
-    func didLoginIn(user: User, token: String)
+    func didLoginIn(user: LoginResponse)
     func didFailToLoginIn(error: Error)
 }

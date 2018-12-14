@@ -31,7 +31,14 @@ enum Login {
     static var paramer = ["fields":"email,first_name,last_name,picture.width(1000).height(1000),birthday,gender"]
     
     fileprivate func didlogin(using email: User, delegate: LoginDelegate) {
-        
+        UserService.login(user: email) { (response) in
+            switch response {
+            case .failure(let error):
+                delegate.didFailToLoginIn(error: error)
+            case .success(let value):
+                delegate.didLoginIn(user: value)
+            }
+        }
     }
     
     fileprivate func didLoginUsingFacebook(_ delegate: LoginDelegate) {
@@ -49,8 +56,15 @@ enum Login {
                         print(error)
                     case .success(let data):
                         print(data)
-                        
-//                        didlogin(using: <#T##User#>, delegate: <#T##LoginDelegate#>)
+                        let user = User(email: "", password: "")
+                        UserService.register(user: user, completion: { (r) in
+                            switch r {
+                            case .failure(let error):
+                                delegate.didFailToLoginIn(error: error)
+                            case .success(let value):
+                                self.didlogin(using: user, delegate: delegate)
+                            }
+                        })
                     }
                 })
 

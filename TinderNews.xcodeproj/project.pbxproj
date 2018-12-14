@@ -49,6 +49,11 @@
 		A97C61DB21C3D72100BBB3EB /* Extension+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61DA21C3D72100BBB3EB /* Extension+Encodable.swift */; };
 		A97C61DF21C3D76400BBB3EB /* FromBackgroundToMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61DE21C3D76400BBB3EB /* FromBackgroundToMain.swift */; };
 		A97C61E121C3D79400BBB3EB /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E021C3D79400BBB3EB /* Extension+String.swift */; };
+		A97C61E321C3DA9F00BBB3EB /* AdmobToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E221C3DA9F00BBB3EB /* AdmobToken.swift */; };
+		A97C61E521C3DF7A00BBB3EB /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E421C3DF7A00BBB3EB /* LoginResponse.swift */; };
+		A97C61E821C407EF00BBB3EB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E721C407EF00BBB3EB /* ProfileViewController.swift */; };
+		A97C61EB21C40D1700BBB3EB /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61EA21C40D1700BBB3EB /* SettingsTableViewController.swift */; };
+		A97C61EE21C410E500BBB3EB /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61ED21C410E500BBB3EB /* BuyView.swift */; };
 		A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */; };
 		A9F9FF6B21A436C300197766 /* TinderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6A21A436C300197766 /* TinderLayout.swift */; };
 		A9F9FF6D21A43D8000197766 /* TinderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6C21A43D8000197766 /* TinderDelegate.swift */; };
@@ -99,6 +104,11 @@
 		A97C61DA21C3D72100BBB3EB /* Extension+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Encodable.swift"; sourceTree = "<group>"; };
 		A97C61DE21C3D76400BBB3EB /* FromBackgroundToMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromBackgroundToMain.swift; sourceTree = "<group>"; };
 		A97C61E021C3D79400BBB3EB /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		A97C61E221C3DA9F00BBB3EB /* AdmobToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobToken.swift; sourceTree = "<group>"; };
+		A97C61E421C3DF7A00BBB3EB /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		A97C61E721C407EF00BBB3EB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A97C61EA21C40D1700BBB3EB /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		A97C61ED21C410E500BBB3EB /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9F9FF6A21A436C300197766 /* TinderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderLayout.swift; sourceTree = "<group>"; };
 		A9F9FF6C21A43D8000197766 /* TinderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderDelegate.swift; sourceTree = "<group>"; };
@@ -154,7 +164,7 @@
 				A97C5E9A21C26E1F00BBB3EB /* NetworkHelper */,
 				A9F9FF6921A4368E00197766 /* Layout */,
 				A92895A721A1F83D0051EBC5 /* Extension */,
-				A92895A221A1F8170051EBC5 /* NetworkService */,
+				A92895A221A1F8170051EBC5 /* Service */,
 				A92895A121A1F80C0051EBC5 /* Controller */,
 				A92895A021A1F8080051EBC5 /* View */,
 				A928959F21A1F8000051EBC5 /* Model */,
@@ -188,6 +198,7 @@
 				A924ECA921B3F9EA00321D2C /* ResponseData.swift */,
 				A97C5E9421C26B3200BBB3EB /* User.swift */,
 				A97C5E9021C26A8800BBB3EB /* Login.swift */,
+				A97C61E421C3DF7A00BBB3EB /* LoginResponse.swift */,
 				A97C5E9E21C26EC300BBB3EB /* UserResponse.swift */,
 			);
 			path = Model;
@@ -196,6 +207,7 @@
 		A92895A021A1F8080051EBC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A97C61EC21C410B500BBB3EB /* UIView */,
 				A911231C21A6EFA6000F46C7 /* UICollectionReusableView  */,
 				A92895C721A1FE840051EBC5 /* UICollectionViewCell */,
 			);
@@ -205,6 +217,8 @@
 		A92895A121A1F80C0051EBC5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A97C61E921C40D0400BBB3EB /* Settings */,
+				A97C61E621C407D000BBB3EB /* Profile */,
 				A97C61CA21C2E57800BBB3EB /* DetailNews */,
 				A92895C421A1FC890051EBC5 /* Login */,
 				A92895C321A1FC830051EBC5 /* News */,
@@ -213,14 +227,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		A92895A221A1F8170051EBC5 /* NetworkService */ = {
+		A92895A221A1F8170051EBC5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				A911231821A6CD26000F46C7 /* file.json */,
 				A91E93A021BD4B2700AF4B77 /* NewsSerrvice.swift */,
 				A97C5E9C21C26E4B00BBB3EB /* UserService.swift */,
 			);
-			path = NetworkService;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		A92895A721A1F83D0051EBC5 /* Extension */ = {
@@ -296,6 +310,7 @@
 			children = (
 				A97C5E9821C26DAA00BBB3EB /* UserDefaultKey.swift */,
 				A97C61D621C3D6A700BBB3EB /* Keys.swift */,
+				A97C61E221C3DA9F00BBB3EB /* AdmobToken.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -306,6 +321,30 @@
 				A97C61DE21C3D76400BBB3EB /* FromBackgroundToMain.swift */,
 			);
 			path = HelperMethod;
+			sourceTree = "<group>";
+		};
+		A97C61E621C407D000BBB3EB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A97C61E721C407EF00BBB3EB /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A97C61E921C40D0400BBB3EB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A97C61EA21C40D1700BBB3EB /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A97C61EC21C410B500BBB3EB /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				A97C61ED21C410E500BBB3EB /* BuyView.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		A9F9FF6921A4368E00197766 /* Layout */ = {
@@ -505,17 +544,21 @@
 				A911232021A6EFFF000F46C7 /* FooterCollectionReusableView.swift in Sources */,
 				A92895AB21A1F87F0051EBC5 /* Article.swift in Sources */,
 				A92895B921A1F9B70051EBC5 /* NetworkService.swift in Sources */,
+				A97C61E521C3DF7A00BBB3EB /* LoginResponse.swift in Sources */,
 				A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */,
 				A97C5E9921C26DAA00BBB3EB /* UserDefaultKey.swift in Sources */,
 				A97C5E9321C26AE700BBB3EB /* LoginDelegate.swift in Sources */,
 				A97C61DB21C3D72100BBB3EB /* Extension+Encodable.swift in Sources */,
 				A97C61DF21C3D76400BBB3EB /* FromBackgroundToMain.swift in Sources */,
+				A97C61EB21C40D1700BBB3EB /* SettingsTableViewController.swift in Sources */,
+				A97C61EE21C410E500BBB3EB /* BuyView.swift in Sources */,
 				A92895BA21A1F9B70051EBC5 /* DataResponceError.swift in Sources */,
 				A91E93A121BD4B2700AF4B77 /* NewsSerrvice.swift in Sources */,
 				A9F9FF6B21A436C300197766 /* TinderLayout.swift in Sources */,
 				A97C61D221C3D12600BBB3EB /* EndPath.swift in Sources */,
 				A911231E21A6EFF6000F46C7 /* HeaderCollectionReusableView.swift in Sources */,
 				A97C61E121C3D79400BBB3EB /* Extension+String.swift in Sources */,
+				A97C61E321C3DA9F00BBB3EB /* AdmobToken.swift in Sources */,
 				A97C61D421C3D1C100BBB3EB /* EndURL.swift in Sources */,
 				A924ECA821B3F95800321D2C /* Page.swift in Sources */,
 				A97C61CC21C2E59C00BBB3EB /* DetailNewsTableViewController.swift in Sources */,
@@ -525,6 +568,7 @@
 				A97C5E9121C26A8800BBB3EB /* Login.swift in Sources */,
 				A911232321A6FACC000F46C7 /* BaseCollectionReusableView.swift in Sources */,
 				A911231B21A6E566000F46C7 /* NewsCollectionViewController.swift in Sources */,
+				A97C61E821C407EF00BBB3EB /* ProfileViewController.swift in Sources */,
 				A928958D21A183540051EBC5 /* AppDelegate.swift in Sources */,
 				A97C5E9721C26CD000BBB3EB /* LoginViewController.swift in Sources */,
 				A97C61CE21C3C80800BBB3EB /* CardCollectionViewCell.swift in Sources */,

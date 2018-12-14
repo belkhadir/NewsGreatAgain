@@ -11,16 +11,10 @@ import Foundation
 
 class User: Codable {
     internal let email: String
-    internal let password: String?
+    internal let passowrd: String?
     
     init(email: String, password: String) {
         self.email = email
-        self.password = password
-    }
-}
-
-extension User {
-    var json: [String: Any] {
-        return []
+        self.passowrd = password
     }
 }

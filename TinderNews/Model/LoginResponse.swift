@@ -1,5 +1,5 @@
 //
-//  Path.swift
+//  LoginResponse.swift
 //  TinderNews
 //
 //  Created by xxx on 12/14/18.
@@ -8,10 +8,9 @@
 
 import Foundation
 
-enum EndPath: String {
-    case news
-    case login
-    case register
-    case favorite
-    case logout
+
+class LoginResponse: Codable {
+    let id: Int
+    let token: String
+    let userID: Int
 }

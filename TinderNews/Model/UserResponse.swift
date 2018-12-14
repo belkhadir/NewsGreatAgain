@@ -9,16 +9,7 @@
 import Foundation
 
 
-class UserResponse: User {
-    var token: String
-    
-    init(email: String, password: String, token: String) {
-        self.token = token
-        super.init(email: email, password: password)
-    }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
-    }
-    
+class UserResponse: Codable {
+    let email: String
+    let userID: String
 }
