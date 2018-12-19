@@ -41,7 +41,6 @@ func sendRequest<T: Decodable>(for type: T.Type,
     var compenents = URLComponents()
     compenents.scheme = "http"
     compenents.host = host //"api.coinmarketcap.com"
-    compenents.port = port
     compenents.path = "/" + path.rawValue
     compenents.queryItems = query
     
@@ -83,7 +82,7 @@ fileprivate func sendRequest<T: Decodable>(_ request: URLRequest, _ completion: 
         
         do {
             let responseData = try JSONDecoder().decode(type.self, from: jsonD)
-            print(responseData)
+//            print(responseData)
             completion(Result.success(responseData))
         } catch let error{
             debugPrint(error)

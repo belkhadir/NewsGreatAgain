@@ -17,7 +17,15 @@ class NewsCollectionViewCell: CardCollectionViewCell, Configurable {
             return
         }
         let url = URL(string: urlString)
-        imageView.sd_setImage(with: url, completed: nil)
+        imageView.sd_setImage(with: url) { [unowned self] (image, error, _, _) in
+            guard error == nil else {
+                return
+            }
+            guard let image = image else {
+                return
+            }
+            self.imageView.image = RBResizeImage(image: image, targetSize: self.frame.size)
+        }
         titleLabel.sizeToFit()
     }
     

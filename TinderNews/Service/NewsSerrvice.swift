@@ -16,7 +16,7 @@ class NewService {
                         completion: @escaping articles) {
         
         let query = [URLQueryItem(name: "page", value: "\(page.next)")]
-        sendRequest(for: ResponseData<Article>.self, host: "localhost", path: EndPath.news, port: 8080, query: query, httpMethod: .get, bear: nil) { completion($0) }
+        sendRequest(for: ResponseData<Article>.self, host: "newsgreatagain.com", path: EndPath.news, port: 8080, query: query, httpMethod: .get, bear: nil) { completion($0) }
     }
     
     static func addTofavorite(article: Article) {

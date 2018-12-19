@@ -53,7 +53,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertiser" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTT-Yh-eSq">
-                    <rect key="frame" x="75" y="327" width="71" height="18"/>
+                    <rect key="frame" x="75" y="327" width="287" height="18"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Of-AP-0h9">
-                    <rect key="frame" x="154" y="328" width="100" height="17"/>
+                    <rect key="frame" x="370" y="328" width="100" height="17"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,6 +84,7 @@
                 <constraint firstItem="PEQ-D9-2Vv" firstAttribute="trailing" secondItem="beR-eV-DX1" secondAttribute="trailing" id="QKK-wj-EC7"/>
                 <constraint firstAttribute="trailing" secondItem="beR-eV-DX1" secondAttribute="trailing" constant="13" id="Qfd-br-Vag"/>
                 <constraint firstItem="GTT-Yh-eSq" firstAttribute="bottom" secondItem="iNa-bH-h1m" secondAttribute="bottom" id="Tnh-lC-Th1"/>
+                <constraint firstItem="GTT-Yh-eSq" firstAttribute="trailing" secondItem="beR-eV-DX1" secondAttribute="trailing" id="ZAS-o1-S6u"/>
                 <constraint firstItem="beR-eV-DX1" firstAttribute="leading" secondItem="iNa-bH-h1m" secondAttribute="trailing" constant="8" id="aVh-9B-9jF"/>
                 <constraint firstItem="PEQ-D9-2Vv" firstAttribute="leading" secondItem="iNa-bH-h1m" secondAttribute="leading" id="bmn-wc-ZQL"/>
                 <constraint firstItem="fNp-yu-K4i" firstAttribute="top" secondItem="lp1-oz-XOs" secondAttribute="bottom" constant="5" id="c47-D6-r0w"/>

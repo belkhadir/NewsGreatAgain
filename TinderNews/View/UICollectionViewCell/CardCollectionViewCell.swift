@@ -34,4 +34,10 @@ class CardCollectionViewCell: UICollectionViewCell {
         contentView.layer.shadowOffset = CGSize(width: -1, height: 2)
         contentView.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        contentView.layer.shadowOpacity = 0.2
+    }
 }

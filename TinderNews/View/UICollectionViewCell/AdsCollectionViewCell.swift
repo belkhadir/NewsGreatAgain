@@ -9,23 +9,42 @@
 import UIKit
 import GoogleMobileAds
 
-class AdsCollectionViewCell: CardCollectionViewCell, Configurable {
-    typealias T = AdloaderHelp
-    
-    func configure(cell with: AdloaderHelp) {
-        adloader = with
-    }
-    
+class AdsCollectionViewCell: UICollectionViewCell {
     var nativeAdView: GADUnifiedNativeAdView!
     
     
-    fileprivate var adloader: AdloaderHelp?
+    
+    let adUnitID = "ca-app-pub-3940256099942544/3986624511"
+    
+    /// The number of native ads to load (between 1 and 5 for this example).
+    let numAdsToLoad = 1
+    
+    /// The ad loader that loads the native ads.
+    var adLoader: GADAdLoader!
+    
+    let request = GADRequest()
     
     weak var viewController: UIViewController?
+    weak var adsCollectionViewCell: AdsCollectionViewCell?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupLayout()
+        let options = GADMultipleAdsAdLoaderOptions()
+        options.numberOfAds = numAdsToLoad
         
+        // Prepare the ad loader and start loading ads.
+        adLoader = GADAdLoader(adUnitID: adUnitID,
+                               rootViewController: viewController,
+                               adTypes: [.unifiedNative],
+                               options: [options])
+        adLoader.delegate = self
+        guard let nibObjects = Bundle.main.loadNibNamed("UnifiedNativeAdView", owner: nil, options: nil),
+            let nativeAdView = nibObjects.first as? GADUnifiedNativeAdView else {
+                assert(false, "Could not load nib file for adView")
+        }
+        
+        setAdView(nativeAdView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,7 +53,8 @@ class AdsCollectionViewCell: CardCollectionViewCell, Configurable {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        nativeAdView.nativeAd = nil
+        nativeAdView.nativeAd = nil
+        adLoader.load(request)
     }
     
     func setAdView(_ view: GADUnifiedNativeAdView) {
@@ -46,18 +66,20 @@ class AdsCollectionViewCell: CardCollectionViewCell, Configurable {
         nativeAdView.autoLayout(topAnchor: topAnchor, bottomAnchor: bottomAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor)
     }
 
-    
+    internal func setupLayout() {
+        contentView.layer.cornerRadius = 5
+        contentView.backgroundColor = .white
+        contentView.layer.shadowColor = UIColor.black.cgColor
+        contentView.layer.shadowOpacity = 0.2
+        contentView.layer.shadowRadius = 10
+        contentView.layer.shadowOffset = CGSize(width: -1, height: 2)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+    }
 }
 
 extension AdsCollectionViewCell: GADUnifiedNativeAdLoaderDelegate {
     
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADUnifiedNativeAd) {
-        guard let nibObjects = Bundle.main.loadNibNamed("UnifiedNativeAdView", owner: nil, options: nil),
-            let nativeAdView = nibObjects.first as? GADUnifiedNativeAdView else {
-                assert(false, "Could not load nib file for adView")
-        }
-        
-        setAdView(nativeAdView)
         
         nativeAdView.nativeAd = nativeAd
         

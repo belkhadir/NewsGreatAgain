@@ -11,6 +11,20 @@ import JGProgressHUD
 
 class NewsCollectionViewController: UICollectionViewController {
     
+    
+    enum Section: Int {
+        case article
+        case ads
+        
+        init(section: Int) {
+            self.init(rawValue: section)!
+        }
+        
+        init(at indexPath: IndexPath) {
+            self.init(section: indexPath.section)
+        }
+    }
+    
     fileprivate var articles = [Article]() {
         didSet {
             if articles.isEmpty {
@@ -19,7 +33,9 @@ class NewsCollectionViewController: UICollectionViewController {
         }
     }
     
-    fileprivate var page = Page.Position(current: 1,max: 1, next: 1, previous: 1)
+    
+    
+    fileprivate var page = Page.Position(current: 1,max: 0, next: 1, previous: 1)
     
     fileprivate let loadingView = JGProgressHUD(style: JGProgressHUDStyle.light)
     
@@ -29,6 +45,7 @@ class NewsCollectionViewController: UICollectionViewController {
         if let layout = collectionView.collectionViewLayout as? TinderLayout {
             layout.delegate = self
         }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,7 +62,7 @@ class NewsCollectionViewController: UICollectionViewController {
         
         collectionView.backgroundColor = UIColor.groupTableViewBackground
         collectionView.register(NewsCollectionViewCell.self, forCellWithReuseIdentifier: NewsCollectionViewCell.reuseIdentifier)
-//        collectionView.register(AdsCollectionViewCell.self, forCellWithReuseIdentifier: AdsCollectionViewCell.reuseIdentifier)
+        collectionView.register(AdsCollectionViewCell.self, forCellWithReuseIdentifier: AdsCollectionViewCell.reuseIdentifier)
         collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier)
         collectionView.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterCollectionReusableView.reuseIdentifier)
     }
@@ -60,24 +77,45 @@ class NewsCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return articles.count
+//        let sections = Section(section: section)
+//        switch sections {
+//        case .ads:
+//            return 1
+//        case .article:
+//            return articles.count
+//        }
+
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if articles.count == 1 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdsCollectionViewCell.reuseIdentifier, for: indexPath) as! AdsCollectionViewCell
-//            cell.viewController = self
-//            return cell
-//        }else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.reuseIdentifier, for: indexPath) as! NewsCollectionViewCell
-            cell.configure(cell: articles[indexPath.item])
-            return cell
-//        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.reuseIdentifier, for: indexPath) as! NewsCollectionViewCell
+        cell.configure(cell: articles[indexPath.item])
+        return cell
     }
 
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let article = articles[indexPath.item]
+        
+        let controller = DetailNewsTableViewController()
+        controller.article = article
+        
+        DispatchQueue.main.async { [unowned self] in
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    
     // Mark: fetch more news
     
     func fetchmoreNews() {
         loadingView.show(in: view)
+        if page.max == page.current {
+            call {
+                self.loadingView.dismiss()
+            }
+            return
+        }
         NewService.getNewsFornext(page: page) { [weak self](result) in
             guard let weakSelf = self else {
                 return

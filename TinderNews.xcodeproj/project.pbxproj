@@ -29,6 +29,9 @@
 		A92895C021A1FB550051EBC5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92895BF21A1FB550051EBC5 /* OnboardingViewController.swift */; };
 		A92895C221A1FBB80051EBC5 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92895C121A1FBB80051EBC5 /* PageViewController.swift */; };
 		A92895C921A1FEC20051EBC5 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92895C821A1FEC20051EBC5 /* NewsCollectionViewCell.swift */; };
+		A94144D121C965ED00D362E0 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D021C965ED00D362E0 /* DetailHeaderView.swift */; };
+		A94144D421C9685000D362E0 /* AdsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D321C9685000D362E0 /* AdsTableViewCell.swift */; };
+		A94144D621C97A8000D362E0 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D521C97A8000D362E0 /* RBResizer.swift */; };
 		A97C5E8D21C1BF1500BBB3EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A97C5E8C21C1BF1500BBB3EB /* GoogleService-Info.plist */; };
 		A97C5E8F21C1BF8E00BBB3EB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97C5E8E21C1BF8E00BBB3EB /* AdSupport.framework */; };
 		A97C5E9121C26A8800BBB3EB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E9021C26A8800BBB3EB /* Login.swift */; };
@@ -41,7 +44,6 @@
 		A97C61C921C28AC200BBB3EB /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97C61C821C28AC200BBB3EB /* UnifiedNativeAdView.xib */; };
 		A97C61CC21C2E59C00BBB3EB /* DetailNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61CB21C2E59C00BBB3EB /* DetailNewsTableViewController.swift */; };
 		A97C61CE21C3C80800BBB3EB /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61CD21C3C80800BBB3EB /* CardCollectionViewCell.swift */; };
-		A97C61D021C3CC3A00BBB3EB /* AdloaderHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61CF21C3CC3A00BBB3EB /* AdloaderHelp.swift */; };
 		A97C61D221C3D12600BBB3EB /* EndPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61D121C3D12600BBB3EB /* EndPath.swift */; };
 		A97C61D421C3D1C100BBB3EB /* EndURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61D321C3D1C100BBB3EB /* EndURL.swift */; };
 		A97C61D721C3D6A800BBB3EB /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61D621C3D6A700BBB3EB /* Keys.swift */; };
@@ -54,6 +56,8 @@
 		A97C61E821C407EF00BBB3EB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E721C407EF00BBB3EB /* ProfileViewController.swift */; };
 		A97C61EB21C40D1700BBB3EB /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61EA21C40D1700BBB3EB /* SettingsTableViewController.swift */; };
 		A97C61EE21C410E500BBB3EB /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61ED21C410E500BBB3EB /* BuyView.swift */; };
+		A97C622F21C52C0800BBB3EB /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C622E21C52C0800BBB3EB /* GradientButton.swift */; };
+		A97C623221C52FAD00BBB3EB /* BuyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C623121C52FAD00BBB3EB /* BuyController.swift */; };
 		A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */; };
 		A9F9FF6B21A436C300197766 /* TinderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6A21A436C300197766 /* TinderLayout.swift */; };
 		A9F9FF6D21A43D8000197766 /* TinderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6C21A43D8000197766 /* TinderDelegate.swift */; };
@@ -84,6 +88,9 @@
 		A92895BF21A1FB550051EBC5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A92895C121A1FBB80051EBC5 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A92895C821A1FEC20051EBC5 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A94144D021C965ED00D362E0 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		A94144D321C9685000D362E0 /* AdsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsTableViewCell.swift; sourceTree = "<group>"; };
+		A94144D521C97A8000D362E0 /* RBResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
 		A97C5E8C21C1BF1500BBB3EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A97C5E8E21C1BF8E00BBB3EB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		A97C5E9021C26A8800BBB3EB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -96,7 +103,6 @@
 		A97C61C821C28AC200BBB3EB /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
 		A97C61CB21C2E59C00BBB3EB /* DetailNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewsTableViewController.swift; sourceTree = "<group>"; };
 		A97C61CD21C3C80800BBB3EB /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
-		A97C61CF21C3CC3A00BBB3EB /* AdloaderHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdloaderHelp.swift; sourceTree = "<group>"; };
 		A97C61D121C3D12600BBB3EB /* EndPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPath.swift; sourceTree = "<group>"; };
 		A97C61D321C3D1C100BBB3EB /* EndURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndURL.swift; sourceTree = "<group>"; };
 		A97C61D621C3D6A700BBB3EB /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
@@ -109,6 +115,8 @@
 		A97C61E721C407EF00BBB3EB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A97C61EA21C40D1700BBB3EB /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A97C61ED21C410E500BBB3EB /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
+		A97C622E21C52C0800BBB3EB /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		A97C623121C52FAD00BBB3EB /* BuyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyController.swift; sourceTree = "<group>"; };
 		A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9F9FF6A21A436C300197766 /* TinderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderLayout.swift; sourceTree = "<group>"; };
 		A9F9FF6C21A43D8000197766 /* TinderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderDelegate.swift; sourceTree = "<group>"; };
@@ -207,9 +215,11 @@
 		A92895A021A1F8080051EBC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A94144D221C9683000D362E0 /* UITableViewCell */,
 				A97C61EC21C410B500BBB3EB /* UIView */,
 				A911231C21A6EFA6000F46C7 /* UICollectionReusableView  */,
 				A92895C721A1FE840051EBC5 /* UICollectionViewCell */,
+				A97C622E21C52C0800BBB3EB /* GradientButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +227,7 @@
 		A92895A121A1F80C0051EBC5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A97C623021C52F9C00BBB3EB /* BuyController */,
 				A97C61E921C40D0400BBB3EB /* Settings */,
 				A97C61E621C407D000BBB3EB /* Profile */,
 				A97C61CA21C2E57800BBB3EB /* DetailNews */,
@@ -280,9 +291,16 @@
 				A97C61C821C28AC200BBB3EB /* UnifiedNativeAdView.xib */,
 				A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */,
 				A97C61CD21C3C80800BBB3EB /* CardCollectionViewCell.swift */,
-				A97C61CF21C3CC3A00BBB3EB /* AdloaderHelp.swift */,
 			);
 			path = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
+		A94144D221C9683000D362E0 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A94144D321C9685000D362E0 /* AdsTableViewCell.swift */,
+			);
+			path = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		A97C5E9A21C26E1F00BBB3EB /* NetworkHelper */ = {
@@ -319,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				A97C61DE21C3D76400BBB3EB /* FromBackgroundToMain.swift */,
+				A94144D521C97A8000D362E0 /* RBResizer.swift */,
 			);
 			path = HelperMethod;
 			sourceTree = "<group>";
@@ -343,8 +362,17 @@
 			isa = PBXGroup;
 			children = (
 				A97C61ED21C410E500BBB3EB /* BuyView.swift */,
+				A94144D021C965ED00D362E0 /* DetailHeaderView.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		A97C623021C52F9C00BBB3EB /* BuyController */ = {
+			isa = PBXGroup;
+			children = (
+				A97C623121C52FAD00BBB3EB /* BuyController.swift */,
+			);
+			path = BuyController;
 			sourceTree = "<group>";
 		};
 		A9F9FF6921A4368E00197766 /* Layout */ = {
@@ -530,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97C623221C52FAD00BBB3EB /* BuyController.swift in Sources */,
 				A97C5E9D21C26E4B00BBB3EB /* UserService.swift in Sources */,
 				A97C61D721C3D6A800BBB3EB /* Keys.swift in Sources */,
 				A92895C221A1FBB80051EBC5 /* PageViewController.swift in Sources */,
@@ -537,13 +566,13 @@
 				A924ECAA21B3F9EA00321D2C /* ResponseData.swift in Sources */,
 				A97C5E9521C26B3200BBB3EB /* User.swift in Sources */,
 				A9F9FF6D21A43D8000197766 /* TinderDelegate.swift in Sources */,
-				A97C61D021C3CC3A00BBB3EB /* AdloaderHelp.swift in Sources */,
 				A97C61D921C3D70200BBB3EB /* Extension+UIViewController.swift in Sources */,
 				A92895A921A1F8470051EBC5 /* UIView.swift in Sources */,
 				A92895A521A1F8330051EBC5 /* Configurable.swift in Sources */,
 				A911232021A6EFFF000F46C7 /* FooterCollectionReusableView.swift in Sources */,
 				A92895AB21A1F87F0051EBC5 /* Article.swift in Sources */,
 				A92895B921A1F9B70051EBC5 /* NetworkService.swift in Sources */,
+				A94144D621C97A8000D362E0 /* RBResizer.swift in Sources */,
 				A97C61E521C3DF7A00BBB3EB /* LoginResponse.swift in Sources */,
 				A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */,
 				A97C5E9921C26DAA00BBB3EB /* UserDefaultKey.swift in Sources */,
@@ -567,12 +596,15 @@
 				A92895A621A1F8330051EBC5 /* Identifiable.swift in Sources */,
 				A97C5E9121C26A8800BBB3EB /* Login.swift in Sources */,
 				A911232321A6FACC000F46C7 /* BaseCollectionReusableView.swift in Sources */,
+				A97C622F21C52C0800BBB3EB /* GradientButton.swift in Sources */,
 				A911231B21A6E566000F46C7 /* NewsCollectionViewController.swift in Sources */,
 				A97C61E821C407EF00BBB3EB /* ProfileViewController.swift in Sources */,
+				A94144D421C9685000D362E0 /* AdsTableViewCell.swift in Sources */,
 				A928958D21A183540051EBC5 /* AppDelegate.swift in Sources */,
 				A97C5E9721C26CD000BBB3EB /* LoginViewController.swift in Sources */,
 				A97C61CE21C3C80800BBB3EB /* CardCollectionViewCell.swift in Sources */,
 				A92895BB21A1F9B70051EBC5 /* Result.swift in Sources */,
+				A94144D121C965ED00D362E0 /* DetailHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

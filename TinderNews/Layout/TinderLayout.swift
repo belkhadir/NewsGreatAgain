@@ -173,14 +173,4 @@ class TinderLayout: UICollectionViewLayout {
     
     }
     
-//    override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-//        switch elementKind {
-//        case  UICollectionView.elementKindSectionHeader:
-//            let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, with: indexPath)
-//            attribute.frame = CGRect(x: 0, y: 0, width: width, height: 100)
-//            return attribute
-//        default:
-//            return nil
-//        }
-//    }
 }
