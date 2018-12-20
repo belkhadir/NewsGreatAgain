@@ -1,24 +1,28 @@
 //
-//  BaseCollectionReusableView.swift
+//  BasicView.swift
 //  TinderNews
 //
-//  Created by xxx on 11/22/18.
+//  Created by xxx on 12/19/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
 import UIKit
 
-class BaseCollectionReusableView: UICollectionReusableView {
+class BasicView: UIView {
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setupLayout()
     }
     
-    internal func setupLayout() {
     
+    internal func setupLayout() {
+        
     }
 }

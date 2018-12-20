@@ -129,11 +129,11 @@ class TinderLayout: UICollectionViewLayout {
                 if let topCard = topCellWithIndexPath {
                     animateAndRemove(left: xOffset < 0, cell: topCard.cell, completion: { [weak self] in
                         guard let `self` = self else { return }
-                        if xOffset < 0 {
-                            self.delegate!.didDislike(topCard.cell, at: topCard.indexPath)
-                        }else {
-                            self.delegate!.didLike(topCard.cell, at: topCard.indexPath)
-                        }
+//                        if xOffset < 0 {
+//                            self.delegate!.didDislike(topCard.cell, at: topCard.indexPath)
+//                        }else {
+//                            self.delegate!.didLike(topCard.cell, at: topCard.indexPath)
+//                        }
                         
                     })
                 }

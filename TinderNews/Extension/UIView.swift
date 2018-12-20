@@ -41,7 +41,10 @@ extension UIView {
     }
     
     func fillSuperView() {
-        autoLayout(topAnchor: topAnchor, bottomAnchor: bottomAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor)
+        guard let superview = superview?.safeAreaLayoutGuide else {
+            return
+        }
+        autoLayout(topAnchor: superview.topAnchor, bottomAnchor: superview.bottomAnchor, leadingAnchor: superview.leadingAnchor, trailingAnchor: superview.trailingAnchor)
     }
     
 }

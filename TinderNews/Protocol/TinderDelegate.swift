@@ -10,6 +10,6 @@ import UIKit
 
 
 protocol TinderDelegate: class {
-    func didDislike(_ cell: UICollectionViewCell, at indexPath: IndexPath)
-    func didLike(_ cell: UICollectionViewCell, at indexPath: IndexPath)
+    func didDislike(_ cell: UIView)
+    func didLike(_ cell: UIView)
 }

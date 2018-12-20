@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.configure(withApplicationID: ADMOB_APP_ID)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        
-        window?.rootViewController = NewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let news = NewsViewController()
+        window?.rootViewController = news //NewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         window?.makeKeyAndVisible()
         
         

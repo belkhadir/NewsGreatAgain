@@ -8,7 +8,7 @@
 
 import UIKit
 
-func RBSquareImageTo(image: UIImage, size: CGSize) -> UIImage {
+func RBSquareImageTo(image: UIImage, size: CGSize) -> UIImage? {
     return RBResizeImage(image: RBSquareImage(image: image), targetSize: size)
 }
 
@@ -32,7 +32,7 @@ func RBSquareImage(image: UIImage) -> UIImage {
     return UIImage(cgImage: imageRef!, scale: UIScreen.main.scale, orientation: image.imageOrientation)
 }
 
-func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
     let size = image.size
     
     let widthRatio  = targetSize.width  / image.size.width
@@ -56,5 +56,6 @@ func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
     let newImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
-    return newImage!
+    
+    return newImage
 }
