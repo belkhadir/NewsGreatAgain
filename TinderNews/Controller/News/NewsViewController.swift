@@ -10,7 +10,6 @@ import UIKit
 import JGProgressHUD
 
 class NewsViewController: UIViewController {
-
     fileprivate let navigationStack = NavigationStackView()
     fileprivate let cardsView = UIView()
     fileprivate let homebottomStack = HomebottomStackView()
@@ -32,7 +31,6 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-//        setupLayoutCard()
         articles = [Article]()
         addTarget()
     }
@@ -40,32 +38,35 @@ class NewsViewController: UIViewController {
     fileprivate func addNewsTocard() {
         var previousCardView: CardView?
         topCard = nil
-        
+
         articles.forEach { (article) in
             let cardView: ArticleView = ArticleView(frame: .zero)
             cardView.configure(cell: article)
             self.cardsView.addSubview(cardView)
             self.cardsView.sendSubviewToBack(cardView)
-            
+
             cardView.fillSuperView()
             cardView.delegate = self
             previousCardView?.nextCardView = cardView
             previousCardView = cardView
-            
+
             if topCard == nil {
                 topCard = cardView
             }
         }
-        
+
         let ads = AdsView(frame: .zero)
+        ads.viewController = self
         cardsView.addSubview(ads)
         self.cardsView.sendSubviewToBack(ads)
         ads.fillSuperView()
+        ads.loadRequest()
+        
     }
     
     fileprivate func setupLayout() {
         view.backgroundColor = .white
-        
+
         let overAllStackView = UIStackView(arrangedSubviews: [navigationStack, cardsView, homebottomStack])
         overAllStackView.translatesAutoresizingMaskIntoConstraints = false
         overAllStackView.axis = .vertical
@@ -86,7 +87,7 @@ class NewsViewController: UIViewController {
             }
             return
         }
-        NewService.getNewsFornext(page: page) { [weak self](result) in
+        NewsService.getNewsFornext(page: page) { [weak self](result) in
             guard let weakSelf = self else {
                 return
             }
@@ -107,8 +108,10 @@ class NewsViewController: UIViewController {
         }
     }
     
-    
     fileprivate func addTarget() {
+        navigationStack.favoriteButton.addTarget(self, action: #selector(handleFavorite), for: .touchUpInside)
+        navigationStack.logoButton.addTarget(self, action: #selector(handleLogo), for: .touchUpInside)
+        navigationStack.settingsButton.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
         homebottomStack.likeButton.addTarget(self, action: #selector(handleLike), for: .touchUpInside)
         homebottomStack.dislikeButton.addTarget(self, action: #selector(handleDisLike), for: .touchUpInside)
     }
@@ -121,6 +124,28 @@ class NewsViewController: UIViewController {
         animateTheremoveCard(left: true)
     }
 
+    @objc func handleFavorite() {
+        tranlateStack(with: -10)
+    }
+    @objc func handleLogo() {
+        tranlateStack(with: view.frame.width / 2)
+    }
+    
+    @objc func handleSettings() {
+        
+//        tranlateStack(with: 350)
+    }
+    
+    func tranlateStack(with value: CGFloat) {
+        let translateAnimation = CABasicAnimation(keyPath: "position.x")
+        translateAnimation.toValue = value
+        translateAnimation.duration = 0.5
+        translateAnimation.fillMode =  .forwards
+        translateAnimation.isRemovedOnCompletion = false
+        translateAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        
+        navigationStack.layer.add(translateAnimation, forKey: "tranlation")
+    }
     
     func animateTheremoveCard(left: Bool) {
         let translateAnimation = CABasicAnimation(keyPath: "position.x")
@@ -130,11 +155,9 @@ class NewsViewController: UIViewController {
         translateAnimation.isRemovedOnCompletion = false
         translateAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
         
-        
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotationAnimation.toValue = 15 * CGFloat.pi / 180
         rotationAnimation.duration = 0.5
-        
         
         let cardView = topCard
         topCard = cardView?.nextCardView
@@ -155,8 +178,18 @@ class NewsViewController: UIViewController {
 }
 
 extension NewsViewController: CardViewDelegate {
-    func didTapMoreInfo() {
+    func didDislike(_ cell: CardView) {
         
+    }
+    
+    func didLike(_ cell: CardView) {
+        
+    }
+    
+    func didTapMoreInfo(cardView: CardView, artilce: Article) {
+        let detail = DetailsViewController()
+        detail.article = artilce
+        present(detail, animated: true, completion: nil)
     }
     
     func didRemoveCardView(cardView: CardView) {
@@ -166,6 +199,4 @@ extension NewsViewController: CardViewDelegate {
             self.articles.removeLast()
         }
     }
-    
-    
 }

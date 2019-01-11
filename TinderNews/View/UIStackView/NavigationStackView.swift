@@ -10,24 +10,30 @@ import UIKit
 
 class NavigationStackView: UIStackView {
 
-    fileprivate let settingsButton = UIButton(type: .system)
-    fileprivate let logoButton = UIButton(type: .system)
-    fileprivate let favoriteButton = UIButton(type: .system)
+    let settingsButton = UIButton(type: .system)
+    let logoButton = UIButton(type: .system)
+    let favoriteButton = UIButton(type: .system)
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        settingsButton.setImage(UIImage(named: "settings")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        logoButton.setImage(UIImage(named: "LOGO-RED-HEADER")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        favoriteButton.setImage(UIImage(named: "heart")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-
+        [settingsButton, logoButton, favoriteButton].forEach { addArrangedSubview($0) }
         axis = .horizontal
-        distribution = .fillEqually
+        distribution = .equalSpacing
         alignment = .center
         
         isLayoutMarginsRelativeArrangement = true
-        layoutMargins = .init(top: 0, left: 16, bottom: 0, right: 16)
+        layoutMargins = .init(top: 0, left: 8, bottom: 0, right: 8)
+        
     }
     
     required init(coder: NSCoder) {

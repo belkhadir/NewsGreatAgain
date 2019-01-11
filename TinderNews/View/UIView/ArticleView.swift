@@ -18,7 +18,9 @@ class ArticleView: CardView, Configurable {
             return
         }
         let url = URL(string: urlString)
-        imageView.sd_setImage(with: url, completed: nil)
+        let placeHolder = UIImage(named: "placeHolder")
+        imageView.sd_setImage(with: url, placeholderImage: placeHolder, options: .retryFailed, completed: nil)
+//        imageView.sd_setImage(with: url, completed: nil)
         titleLabel.sizeToFit()
     }
     
@@ -68,6 +70,12 @@ class ArticleView: CardView, Configurable {
         // self.frame is actually zero frame
         
         imageView.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    override func handleTap(gesture: UITapGestureRecognizer) {
+        super.handleTap(gesture: gesture)
+        guard let article = article else { return }
+        delegate?.didTapMoreInfo(cardView: self, artilce: article)
     }
     
 }

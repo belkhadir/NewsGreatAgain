@@ -9,6 +9,8 @@
 import Foundation
 
 protocol CardViewDelegate: class {
-    func didTapMoreInfo()
+    func didTapMoreInfo(cardView: CardView, artilce: Article)
     func didRemoveCardView(cardView: CardView)
+    func didDislike(_ cell: CardView)
+    func didLike(_ cell: CardView)
 }

@@ -9,6 +9,5 @@
 import Foundation
 
 enum EndURL: String {
-    case address = "localhost"
-    case port
+    case host = "newsgreatagain.com"
 }

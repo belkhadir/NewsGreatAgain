@@ -11,10 +11,11 @@ import Foundation
 
 class User: Codable {
     internal let email: String
-    internal let passowrd: String?
-    
-    init(email: String, password: String) {
+    internal var password: String?
+    internal var fullName: String?
+    init(email: String, password: String, fullName: String?=nil) {
         self.email = email
-        self.passowrd = password
+        self.password = password
+        self.fullName = fullName
     }
 }

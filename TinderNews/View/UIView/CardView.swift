@@ -14,8 +14,6 @@ class CardView: UIView {
     internal var cornerRadius: CGFloat = 10
     fileprivate let maxOffsetThresholdPercentage: CGFloat = 0.3
     
-    weak var rootController: UIViewController?
-    
     weak var delegate: CardViewDelegate?
 
     override init(frame: CGRect) {
@@ -32,9 +30,7 @@ class CardView: UIView {
     
     
     @objc func handleTap(gesture: UITapGestureRecognizer) {
-        let detailVC = DetailNewsTableViewController()
-//        detailVC.article = article
-        rootController?.present(detailVC, animated: true, completion: nil)
+        
     }
 
     
@@ -72,6 +68,7 @@ class CardView: UIView {
             
             if abs(xOffset) > xMaxOffset {
                 self.frame = CGRect(x: xOffset < 0 ? -1000:1000, y: 0, width: self.frame.width, height: self.frame.height)
+                _ = xOffset < 0 ? self.delegate?.didDislike(self): self.delegate?.didLike(self)
             }else {
                 self.transform = .identity
             }

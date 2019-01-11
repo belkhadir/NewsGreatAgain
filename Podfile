@@ -13,4 +13,6 @@ target 'TinderNews' do
   pod 'FacebookLogin'
   pod 'FirebaseUI/Google'
   pod 'JGProgressHUD'
+  pod 'Firebase/DynamicLinks'
+  pod 'Firebase/Performance'
 end

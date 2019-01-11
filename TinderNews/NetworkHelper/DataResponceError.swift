@@ -13,6 +13,7 @@ enum DataResponseError: Error {
     case network
     case decoding
     case dataDecodint(data: Data)
+    case response
     var reason: String {
         switch self {
         case .network:
@@ -21,6 +22,9 @@ enum DataResponseError: Error {
             return "An error occurred while decoding data"
         case .dataDecodint:
             return "DAATA"
+        case .response:
+            return "Comand invalid please contact the support"
+            
         }
     }
 }

@@ -15,8 +15,10 @@ enum Login {
     case facebook
     case google
     case none
+    case register(user: User)
     
     func userDidlogin(delegate: LoginDelegate) {
+        delegate.didStart()
         switch self {
         case .email(let user):
             didlogin(using: user, delegate: delegate)
@@ -24,6 +26,8 @@ enum Login {
             didLoginUsingFacebook(delegate)
         case .google:
             didLoginUsinGoogle(delegate)
+        case .register(let user):
+            registerUser(using: user, delegate)
         case .none: return
         }
     }
@@ -36,6 +40,10 @@ enum Login {
             case .failure(let error):
                 delegate.didFailToLoginIn(error: error)
             case .success(let value):
+                if let _ = value.error, let reason = value.reason {
+                    let error = NSError(domain:  "User" + reason, code: 0, userInfo: nil)
+                    delegate.didFailToLoginIn(error: error)
+                }
                 delegate.didLoginIn(user: value)
             }
         }
@@ -56,7 +64,7 @@ enum Login {
                         print(error)
                     case .success(let data):
                         print(data)
-                        let user = User(email: "", password: "")
+                        let user = User(email: "", password: "", fullName: "")
                         UserService.register(user: user, completion: { (r) in
                             switch r {
                             case .failure(let error):
@@ -70,6 +78,17 @@ enum Login {
 
             case .cancelled:
                 return
+            }
+        }
+    }
+    
+    fileprivate func registerUser(using user: User,_ delegate: LoginDelegate) {
+        UserService.register(user: user) { (result) in
+            switch result {
+            case .failure(let error):
+                delegate.didFailToLoginIn(error: error)
+            case .success:
+                self.didlogin(using: user, delegate: delegate)
             }
         }
     }

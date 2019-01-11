@@ -14,4 +14,8 @@ enum EndPath: String {
     case register
     case favorite
     case logout
+    case addfavorite
+    case unfavorite
+    case referal
+    case purchase
 }

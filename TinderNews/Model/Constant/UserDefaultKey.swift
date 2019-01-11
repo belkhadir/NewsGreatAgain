@@ -11,4 +11,9 @@ import Foundation
 enum UserDefaultKey: String {
     case token
     case userID
+    case isLogged
+    case invitedBy
+    case purchased
+    case fullName
+    case email
 }

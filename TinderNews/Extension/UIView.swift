@@ -13,6 +13,7 @@ extension UIView {
     func autoLayout(topAnchor: NSLayoutYAxisAnchor?, bottomAnchor: NSLayoutYAxisAnchor?,
                     leadingAnchor: NSLayoutXAxisAnchor?, trailingAnchor: NSLayoutXAxisAnchor?,
                     inset: UIEdgeInsets = .zero, height: (NSLayoutDimension, CGFloat)? = nil, width: (NSLayoutDimension, CGFloat)? = nil) {
+        translatesAutoresizingMaskIntoConstraints  = false
         if let topAnchor = topAnchor {
             self.topAnchor.constraint(equalTo: topAnchor, constant: inset.top).isActive = true
         }
