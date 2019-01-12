@@ -19,7 +19,14 @@ class ArticleView: CardView, Configurable {
         }
         let url = URL(string: urlString)
         let placeHolder = UIImage(named: "placeHolder")
-        imageView.sd_setImage(with: url, placeholderImage: placeHolder, options: .retryFailed, completed: nil)
+        imageView.sd_setImage(with: url, placeholderImage: placeHolder, options: .retryFailed) { [unowned self](image, error, cach, url) in
+
+            if image == nil {
+                self.imageView.image = placeHolder
+            }
+            
+        }
+//        imageView.sd_setImage(with: url, placeholderImage: placeHolder, options: .retryFailed, completed: nil)
 //        imageView.sd_setImage(with: url, completed: nil)
         titleLabel.sizeToFit()
     }

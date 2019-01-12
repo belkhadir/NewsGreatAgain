@@ -17,7 +17,7 @@ class RegisterViewController: UIViewController {
     fileprivate let fullNameTextField = makeTextField(placeHolder: "Full name")
     fileprivate let emailTextField = makeTextField(placeHolder: "Email")
     fileprivate let passwordTextField = makeTextField(placeHolder: "Create a password")
-    fileprivate let button = configureButton(button: "JOIN NOW", backgroundColor: .blue)
+    fileprivate let button = configureButton(button: "JOIN NOW", backgroundColor: #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1))
     fileprivate let loading = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
@@ -30,6 +30,7 @@ class RegisterViewController: UIViewController {
     
     fileprivate func addTarget() {
         button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        
     }
     
     @objc func handleRegister() {

@@ -7,49 +7,44 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class JoinViewController: UIViewController {
-
-     fileprivate let titleLabel: UILabel = {
+    
+    
+    let loginButtonStack = LoginRegisterStackView()
+    
+    fileprivate let loading = JGProgressHUD(style: .dark)
+    
+    fileprivate let logoImage = UIImageView(image: UIImage(named: "NLOGO")!)
+    
+    fileprivate let titleLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = NSAttributedString(string: "Join News Great Again (it's free)", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 21), NSAttributedString.Key.foregroundColor: UIColor.black])
+        label.attributedText = NSAttributedString(string: "Join\n News Great Again (it's free)", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 35), NSAttributedString.Key.foregroundColor: UIColor.white])
+        label.numberOfLines = 0
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    fileprivate let memberLabel: UILabel = {
-        let label = UILabel()
-        label.attributedText = NSAttributedString(string: "Already a member?", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray])
-        return label
-    }()
     
-    fileprivate let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitleColor(UIColor.lightGray, for: .normal)
-        button.setTitle("Log in", for: .normal)
-        return button
-    }()
-    
-    fileprivate let emailButton: UIButton = {
-        return configureButton(button: "CONTINUE WITH EMAIL", backgroundColor: .blue)
-    }()
-    
-    fileprivate let socialMediaStack = SocialMediaStack()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupGradientLayer()
         setupLayout()
         addTarget()
     }
     
 
     fileprivate func addTarget() {
-        emailButton.addTarget(self, action: #selector(handleEmail), for: .touchUpInside)
-        loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        loginButtonStack.registerButton.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        loginButtonStack.loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        
     }
     
-    @objc func handleEmail() {
+    @objc func handleRegister() {
         let registerVC = RegisterViewController()
         present(registerVC, animated: true, completion: nil)
     }
@@ -59,36 +54,36 @@ class JoinViewController: UIViewController {
         present(login, animated: true, completion: nil)
     }
     
+    let gradientLayer = CAGradientLayer()
+
+    fileprivate func setupGradientLayer() {
+        let topColor = #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1)
+        let bottomColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1)
+        // make sure to user cgColor
+        gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
+        gradientLayer.locations = [0, 1]
+        view.layer.addSublayer(gradientLayer)
+        gradientLayer.frame = view.bounds
+    }
     
     fileprivate func setupLayout() {
         view.backgroundColor = .white
+        logoImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        logoImage.contentMode = .scaleAspectFill
+        logoImage.clipsToBounds = true
+        
         let titleView = UIView()
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         titleView.addSubview(titleLabel)
-        titleLabel.centerXAnchor.constraint(equalTo: titleView.centerXAnchor).isActive = true
+        
+        titleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 16).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -16).isActive = true
+        
         titleLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
         
-        let seperator = SeperatorStackView()
-        
-        
-        let loginStack = UIStackView(arrangedSubviews: [memberLabel, loginButton])
-        loginStack.axis = .horizontal
-        loginStack.alignment = .center
-        loginStack.distribution = .fill
-        loginStack.spacing = 6
-        loginStack.translatesAutoresizingMaskIntoConstraints = false
-        
-        let loginView = UIView()
-        loginView.translatesAutoresizingMaskIntoConstraints = false
-        loginView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        loginView.addSubview(loginStack)
-        loginStack.centerXAnchor.constraint(equalTo: loginView.centerXAnchor).isActive = true
-        loginStack.centerYAnchor.constraint(equalTo: loginView.centerYAnchor).isActive = true
-        
-        
-        let overAllStackView = UIStackView(arrangedSubviews: [titleView, socialMediaStack, seperator, emailButton, loginView])
+        let overAllStackView = UIStackView(arrangedSubviews: [logoImage,titleView, loginButtonStack])
         overAllStackView.alignment = .fill
         overAllStackView.distribution = .equalSpacing
         overAllStackView.axis = .vertical
@@ -97,8 +92,15 @@ class JoinViewController: UIViewController {
         
         overAllStackView.fillSuperView()
         overAllStackView.isLayoutMarginsRelativeArrangement = true
-        overAllStackView.layoutMargins = .init(top: 16, left: 16, bottom: 200, right: 16)
+        overAllStackView.layoutMargins = .init(top: 16, left: 16, bottom: 16, right: 16)
+        
+    }
+    
+    
+    func addLoginRegisterButton() {
+        
         
     }
 
 }
+

@@ -89,7 +89,8 @@ class MainViewController: UIViewController {
         state = State.settings
         let indexPath = IndexPath(item: 0, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
-        
+        let halfWidth = view.frame.width/2
+        tranlateStack(with: halfWidth, mode: .forwards)
     }
     
     func tranlateStack(with value: CGFloat, mode: CAMediaTimingFillMode) {

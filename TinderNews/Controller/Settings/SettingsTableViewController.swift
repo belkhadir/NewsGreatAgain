@@ -74,6 +74,10 @@ class SettingsTableViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             case .success:
+                UserDefaults.standard.removeObject(forKey: UserDefaultKey.email.rawValue)
+                UserDefaults.standard.removeObject(forKey: UserDefaultKey.token.rawValue)
+                UserDefaults.standard.removeObject(forKey: UserDefaultKey.fullName.rawValue)
+                UserDefaults.standard.removeObject(forKey: UserDefaultKey.isLogged.rawValue)
                 let vc = JoinViewController()
                 DispatchQueue.main.async {
                     self.present(vc, animated: true, completion: nil)

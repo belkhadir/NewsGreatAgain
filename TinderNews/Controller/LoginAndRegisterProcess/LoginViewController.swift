@@ -21,13 +21,13 @@ class LoginViewController: UIViewController {
     fileprivate let titleView = UIView()
     fileprivate let seperator = SeperatorStackView()
     fileprivate lazy var emaiLoginStack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
-    fileprivate lazy var overAllStackView = UIStackView(arrangedSubviews: [titleView, socialMediaStack, seperator, emaiLoginStack, forgetPassword])
+    fileprivate lazy var overAllStackView = UIStackView(arrangedSubviews: [titleView, seperator, emaiLoginStack, forgetPassword])
     
     fileprivate let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setAttributedTitle(NSAttributedString(string: "LOGIN", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 21), NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
-        button.layer.backgroundColor = UIColor.blue.cgColor
+        button.layer.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1).cgColor
         return button
     }()
     
@@ -37,7 +37,8 @@ class LoginViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    fileprivate let socialMediaStack = SocialMediaStack()
+
+    
     fileprivate let forgetPassword: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Forget Password?", for: .normal)
@@ -83,7 +84,6 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func addTarget() {
-        socialMediaStack.facebookLogin.addTarget(self, action: #selector(didTapFacebook), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(didTapEmail), for: .touchUpInside)
         
     }

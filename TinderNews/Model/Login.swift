@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import FacebookLogin
-import FacebookCore
+//import FacebookLogin
+//import FacebookCore
 
 enum Login {
     case email(user: User)
@@ -51,35 +51,46 @@ enum Login {
     
     fileprivate func didLoginUsingFacebook(_ delegate: LoginDelegate) {
         
-        let loginManager = LoginManager(loginBehavior: .native, defaultAudience: .everyone)
-        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: UIViewController()) { (result) in
-            switch result {
-            case .failed(let error):
-                delegate.didFailToLoginIn(error: error)
-            case .success(_, _, let accessToken):
-                let graphRequest: GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields":"first_name,email, picture.type(large)"], accessToken: accessToken, httpMethod: .GET)
-                graphRequest.start({ (response, result) in
-                    switch result {
-                    case .failed(let error):
-                        print(error)
-                    case .success(let data):
-                        print(data)
-                        let user = User(email: "", password: "", fullName: "")
-                        UserService.register(user: user, completion: { (r) in
-                            switch r {
-                            case .failure(let error):
-                                delegate.didFailToLoginIn(error: error)
-                            case .success(let value):
-                                self.didlogin(using: user, delegate: delegate)
-                            }
-                        })
-                    }
-                })
-
-            case .cancelled:
-                return
-            }
-        }
+//        let loginManager = LoginManager(loginBehavior: .native, defaultAudience: .everyone)
+//        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: UIViewController()) { (result) in
+//            switch result {
+//            case .failed(let error):
+//                delegate.didFailToLoginIn(error: error)
+//            case .success(_, _, let accessToken):
+//                let graphRequest: GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields":"first_name,email, picture.type(large)"], accessToken: accessToken, httpMethod: .GET)
+//                graphRequest.start({ (response, result) in
+//                    switch result {
+//                    case .failed(let error):
+//                        print(error)
+//                    case .success(let graphResponse):
+//
+//                        if let responseDictionary = graphResponse.dictionaryValue {
+//                            print(responseDictionary)
+//                            let firstNameFB = responseDictionary["first_name"] as? String
+//                            let lastNameFB = responseDictionary["last_name"] as? String
+//                            let socialIdFB = responseDictionary["id"] as? String
+//                            let genderFB = responseDictionary["gender"] as? String
+//                            let pictureUrlFB = responseDictionary["picture"] as? [String:Any]
+//                            let photoData = pictureUrlFB!["data"] as? [String:Any]
+//                            let photoUrl = photoData!["url"] as? String
+//                            print(firstNameFB, lastNameFB, socialIdFB, genderFB, photoUrl)
+//                        }
+////                        let user = User(email: "", password: "", fullName: "")
+////                        UserService.register(user: user, completion: { (r) in
+////                            switch r {
+////                            case .failure(let error):
+////                                delegate.didFailToLoginIn(error: error)
+////                            case .success(let value):
+////                                self.didlogin(using: user, delegate: delegate)
+////                            }
+////                        })
+//                    }
+//                })
+//
+//            case .cancelled:
+//                return
+//            }
+//        }
     }
     
     fileprivate func registerUser(using user: User,_ delegate: LoginDelegate) {

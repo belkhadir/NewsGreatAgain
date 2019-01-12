@@ -30,6 +30,8 @@
 		A940F99121E7947200522677 /* CoreDataStackManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940F99021E7947200522677 /* CoreDataStackManage.swift */; };
 		A940F99421E7949300522677 /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A940F99221E7949300522677 /* News.xcdatamodeld */; };
 		A940F99621E79AC500522677 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940F99521E79AC500522677 /* Favorite.swift */; };
+		A940F99821EA0E0D00522677 /* LoginRegisterStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940F99721EA0E0D00522677 /* LoginRegisterStackView.swift */; };
+		A940F99A21EA3EF600522677 /* JoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940F99921EA3EF600522677 /* JoinView.swift */; };
 		A94144D121C965ED00D362E0 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D021C965ED00D362E0 /* DetailHeaderView.swift */; };
 		A94144D421C9685000D362E0 /* AdsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D321C9685000D362E0 /* AdsTableViewCell.swift */; };
 		A94144D621C97A8000D362E0 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D521C97A8000D362E0 /* RBResizer.swift */; };
@@ -120,6 +122,8 @@
 		A940F99021E7947200522677 /* CoreDataStackManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManage.swift; sourceTree = "<group>"; };
 		A940F99321E7949300522677 /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
 		A940F99521E79AC500522677 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		A940F99721EA0E0D00522677 /* LoginRegisterStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterStackView.swift; sourceTree = "<group>"; };
+		A940F99921EA3EF600522677 /* JoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
 		A94144D021C965ED00D362E0 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
 		A94144D321C9685000D362E0 /* AdsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsTableViewCell.swift; sourceTree = "<group>"; };
 		A94144D521C97A8000D362E0 /* RBResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 				A94144EF21CA90F500D362E0 /* HomebottomStackView.swift */,
 				A941450C21CFD3D200D362E0 /* SeperatorStackView.swift */,
 				A941450E21CFD9D800D362E0 /* SocialMediaStack.swift */,
+				A940F99721EA0E0D00522677 /* LoginRegisterStackView.swift */,
 			);
 			path = UIStackView;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				A94144F521CAC37B00D362E0 /* AdsView.swift */,
 				A94144F721CAC4E200D362E0 /* ArticleView.swift */,
 				A941450A21CFD33A00D362E0 /* LineView.swift */,
+				A940F99921EA3EF600522677 /* JoinView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -538,7 +544,6 @@
 				A928958621A183540051EBC5 /* Frameworks */,
 				A928958721A183540051EBC5 /* Resources */,
 				625F206970689DA46515D472 /* [CP] Embed Pods Frameworks */,
-				1C19FC93E01301EABC5CB906 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -609,28 +614,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C19FC93E01301EABC5CB906 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TinderNews/Pods-TinderNews-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinderNews/Pods-TinderNews-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		20DF3FC52DDE974164ACDA1F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -656,11 +639,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TinderNews/Pods-TinderNews-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -671,11 +649,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -715,8 +688,10 @@
 				A9D461F321D160DB005969F5 /* NavigationViewController.swift in Sources */,
 				A94144FC21CBB33100D362E0 /* DetailsViewController.swift in Sources */,
 				A997ACDF21E4D690007C897E /* DetailLicensesViewController.swift in Sources */,
+				A940F99821EA0E0D00522677 /* LoginRegisterStackView.swift in Sources */,
 				A941450921CD383600D362E0 /* ArticleTableViewCell.swift in Sources */,
 				A92895A521A1F8330051EBC5 /* Configurable.swift in Sources */,
+				A940F99A21EA3EF600522677 /* JoinView.swift in Sources */,
 				A92895AB21A1F87F0051EBC5 /* Article.swift in Sources */,
 				A92895B921A1F9B70051EBC5 /* NetworkService.swift in Sources */,
 				A94144FA21CADE9600D362E0 /* CardViewDelegate.swift in Sources */,
@@ -914,7 +889,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8GJLLZVYS;
 				INFOPLIST_FILE = TinderNews/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newsgreatagain.newsgreatagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -931,7 +909,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8GJLLZVYS;
 				INFOPLIST_FILE = TinderNews/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newsgreatagain.newsgreatagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
