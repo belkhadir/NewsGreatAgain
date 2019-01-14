@@ -2,7 +2,7 @@
 //  RegisterViewController.swift
 //  TinderNews
 //
-//  Created by xxx on 12/23/18.
+//  Created by Belkhadir Anas on 12/23/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
@@ -22,11 +22,18 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addTarget()
         setupLayout()
         addDelegateToTextField()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     
     fileprivate func addTarget() {
         button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
@@ -63,7 +70,7 @@ class RegisterViewController: UIViewController {
         overAllStackView.fillSuperView()
         
         overAllStackView.isLayoutMarginsRelativeArrangement = true
-        overAllStackView.layoutMargins = .init(top: 32, left: 16, bottom: view.frame.width + 20, right: 16)
+        overAllStackView.layoutMargins = .init(top: 32, left: 16, bottom: view.frame.width , right: 16)
     }
    
 

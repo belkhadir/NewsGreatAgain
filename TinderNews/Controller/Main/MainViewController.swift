@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  TinderNews
 //
-//  Created by xxx on 12/20/18.
+//  Created by Belkhadir Anas on 12/20/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
@@ -44,10 +44,14 @@ class MainViewController: UIViewController {
         setupLayout()
         addTarget()
         
-//        let indexPath = IndexPath(item: 0, section: 2)
-//        collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
+
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        handleLogo()
+    }
     
     fileprivate func setupLayout() {
         view.backgroundColor = .white
@@ -76,17 +80,20 @@ class MainViewController: UIViewController {
     
     @objc func handleFavorite() {
         state = State.favorite
+        activeThenavigationStack(state: state)
         let indexPath = IndexPath(item: 0, section: 2)
         collectionView.scrollToItem(at: indexPath, at: .right, animated: true)
     }
     @objc func handleLogo() {
         state = State.home
+        activeThenavigationStack(state: state)
         let indexPath = IndexPath(item: 0, section: 1)
         collectionView.scrollToItem(at: indexPath, at: state == State.settings ? .left: .right, animated: true)
     }
     
     @objc func handleSettings() {
         state = State.settings
+        activeThenavigationStack(state: state)
         let indexPath = IndexPath(item: 0, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         let halfWidth = view.frame.width/2
@@ -101,6 +108,13 @@ class MainViewController: UIViewController {
         translateAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
         
         navigationStack.layer.add(translateAnimation, forKey: "tranlation")
+    }
+    
+    private func activeThenavigationStack(state: State) {
+        navigationStack.settingsButton.tintColor = state == .settings ?  #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1) :UIColor.lightGray
+        navigationStack.logoButton.tintColor = state == .home ?  #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1) :UIColor.lightGray
+        navigationStack.favoriteButton.tintColor =  state == .favorite ?  #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1) :UIColor.lightGray
+        
     }
 }
 

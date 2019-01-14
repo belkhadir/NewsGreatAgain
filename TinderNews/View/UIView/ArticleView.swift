@@ -2,7 +2,7 @@
 //  ArticleView.swift
 //  TinderNews
 //
-//  Created by xxx on 12/19/18.
+//  Created by Belkhadir Anas on 12/19/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
@@ -19,15 +19,7 @@ class ArticleView: CardView, Configurable {
         }
         let url = URL(string: urlString)
         let placeHolder = UIImage(named: "placeHolder")
-        imageView.sd_setImage(with: url, placeholderImage: placeHolder, options: .retryFailed) { [unowned self](image, error, cach, url) in
-
-            if image == nil {
-                self.imageView.image = placeHolder
-            }
-            
-        }
-//        imageView.sd_setImage(with: url, placeholderImage: placeHolder, options: .retryFailed, completed: nil)
-//        imageView.sd_setImage(with: url, completed: nil)
+        imageView.sd_setImage(with: url, placeholderImage: placeHolder, options: .retryFailed, completed: nil)
         titleLabel.sizeToFit()
     }
     

@@ -2,7 +2,7 @@
 //  DetailsViewController.swift
 //  TinderNews
 //
-//  Created by xxx on 12/20/18.
+//  Created by Belkhadir Anas on 12/20/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
@@ -51,9 +51,18 @@ class DetailsViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+
     fileprivate func setuplayout() {
         view.backgroundColor = .white
-        closeButton.setImage(UIImage(named: "cancel")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        
+        
+        closeButton.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1)
+//        closeButton.setImage(UIImage(named: "cancel")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        closeButton.setAttributedTitle(NSAttributedString(string: "X", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
+        
         view.addSubview(scrollView)
         view.addSubview(closeButton)
         scrollView.fillSuperView()
@@ -68,9 +77,11 @@ class DetailsViewController: UIViewController {
         
         let safeArea = view.safeAreaLayoutGuide
         closeButton.autoLayout(topAnchor: safeArea.topAnchor, bottomAnchor: nil, leadingAnchor: nil, trailingAnchor: safeArea.trailingAnchor, inset: .init(top: 8, left: 0, bottom: 0, right: 8))
-        closeButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        closeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
+        closeButton.layer.cornerRadius = 30 / 2
+        closeButton.clipsToBounds = true
         
         scrollView.addSubview(label)
         label.autoLayout(topAnchor: imageView.bottomAnchor, bottomAnchor: scrollView.bottomAnchor, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor, inset: .init(top: 16, left: 16, bottom: 100, right: 16))

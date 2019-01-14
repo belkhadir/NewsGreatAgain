@@ -2,7 +2,7 @@
 //  GradientButton.swift
 //  TinderNews
 //
-//  Created by xxx on 12/15/18.
+//  Created by Belkhadir Anas on 12/15/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 

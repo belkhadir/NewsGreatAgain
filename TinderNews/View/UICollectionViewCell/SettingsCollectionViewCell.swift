@@ -2,7 +2,7 @@
 //  SettingsCollectionViewCell.swift
 //  TinderNews
 //
-//  Created by xxx on 12/20/18.
+//  Created by Belkhadir Anas on 12/20/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
@@ -16,9 +16,8 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     
     fileprivate let removeAdsButton = UIButton(type: .system)
     fileprivate let imageView = UIImageView()
-    fileprivate let fullName: UILabel = {
+    fileprivate let fullNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Anas Belkhadir"
         label.font = UIFont.monospacedDigitSystemFont(ofSize: 32, weight: .bold)
         label.textColor = UIColor.darkGray
         return label
@@ -41,9 +40,19 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureButton()
-        setupLayout()
-        loadProducts()
+        let isLogged = UserDefaults.standard.bool(forKey: UserDefaultKey.isLogged.rawValue)
+        
+        if let fullName = UserDefaults.standard.string(forKey: UserDefaultKey.fullName.rawValue) {
+            fullNameLabel.text = fullName
+        }
+        
+        if isLogged == false {
+            addLoginView()
+        }else {
+            configureButton()
+            setupLayout()
+            loadProducts()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,25 +70,34 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         aboutButton.addTarget(self, action: #selector(handleAbout), for: .touchUpInside)
         aboutButton.setImage(UIImage(named: "about")?.withRenderingMode(.alwaysOriginal), for: .normal)
         
-        inviteButton.setAttributedTitle(NSAttributedString(string: "SHARE THE APP ", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.black]), for: .normal)
+        inviteButton.setAttributedTitle(NSAttributedString(string: "SHARE THE APP ", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1)]), for: .normal)
         
         inviteButton.layer.backgroundColor = UIColor.white.cgColor
         inviteButton.layer.cornerRadius = 60/2
         inviteButton.clipsToBounds = true
-        inviteButton.layer.borderColor = UIColor.black.cgColor
+        inviteButton.layer.borderColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1).cgColor
         inviteButton.layer.borderWidth = 1
         
         removeAdsButton.addTarget(self, action: #selector(handleRemoveAds), for: .touchUpInside)
-        removeAdsButton.layer.backgroundColor = UIColor.black.cgColor
+        removeAdsButton.layer.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1).cgColor
         removeAdsButton.setAttributedTitle(NSAttributedString(string: "REMOVE ADS | $1.99 \n MONTH", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
         removeAdsButton.layer.cornerRadius = 60/2
         removeAdsButton.clipsToBounds = true
     }
     
+    fileprivate func addLoginView() {
+        let joinView = JoinView()
+        joinView.rootController = rootController
+        
+        addSubview(joinView)
+        
+        joinView.fillSuperView()
+    }
+    
     fileprivate func setupLayout() {
         backgroundColor = .white
 //        addSubview(removeAdsButton)
-        let safe = safeAreaLayoutGuide
+//        let safe = safeAreaLayoutGuide
         
         let topView = UIView()
         let bottomView = UIView()
@@ -134,7 +152,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         overAllButton.distribution = .fill
         overAllButton.spacing = 32
         
-        let topStack = UIStackView(arrangedSubviews: [imageView, fullName, overAllButton])
+        let topStack = UIStackView(arrangedSubviews: [imageView, fullNameLabel, overAllButton])
         topStack.alignment = .center
         topStack.distribution = .fill
         topStack.axis = .vertical
@@ -145,12 +163,9 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 90).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 90).isActive = true
-//
+            //
         topStack.autoLayout(topAnchor: topView.topAnchor, bottomAnchor: topView.bottomAnchor, leadingAnchor: topView.leadingAnchor, trailingAnchor: topView.trailingAnchor, inset: .init(top: 32, left: 32, bottom: 32, right: 32))
-        
-        
-        
-        
+
         
         let stackReferal = UIStackView(arrangedSubviews: [inviteButton, orLabel, removeAdsButton])
         stackReferal.alignment = .fill

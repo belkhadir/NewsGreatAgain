@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  TinderNews
 //
-//  Created by xxx on 12/13/18.
+//  Created by Belkhadir Anas on 12/13/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
@@ -60,6 +60,12 @@ class LoginViewController: UIViewController {
         setupNotification()
         hideKeyboardWhenTappedAround()
         addDelegate()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     fileprivate func setupNotification() {

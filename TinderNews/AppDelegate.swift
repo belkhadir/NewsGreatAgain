@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TinderNews
 //
-//  Created by xxx on 11/18/18.
+//  Created by Belkhadir Anas on 11/18/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
@@ -23,11 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
+        
+        let navigationBarApearace = UINavigationBar.appearance()
+        navigationBarApearace.tintColor = .white
+        navigationBarApearace.barTintColor = #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1)
+        
         var controller: UIViewController?
         if isLogged {
             controller = MainViewController()
         }else {
-            controller = JoinViewController()
+            let join = JoinViewController()
+            controller = UINavigationController(rootViewController: join)
+            
         }
         window?.rootViewController = controller //home //news //NewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         window?.makeKeyAndVisible()
@@ -56,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
+//        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
         //        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
         //            return true
         //        }
@@ -93,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         for queryElement in query {
-            debugPrint("Name : \(queryElement.name) , The value : \(queryElement.value)")
+//            debugPrint("Name : \(queryElement.name) , The value : \(queryElement.value)")
         }
     }
     

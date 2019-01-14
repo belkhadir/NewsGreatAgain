@@ -32,6 +32,7 @@
 		A940F99621E79AC500522677 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940F99521E79AC500522677 /* Favorite.swift */; };
 		A940F99821EA0E0D00522677 /* LoginRegisterStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940F99721EA0E0D00522677 /* LoginRegisterStackView.swift */; };
 		A940F99A21EA3EF600522677 /* JoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940F99921EA3EF600522677 /* JoinView.swift */; };
+		A940F99D21EA49A700522677 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940F99C21EA49A700522677 /* DismissButton.swift */; };
 		A94144D121C965ED00D362E0 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D021C965ED00D362E0 /* DetailHeaderView.swift */; };
 		A94144D421C9685000D362E0 /* AdsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D321C9685000D362E0 /* AdsTableViewCell.swift */; };
 		A94144D621C97A8000D362E0 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94144D521C97A8000D362E0 /* RBResizer.swift */; };
@@ -124,6 +125,7 @@
 		A940F99521E79AC500522677 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		A940F99721EA0E0D00522677 /* LoginRegisterStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterStackView.swift; sourceTree = "<group>"; };
 		A940F99921EA3EF600522677 /* JoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
+		A940F99C21EA49A700522677 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		A94144D021C965ED00D362E0 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
 		A94144D321C9685000D362E0 /* AdsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsTableViewCell.swift; sourceTree = "<group>"; };
 		A94144D521C97A8000D362E0 /* RBResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 		A92895A021A1F8080051EBC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A940F99B21EA498900522677 /* UIButton */,
 				A94144EC21CA907C00D362E0 /* UIStackView */,
 				A94144D221C9683000D362E0 /* UITableViewCell */,
 				A97C61EC21C410B500BBB3EB /* UIView */,
@@ -368,6 +371,14 @@
 				A940F99521E79AC500522677 /* Favorite.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A940F99B21EA498900522677 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				A940F99C21EA49A700522677 /* DismissButton.swift */,
+			);
+			path = UIButton;
 			sourceTree = "<group>";
 		};
 		A94144D221C9683000D362E0 /* UITableViewCell */ = {
@@ -676,6 +687,7 @@
 				A97C61D721C3D6A800BBB3EB /* Keys.swift in Sources */,
 				A92895C221A1FBB80051EBC5 /* PageViewController.swift in Sources */,
 				A9670FFD21D6473C0059ECD3 /* HTTPStatus.swift in Sources */,
+				A940F99D21EA49A700522677 /* DismissButton.swift in Sources */,
 				A92895C021A1FB550051EBC5 /* OnboardingViewController.swift in Sources */,
 				A924ECAA21B3F9EA00321D2C /* ResponseData.swift in Sources */,
 				A94144F221CA91B900D362E0 /* BasicView.swift in Sources */,

@@ -56,8 +56,24 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         tableView.addSubview(self.refreshControl)
 //        fetchFavoriteNews()
-        setupLayout()
-        fetchNewsFromCoreData()
+        
+        let isLogged = UserDefaults.standard.bool(forKey: UserDefaultKey.isLogged.rawValue)
+        
+        if isLogged == false {
+             addLoginView()
+        }else {
+            setupLayout()
+            fetchNewsFromCoreData()
+        }
+    }
+    
+    fileprivate func addLoginView() {
+        let joinView = JoinView()
+        joinView.rootController = rootController
+        
+        addSubview(joinView)
+        
+        joinView.fillSuperView()
     }
     
     

@@ -2,7 +2,7 @@
 //  SettingsTableViewController.swift
 //  TinderNews
 //
-//  Created by xxx on 1/8/19.
+//  Created by Belkhadir Anas on 1/8/19.
 //  Copyright © 2019 Belkhadir. All rights reserved.
 //
 
@@ -78,9 +78,10 @@ class SettingsTableViewController: UITableViewController {
                 UserDefaults.standard.removeObject(forKey: UserDefaultKey.token.rawValue)
                 UserDefaults.standard.removeObject(forKey: UserDefaultKey.fullName.rawValue)
                 UserDefaults.standard.removeObject(forKey: UserDefaultKey.isLogged.rawValue)
-                let vc = JoinViewController()
+                let join = JoinViewController()
+                let controller = UINavigationController(rootViewController: join)
                 DispatchQueue.main.async {
-                    self.present(vc, animated: true, completion: nil)
+                    self.present(controller, animated: true, completion: nil)
                 }
             }
         }

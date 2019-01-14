@@ -2,7 +2,7 @@
 //  SeperatorStackView.swift
 //  TinderNews
 //
-//  Created by xxx on 12/23/18.
+//  Created by Belkhadir Anas on 12/23/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
@@ -12,12 +12,12 @@ class SeperatorStackView: UIStackView {
 
     fileprivate let line1 = LineView()
     fileprivate let line2 = LineView()
-    fileprivate let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.attributedText = NSAttributedString(string: "OR", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.gray])
-        return label
-    }()
+//    fileprivate let label: UILabel = {
+//        let label = UILabel()
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.attributedText = NSAttributedString(string: "OR", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.gray])
+//        return label
+//    }()
     
  
     override init(frame: CGRect) {
@@ -28,7 +28,7 @@ class SeperatorStackView: UIStackView {
         
         line2.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
-        [line1, label, line2].forEach { addArrangedSubview($0) }
+        [line1, line2].forEach { addArrangedSubview($0) }
         
         axis = .horizontal
         distribution = .equalCentering

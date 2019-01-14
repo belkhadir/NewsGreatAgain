@@ -2,7 +2,7 @@
 //  DetailLicensesViewController.swift
 //  TinderNews
 //
-//  Created by xxx on 1/8/19.
+//  Created by Belkhadir Anas on 1/8/19.
 //  Copyright © 2019 Belkhadir. All rights reserved.
 //
 

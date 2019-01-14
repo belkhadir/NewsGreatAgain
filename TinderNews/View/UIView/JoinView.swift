@@ -2,7 +2,7 @@
 //  JoinView.swift
 //  TinderNews
 //
-//  Created by xxx on 1/12/19.
+//  Created by Belkhadir Anas on 1/12/19.
 //  Copyright © 2019 Belkhadir. All rights reserved.
 //
 
@@ -57,6 +57,12 @@ class JoinView: UIView {
     
     let gradientLayer = CAGradientLayer()
     
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = bounds
+    }
+    
     fileprivate func setupGradientLayer() {
         let topColor = #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1)
         let bottomColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1)
@@ -64,15 +70,17 @@ class JoinView: UIView {
         gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
         gradientLayer.locations = [0, 1]
         layer.addSublayer(gradientLayer)
-        gradientLayer.frame = bounds
+        
     }
     
     fileprivate func setupLayout() {
         backgroundColor = .white
         logoImage.translatesAutoresizingMaskIntoConstraints = false
         
-        logoImage.contentMode = .scaleAspectFill
-        logoImage.clipsToBounds = true
+        
+        
+        logoImage.contentMode = .scaleAspectFit
+//        logoImage.clipsToBounds = true
         
         let titleView = UIView()
         titleView.translatesAutoresizingMaskIntoConstraints = false

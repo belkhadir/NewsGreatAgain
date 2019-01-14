@@ -10,14 +10,14 @@ import UIKit
 import JGProgressHUD
 
 class JoinViewController: UIViewController {
-    
-    
+
+
     let loginButtonStack = LoginRegisterStackView()
-    
+
     fileprivate let loading = JGProgressHUD(style: .dark)
-    
+
     fileprivate let logoImage = UIImageView(image: UIImage(named: "NLOGO")!)
-    
+
     fileprivate let titleLabel: UILabel = {
         let label = UILabel()
         label.attributedText = NSAttributedString(string: "Join\n News Great Again (it's free)", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 35), NSAttributedString.Key.foregroundColor: UIColor.white])
@@ -26,34 +26,50 @@ class JoinViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         setupGradientLayer()
         setupLayout()
         addTarget()
+//        setupLayout()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     
+//    func setupLayout() {
+//        
+//        let joinView = JoinView()
+//        joinView.rootController = self
+//        
+//        view.addSubview(joinView)
+//        
+//        joinView.fillSuperView()
+//    }
 
     fileprivate func addTarget() {
         loginButtonStack.registerButton.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         loginButtonStack.loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
-        
+
     }
-    
+
     @objc func handleRegister() {
         let registerVC = RegisterViewController()
-        present(registerVC, animated: true, completion: nil)
+        navigationController?.pushViewController(registerVC, animated: true)
     }
-    
+
     @objc func handleLogin() {
         let login = LoginViewController()
-        present(login, animated: true, completion: nil)
+        navigationController?.pushViewController(login, animated: true)
     }
-    
+
     let gradientLayer = CAGradientLayer()
 
     fileprivate func setupGradientLayer() {
@@ -65,41 +81,41 @@ class JoinViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         gradientLayer.frame = view.bounds
     }
-    
+
     fileprivate func setupLayout() {
         view.backgroundColor = .white
         logoImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        logoImage.contentMode = .scaleAspectFill
-        logoImage.clipsToBounds = true
-        
+
+        logoImage.contentMode = .scaleAspectFit
+//        logoImage.clipsToBounds = true
+
         let titleView = UIView()
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         titleView.addSubview(titleLabel)
-        
+
         titleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 16).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -16).isActive = true
-        
+
         titleLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-        
+
         let overAllStackView = UIStackView(arrangedSubviews: [logoImage,titleView, loginButtonStack])
         overAllStackView.alignment = .fill
         overAllStackView.distribution = .equalSpacing
         overAllStackView.axis = .vertical
-        
+
         view.addSubview(overAllStackView)
-        
+
         overAllStackView.fillSuperView()
         overAllStackView.isLayoutMarginsRelativeArrangement = true
         overAllStackView.layoutMargins = .init(top: 16, left: 16, bottom: 16, right: 16)
-        
+
     }
-    
-    
+
+
     func addLoginRegisterButton() {
-        
-        
+
+
     }
 
 }

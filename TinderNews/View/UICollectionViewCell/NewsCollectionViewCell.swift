@@ -2,7 +2,7 @@
 //  NewsCollectionViewCell.swift
 //  TinderNews
 //
-//  Created by xxx on 11/18/18.
+//  Created by Belkhadir Anas on 11/18/18.
 //  Copyright © 2018 Belkhadir. All rights reserved.
 //
 
