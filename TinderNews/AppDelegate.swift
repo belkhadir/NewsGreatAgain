@@ -26,29 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GADMobileAds.configure(withApplicationID: ADMOB_APP_ID)
         
-        // [START set_messaging_delegate]
         StoreReviewHelper.incrementAppOpenedCount()
-        // [END set_messaging_delegate]
-        
-        // Register for remote notifications. This shows a permission dialog on first run, to
-        // show the dialog at a more appropriate time move this registration accordingly.
-        // [START register_for_notifications]
-//        if #available(iOS 10.0, *) {
-//            // For iOS 10 display notification (sent via APNS)
-//            UNUserNotificationCenter.current().delegate = self
-//            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-//            UNUserNotificationCenter.current().requestAuthorization(
-//                options: authOptions,
-//                completionHandler: {_, _ in })
-//        } else {
-//            let settings: UIUserNotificationSettings =
-//                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-//            application.registerUserNotificationSettings(settings)
-//        }
-//        application.registerForRemoteNotifications()
-        // [END register_for_notifications]
-        
-        
+
+
         window = UIWindow(frame: UIScreen.main.bounds)
         
         
@@ -56,15 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarApearace.tintColor = .white
         navigationBarApearace.barTintColor = #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1)
         
-        var controller: UIViewController?
-        if isLogged {
-            controller = MainViewController()
-        }else {
-            let join = JoinViewController()
-            controller = UINavigationController(rootViewController: join)
-            
-        }
-        window?.rootViewController = controller //home //news //NewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        window?.rootViewController = isLogged ? MainViewController() : UINavigationController(rootViewController: JoinViewController())
+        
         window?.makeKeyAndVisible()
         
         
@@ -217,4 +190,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return false
     }
+    
 }

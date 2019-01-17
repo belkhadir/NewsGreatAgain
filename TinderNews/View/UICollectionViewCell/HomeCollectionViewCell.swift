@@ -114,6 +114,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
                 return
             }
         }
+
         
         loadingView.show(in: self)
         if page.max == page.current {
