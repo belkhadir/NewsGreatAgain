@@ -42,6 +42,7 @@ class AdsCollectionViewCell: UICollectionViewCell {
         guard let nibObjects = Bundle.main.loadNibNamed("UnifiedNativeAdView", owner: nil, options: nil),
             let nativeAdView = nibObjects.first as? GADUnifiedNativeAdView else {
                 assert(false, "Could not load nib file for adView")
+                return 
         }
         
         setAdView(nativeAdView)

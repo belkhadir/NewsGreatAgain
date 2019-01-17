@@ -46,7 +46,25 @@ class HomeCollectionViewCell: UICollectionViewCell {
         var previousCardView: CardView?
         topCard = nil
         
-        articles.forEach { (article) in
+        
+        
+//        articles.forEach { (article) in
+//            let cardView: ArticleView = ArticleView(frame: .zero)
+//            cardView.configure(cell: article)
+//            self.cardsView.addSubview(cardView)
+//            self.cardsView.sendSubviewToBack(cardView)
+//
+//            cardView.fillSuperView()
+//            cardView.delegate = self
+//            previousCardView?.nextCardView = cardView
+//            previousCardView = cardView
+//
+//            if topCard == nil {
+//                topCard = cardView
+//            }
+//        }
+        
+        for (index, article) in articles.enumerated() {
             let cardView: ArticleView = ArticleView(frame: .zero)
             cardView.configure(cell: article)
             self.cardsView.addSubview(cardView)
@@ -60,17 +78,18 @@ class HomeCollectionViewCell: UICollectionViewCell {
             if topCard == nil {
                 topCard = cardView
             }
+            
+            if index == 9 {
+                if !isFreeFromAds {
+                    let ads = AdsView(frame: .zero)
+                    ads.viewController = rootController
+                    cardsView.addSubview(ads)
+                    self.cardsView.sendSubviewToBack(ads)
+                    ads.fillSuperView()
+                    ads.loadRequest()
+                }
+            }
         }
-        
-        if !isFreeFromAds {
-            let ads = AdsView(frame: .zero)
-            ads.viewController = rootController
-            cardsView.addSubview(ads)
-            self.cardsView.sendSubviewToBack(ads)
-            ads.fillSuperView()
-            ads.loadRequest()
-        }
-        
     }
     
     fileprivate func setupLayout() {
@@ -89,6 +108,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     func fetchmoreNews() {
+        if !isUnlocked {
+            if  page.current == 4{
+                // TODO: Tell the user if he want more news he need to subscribe
+                return
+            }
+        }
+        
         loadingView.show(in: self)
         if page.max == page.current {
             call {
@@ -195,6 +221,10 @@ extension HomeCollectionViewCell: CardViewDelegate {
         if !articles.isEmpty {
             articles.removeLast()
         }
+        
+        StoreReviewHelper.checkAndAskForReview()
+        
+        
     }
     
 }

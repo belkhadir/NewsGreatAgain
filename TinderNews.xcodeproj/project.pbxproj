@@ -83,6 +83,9 @@
 		A97C61EE21C410E500BBB3EB /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61ED21C410E500BBB3EB /* BuyView.swift */; };
 		A97C622F21C52C0800BBB3EB /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C622E21C52C0800BBB3EB /* GradientButton.swift */; };
 		A97C623221C52FAD00BBB3EB /* BuyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C623121C52FAD00BBB3EB /* BuyController.swift */; };
+		A997192F21F097CF003868C0 /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997192E21F097CF003868C0 /* StoreKit.swift */; };
+		A997193121F0DF2A003868C0 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193021F0DF2A003868C0 /* NotificationHelper.swift */; };
+		A997193321F0EC38003868C0 /* Unlocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193221F0EC38003868C0 /* Unlocked.swift */; };
 		A997ACD221E4B1D9007C897E /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997ACD121E4B1D8007C897E /* IAPHelper.swift */; };
 		A997ACD421E4B1EE007C897E /* RazeFaceProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997ACD321E4B1EE007C897E /* RazeFaceProducts.swift */; };
 		A997ACD621E4BC0E007C897E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997ACD521E4BC0E007C897E /* SettingsTableViewController.swift */; };
@@ -176,6 +179,9 @@
 		A97C61ED21C410E500BBB3EB /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		A97C622E21C52C0800BBB3EB /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		A97C623121C52FAD00BBB3EB /* BuyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyController.swift; sourceTree = "<group>"; };
+		A997192E21F097CF003868C0 /* StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKit.swift; sourceTree = "<group>"; };
+		A997193021F0DF2A003868C0 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		A997193221F0EC38003868C0 /* Unlocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unlocked.swift; sourceTree = "<group>"; };
 		A997ACD121E4B1D8007C897E /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		A997ACD321E4B1EE007C897E /* RazeFaceProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RazeFaceProducts.swift; sourceTree = "<group>"; };
 		A997ACD521E4BC0E007C897E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -450,6 +456,7 @@
 				A90E5D8121DFF5B400B04A23 /* AppPurchases.swift */,
 				A97C61D621C3D6A700BBB3EB /* Keys.swift */,
 				A97C61E221C3DA9F00BBB3EB /* AdmobToken.swift */,
+				A997193221F0EC38003868C0 /* Unlocked.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -463,6 +470,8 @@
 				A94144D521C97A8000D362E0 /* RBResizer.swift */,
 				A941451021CFDA1100D362E0 /* Button.swift */,
 				A9D061B721D265E00093FE04 /* TextField.swift */,
+				A997192E21F097CF003868C0 /* StoreKit.swift */,
+				A997193021F0DF2A003868C0 /* NotificationHelper.swift */,
 			);
 			path = HelperMethod;
 			sourceTree = "<group>";
@@ -694,6 +703,7 @@
 				A9670FFA21D644860059ECD3 /* EchecResponse.swift in Sources */,
 				A97C5E9521C26B3200BBB3EB /* User.swift in Sources */,
 				A9F9FF6D21A43D8000197766 /* TinderDelegate.swift in Sources */,
+				A997192F21F097CF003868C0 /* StoreKit.swift in Sources */,
 				A940F99421E7949300522677 /* News.xcdatamodeld in Sources */,
 				A97C61D921C3D70200BBB3EB /* Extension+UIViewController.swift in Sources */,
 				A92895A921A1F8470051EBC5 /* UIView.swift in Sources */,
@@ -737,6 +747,7 @@
 				A97C5E9F21C26EC300BBB3EB /* UserResponse.swift in Sources */,
 				A92895C921A1FEC20051EBC5 /* NewsCollectionViewCell.swift in Sources */,
 				A92895A621A1F8330051EBC5 /* Identifiable.swift in Sources */,
+				A997193321F0EC38003868C0 /* Unlocked.swift in Sources */,
 				A97C5E9121C26A8800BBB3EB /* Login.swift in Sources */,
 				A97C622F21C52C0800BBB3EB /* GradientButton.swift in Sources */,
 				A97C61E821C407EF00BBB3EB /* ProfileViewController.swift in Sources */,
@@ -754,6 +765,7 @@
 				A997ACD221E4B1D9007C897E /* IAPHelper.swift in Sources */,
 				A97C5E9721C26CD000BBB3EB /* LoginViewController.swift in Sources */,
 				A941450321CBE78A00D362E0 /* HomeCollectionViewCell.swift in Sources */,
+				A997193121F0DF2A003868C0 /* NotificationHelper.swift in Sources */,
 				A941451121CFDA1100D362E0 /* Button.swift in Sources */,
 				A97C61CE21C3C80800BBB3EB /* CardCollectionViewCell.swift in Sources */,
 				A941450121CBE56300D362E0 /* MainViewController.swift in Sources */,
@@ -908,7 +920,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.newsgreatagain.newsgreatagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -928,7 +940,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.newsgreatagain.newsgreatagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

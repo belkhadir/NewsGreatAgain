@@ -15,7 +15,8 @@ class NewsService {
     static func getNewsFornext(page: Page.Position,
                         completion: @escaping articles) {
         
-        let query = [URLQueryItem(name: "page", value: "\(page.next)")]
+        let query = [URLQueryItem(name: "page", value: "\(page.next)"),
+                     URLQueryItem(name: "per", value: "15")]
         sendRequest(for: ResponseData<Article>.self, host: EndURL.host.rawValue, path: EndPath.news, port: 8080, query: query, httpMethod: .get, bear: nil) { completion($0) }
     }
     

@@ -15,4 +15,5 @@ target 'TinderNews' do
   pod 'JGProgressHUD'
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/Performance'
+  pod 'Firebase/Messaging'
 end

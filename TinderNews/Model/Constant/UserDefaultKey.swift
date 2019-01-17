@@ -13,7 +13,11 @@ enum UserDefaultKey: String {
     case userID
     case isLogged
     case invitedBy
-    case purchased
+    case purchased // refer to ads
     case fullName
     case email
+    case appOpenAccount
+    case unlock // refer to number of article 50
+    case day
+    case subscription
 }
