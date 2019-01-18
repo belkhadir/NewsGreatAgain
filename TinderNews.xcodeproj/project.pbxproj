@@ -86,6 +86,12 @@
 		A997192F21F097CF003868C0 /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997192E21F097CF003868C0 /* StoreKit.swift */; };
 		A997193121F0DF2A003868C0 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193021F0DF2A003868C0 /* NotificationHelper.swift */; };
 		A997193321F0EC38003868C0 /* Unlocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193221F0EC38003868C0 /* Unlocked.swift */; };
+		A997193521F0F851003868C0 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193421F0F851003868C0 /* Subscription.swift */; };
+		A997193721F0F860003868C0 /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193621F0F860003868C0 /* SubscriptionService.swift */; };
+		A997193921F0F991003868C0 /* PaidSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193821F0F991003868C0 /* PaidSubscription.swift */; };
+		A997193C21F1DA4C003868C0 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193B21F1DA4C003868C0 /* SubscribeViewController.swift */; };
+		A997193E21F1DA67003868C0 /* SubscriptionOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997193D21F1DA67003868C0 /* SubscriptionOptionTableViewCell.swift */; };
+		A997194021F1DA92003868C0 /* Subscription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A997193F21F1DA92003868C0 /* Subscription.storyboard */; };
 		A997ACD221E4B1D9007C897E /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997ACD121E4B1D8007C897E /* IAPHelper.swift */; };
 		A997ACD421E4B1EE007C897E /* RazeFaceProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997ACD321E4B1EE007C897E /* RazeFaceProducts.swift */; };
 		A997ACD621E4BC0E007C897E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997ACD521E4BC0E007C897E /* SettingsTableViewController.swift */; };
@@ -182,6 +188,12 @@
 		A997192E21F097CF003868C0 /* StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKit.swift; sourceTree = "<group>"; };
 		A997193021F0DF2A003868C0 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		A997193221F0EC38003868C0 /* Unlocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unlocked.swift; sourceTree = "<group>"; };
+		A997193421F0F851003868C0 /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		A997193621F0F860003868C0 /* SubscriptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
+		A997193821F0F991003868C0 /* PaidSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaidSubscription.swift; sourceTree = "<group>"; };
+		A997193B21F1DA4C003868C0 /* SubscribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		A997193D21F1DA67003868C0 /* SubscriptionOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionOptionTableViewCell.swift; sourceTree = "<group>"; };
+		A997193F21F1DA92003868C0 /* Subscription.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Subscription.storyboard; sourceTree = "<group>"; };
 		A997ACD121E4B1D8007C897E /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		A997ACD321E4B1EE007C897E /* RazeFaceProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RazeFaceProducts.swift; sourceTree = "<group>"; };
 		A997ACD521E4BC0E007C897E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +282,8 @@
 				A9670FFB21D647220059ECD3 /* Response */,
 				A97C61D521C3D68F00BBB3EB /* Constant */,
 				A92895AA21A1F87F0051EBC5 /* Article.swift */,
+				A997193621F0F860003868C0 /* SubscriptionService.swift */,
+				A997193821F0F991003868C0 /* PaidSubscription.swift */,
 				A924ECA721B3F95800321D2C /* Page.swift */,
 				A97C5E9421C26B3200BBB3EB /* User.swift */,
 				A97C5E9021C26A8800BBB3EB /* Login.swift */,
@@ -294,6 +308,7 @@
 		A92895A121A1F80C0051EBC5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A997193A21F1DA20003868C0 /* Subscription */,
 				A997ACD721E4BC15007C897E /* Settings */,
 				A9D461F121D160C5005969F5 /* Navigation */,
 				A94144FF21CBE55600D362E0 /* Main */,
@@ -452,6 +467,7 @@
 		A97C61D521C3D68F00BBB3EB /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				A997193421F0F851003868C0 /* Subscription.swift */,
 				A97C5E9821C26DAA00BBB3EB /* UserDefaultKey.swift */,
 				A90E5D8121DFF5B400B04A23 /* AppPurchases.swift */,
 				A97C61D621C3D6A700BBB3EB /* Keys.swift */,
@@ -504,6 +520,16 @@
 				A97C623121C52FAD00BBB3EB /* BuyController.swift */,
 			);
 			path = BuyController;
+			sourceTree = "<group>";
+		};
+		A997193A21F1DA20003868C0 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				A997193D21F1DA67003868C0 /* SubscriptionOptionTableViewCell.swift */,
+				A997193B21F1DA4C003868C0 /* SubscribeViewController.swift */,
+				A997193F21F1DA92003868C0 /* Subscription.storyboard */,
+			);
+			path = Subscription;
 			sourceTree = "<group>";
 		};
 		A997ACD721E4BC15007C897E /* Settings */ = {
@@ -626,6 +652,7 @@
 				A97C5E8D21C1BF1500BBB3EB /* GoogleService-Info.plist in Resources */,
 				A928959721A183570051EBC5 /* LaunchScreen.storyboard in Resources */,
 				A928959421A183570051EBC5 /* Assets.xcassets in Resources */,
+				A997194021F1DA92003868C0 /* Subscription.storyboard in Resources */,
 				A97C61C921C28AC200BBB3EB /* UnifiedNativeAdView.xib in Resources */,
 				A997ACD921E4BC30007C897E /* Settings.storyboard in Resources */,
 			);
@@ -690,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A940F99121E7947200522677 /* CoreDataStackManage.swift in Sources */,
+				A997193C21F1DA4C003868C0 /* SubscribeViewController.swift in Sources */,
 				A97C623221C52FAD00BBB3EB /* BuyController.swift in Sources */,
 				A941451321CFDF7E00D362E0 /* RegisterViewController.swift in Sources */,
 				A97C5E9D21C26E4B00BBB3EB /* UserService.swift in Sources */,
@@ -751,9 +779,11 @@
 				A97C5E9121C26A8800BBB3EB /* Login.swift in Sources */,
 				A97C622F21C52C0800BBB3EB /* GradientButton.swift in Sources */,
 				A97C61E821C407EF00BBB3EB /* ProfileViewController.swift in Sources */,
+				A997193721F0F860003868C0 /* SubscriptionService.swift in Sources */,
 				A941450521CBE97800D362E0 /* SettingsCollectionViewCell.swift in Sources */,
 				A9D061B821D265E00093FE04 /* TextField.swift in Sources */,
 				A94144D421C9685000D362E0 /* AdsTableViewCell.swift in Sources */,
+				A997193521F0F851003868C0 /* Subscription.swift in Sources */,
 				A941450D21CFD3D200D362E0 /* SeperatorStackView.swift in Sources */,
 				A997ACD621E4BC0E007C897E /* SettingsTableViewController.swift in Sources */,
 				A94144F421CA981000D362E0 /* CardView.swift in Sources */,
@@ -765,9 +795,11 @@
 				A997ACD221E4B1D9007C897E /* IAPHelper.swift in Sources */,
 				A97C5E9721C26CD000BBB3EB /* LoginViewController.swift in Sources */,
 				A941450321CBE78A00D362E0 /* HomeCollectionViewCell.swift in Sources */,
+				A997193E21F1DA67003868C0 /* SubscriptionOptionTableViewCell.swift in Sources */,
 				A997193121F0DF2A003868C0 /* NotificationHelper.swift in Sources */,
 				A941451121CFDA1100D362E0 /* Button.swift in Sources */,
 				A97C61CE21C3C80800BBB3EB /* CardCollectionViewCell.swift in Sources */,
+				A997193921F0F991003868C0 /* PaidSubscription.swift in Sources */,
 				A941450121CBE56300D362E0 /* MainViewController.swift in Sources */,
 				A92895BB21A1F9B70051EBC5 /* Result.swift in Sources */,
 				A94144D121C965ED00D362E0 /* DetailHeaderView.swift in Sources */,

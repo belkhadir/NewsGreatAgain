@@ -52,7 +52,7 @@ class ArticleTableViewCell: UITableViewCell, Configurable {
         titleLabel.leadingAnchor.constraint(equalTo: newsImageView.trailingAnchor, constant: 8).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         titleLabel.topAnchor.constraint(equalTo: newsImageView.topAnchor).isActive = true
-        
+        titleLabel.bottomAnchor.constraint(equalTo: newsImageView.bottomAnchor).isActive = true
         
         newsImageView.layer.cornerRadius = 5
         newsImageView.clipsToBounds = true

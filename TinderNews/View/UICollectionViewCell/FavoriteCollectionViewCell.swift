@@ -20,6 +20,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         table.delegate = self
         table.dataSource = self
         table.estimatedRowHeight = 140
+//        table.rowHeight = UITableView.automaticDimension
         table.rowHeight = 150
         table.separatorInset = UIEdgeInsets(top: 0, left: 120 + 16 + 8, bottom: 0, right: 0)
         table.addSubview(self.refreshControl)

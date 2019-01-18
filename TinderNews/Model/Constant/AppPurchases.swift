@@ -9,6 +9,7 @@
 import Foundation
 
 let productIdentifiers = "com.newsgreatagain.removeads"
+let subscriptionIdentifiers = "com.newsgreatagain.newsgreatagain.allaccess"
 
 var isFreeFromAds: Bool {
     return UserDefaults.standard.bool(forKey: UserDefaultKey.purchased.rawValue)

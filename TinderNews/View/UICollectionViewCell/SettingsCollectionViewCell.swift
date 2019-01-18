@@ -35,6 +35,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     fileprivate let settingsButton = UIButton(type: .system)
     fileprivate let aboutButton = UIButton(type: .system)
     fileprivate let inviteButton = UIButton(type: .system)
+    fileprivate let subscribeButton = UIButton(type: .system)
     
     weak var rootController: UIViewController?
     
@@ -63,6 +64,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func configureButton() {
+        subscribeButton.addTarget(self, action: #selector(handleSubscribe), for: .touchUpInside)
         inviteButton.addTarget(self, action: #selector(sharetheApp), for: .touchUpInside)
         settingsButton.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
         settingsButton.setImage(UIImage(named: "settings")?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -208,7 +210,10 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     }
     
     
-
+    @objc func handleSubscribe() {
+        
+    }
+    
     @objc func sharetheApp() {
         createLink()
     }
