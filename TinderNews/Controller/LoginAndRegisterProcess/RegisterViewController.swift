@@ -22,11 +22,19 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fullNameTextField.keyboardType = UIKeyboardType.alphabet
+        fullNameTextField.returnKeyType = UIReturnKeyType.next
+        
+        emailTextField.keyboardType = UIKeyboardType.emailAddress
+        emailTextField.returnKeyType = UIReturnKeyType.next
+        
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.returnKeyType = UIReturnKeyType.done
         
         addTarget()
         setupLayout()
         addDelegateToTextField()
-        
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {

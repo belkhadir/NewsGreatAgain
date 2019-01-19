@@ -8,8 +8,13 @@
 
 import Foundation
 
-let productIdentifiers = "com.newsgreatagain.removeads"
-let subscriptionIdentifiers = "com.newsgreatagain.newsgreatagain.allaccess"
+
+
+let monthlyAccess = "com.newsgreatagain.newsgreatagain.allaccess.monthly"
+let threeMonthAccess = "com.newsgreatagain.newsgreatagain.allaccess.threemonth"
+let yearlyMonthAccess = "com.newsgreatagain.newsgreatagain.allaccess.yearly"
+let sixMonthAccess = "com.newsgreatagain.newsgreatagain.allaccess.sixmonth"
+
 
 var isFreeFromAds: Bool {
     return UserDefaults.standard.bool(forKey: UserDefaultKey.purchased.rawValue)

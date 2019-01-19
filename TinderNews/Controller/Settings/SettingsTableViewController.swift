@@ -10,6 +10,7 @@ import UIKit
 import JGProgressHUD
 import MessageUI
 import Firebase
+import StoreKit
 
 class SettingsTableViewController: UITableViewController {
     static var  reuseIdentifier = "\(SettingsTableViewController.self)"
@@ -43,7 +44,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func restorePurchase(_ sender: UIButton) {
-        
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
     @IBAction func shareNewsGreatAgain(_ sender: UIButton) {

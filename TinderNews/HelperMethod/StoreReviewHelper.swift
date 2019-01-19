@@ -21,7 +21,7 @@ struct StoreReviewHelper {
         let appOpenCount = UserDefaults.standard.integer(forKey: UserDefaultKey.appOpenAccount.rawValue)
         
         switch appOpenCount {
-        case 10,50:
+        case 5,10:
             StoreReviewHelper().requestReview()
         case _ where appOpenCount%100 == 0 :
             StoreReviewHelper().requestReview()

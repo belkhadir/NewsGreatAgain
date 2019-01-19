@@ -53,7 +53,7 @@ class SubscriptionService: NSObject {
   
   func loadSubscriptionOptions() {
     
-    let productIDs = Set([subscriptionIdentifiers])
+    let productIDs = Set([monthlyAccess, threeMonthAccess, sixMonthAccess, yearlyMonthAccess])
     
     let request = SKProductsRequest(productIdentifiers: productIDs)
     request.delegate = self
@@ -71,18 +71,18 @@ class SubscriptionService: NSObject {
   
   func uploadReceipt(completion: ((_ success: Bool) -> Void)? = nil) {
     if let receiptData = loadReceipt() {
-//      SelfieService.shared.upload(receipt: receiptData) { [weak self] (result) in
-//        guard let strongSelf = self else { return }
-//        switch result {
-//        case .success(let result):
-//          strongSelf.currentSessionId = result.sessionId
-//          strongSelf.currentSubscription = result.currentSubscription
-//          completion?(true)
-//        case .failure(let error):
-//          print("🚫 Receipt Upload Failed: \(error)")
-//          completion?(false)
-//        }
-//      }
+      NewsService.shared.upload(receipt: receiptData) { [weak self] (result) in
+        guard let strongSelf = self else { return }
+        switch result {
+        case .success(let result):
+          strongSelf.currentSessionId = result.sessionId
+          strongSelf.currentSubscription = result.currentSubscription
+          completion?(true)
+        case .failure(let error):
+          print("🚫 Receipt Upload Failed: \(error)")
+          completion?(false)
+        }
+      }
     }
   }
   

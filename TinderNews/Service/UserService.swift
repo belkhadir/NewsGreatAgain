@@ -8,7 +8,9 @@
 
 import Foundation
 
+
 class UserService {
+
     
     static func login(user: User,
                              completion: @escaping (_ result: Result<LoginResponse, DataResponseError>)->Void) {
@@ -50,4 +52,5 @@ class UserService {
             print(result)
         }
     }
+
 }

@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import Firebase
+import StoreKit
 
 class MainViewController: UIViewController {
 
@@ -40,8 +41,16 @@ class MainViewController: UIViewController {
     
     private var state = State.home
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleSessionId(notification:)),
+                                               name: SubscriptionService.sessionIdSetNotification,
+                                               object: nil)
         registerCollectionView()
         setupLayout()
         addTarget()
@@ -49,7 +58,14 @@ class MainViewController: UIViewController {
         registerNotification()
     }
     
-    
+    @objc func handleSessionId(notification: Notification) {
+        OperationQueue.main.addOperation { [weak self] in
+            self?.configureView()
+        }
+    }
+    private func configureView() {
+        
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         handleLogo()

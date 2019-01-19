@@ -8,14 +8,12 @@
 
 import UIKit
 import Firebase
-import StoreKit
+
 
 class SettingsCollectionViewCell: UICollectionViewCell {
     
-    fileprivate var product: SKProduct?
-    
-    fileprivate let removeAdsButton = UIButton(type: .system)
     fileprivate let imageView = UIImageView()
+    
     fileprivate let fullNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.monospacedDigitSystemFont(ofSize: 32, weight: .bold)
@@ -52,7 +50,6 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         }else {
             configureButton()
             setupLayout()
-            loadProducts()
         }
     }
     
@@ -60,7 +57,13 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
         configureButton()
         setupLayout()
-        loadProducts()
+    }
+    
+    fileprivate func setButtonConfiguration(button: UIButton, text: String) {
+        button.layer.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1).cgColor
+        button.setAttributedTitle(NSAttributedString(string: text, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
+        button.layer.cornerRadius = 60/2
+        button.clipsToBounds = true
     }
     
     fileprivate func configureButton() {
@@ -80,11 +83,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         inviteButton.layer.borderColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1).cgColor
         inviteButton.layer.borderWidth = 1
         
-        removeAdsButton.addTarget(self, action: #selector(handleRemoveAds), for: .touchUpInside)
-        removeAdsButton.layer.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1).cgColor
-        removeAdsButton.setAttributedTitle(NSAttributedString(string: "REMOVE ADS | $1.99 \n MONTH", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
-        removeAdsButton.layer.cornerRadius = 60/2
-        removeAdsButton.clipsToBounds = true
+        setButtonConfiguration(button: subscribeButton, text: "News Great Again + PLUS")
     }
     
     fileprivate func addLoginView() {
@@ -122,7 +121,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         
         addSubview(stackView)
         
-        topView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 2/3).isActive = true
+        topView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/2).isActive = true
         
         stackView.fillSuperView()
         
@@ -169,7 +168,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         topStack.autoLayout(topAnchor: topView.topAnchor, bottomAnchor: topView.bottomAnchor, leadingAnchor: topView.leadingAnchor, trailingAnchor: topView.trailingAnchor, inset: .init(top: 32, left: 32, bottom: 32, right: 32))
 
         
-        let stackReferal = UIStackView(arrangedSubviews: [inviteButton, orLabel, removeAdsButton])
+        let stackReferal = UIStackView(arrangedSubviews: [inviteButton, orLabel, subscribeButton])
         stackReferal.alignment = .fill
         stackReferal.axis = .vertical
         stackReferal.distribution = .fill
@@ -177,20 +176,16 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         
         // Bottom
         bottomView.addSubview(stackReferal)
-//        removeAdsButton.autoLayout(topAnchor: nil, bottomAnchor: bottomView.bottomAnchor, leadingAnchor: bottomView.leadingAnchor, trailingAnchor: bottomView.trailingAnchor, inset: .init(top: 0, left: 32, bottom: 32, right: 32))
+
 
         inviteButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         inviteButton.translatesAutoresizingMaskIntoConstraints = false
-        removeAdsButton.translatesAutoresizingMaskIntoConstraints = false
-        removeAdsButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-        stackReferal.autoLayout(topAnchor: bottomView.topAnchor, bottomAnchor: bottomView.bottomAnchor, leadingAnchor: bottomView.leadingAnchor, trailingAnchor: bottomView.trailingAnchor, inset: .init(top: 32, left: 32, bottom: 16, right: 32))
-    }
-    
-    @objc func handleRemoveAds() {
-        guard let product = product else { return }
-        Analytics.logEvent(AnalyticsEventCheckoutProgress, parameters: nil)
-        purchase(product: product)
+        
+        subscribeButton.translatesAutoresizingMaskIntoConstraints = false
+        subscribeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        stackReferal.autoLayout(topAnchor: bottomView.topAnchor, bottomAnchor: bottomView.bottomAnchor, leadingAnchor: bottomView.leadingAnchor, trailingAnchor: bottomView.trailingAnchor, inset: .init(top: 32, left: 32, bottom: 64, right: 32))
     }
     
     
@@ -211,7 +206,13 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     
     
     @objc func handleSubscribe() {
+        let storyBoard = UIStoryboard(name: "Subscription", bundle: nil)
         
+        let subscriptions = storyBoard.instantiateViewController(withIdentifier: SubscribeViewController.reuseIdentifier) as! SubscribeViewController
+        let navigation = UINavigationController(rootViewController: subscriptions)
+        DispatchQueue.main.async {
+            self.rootController?.present(navigation, animated: true, completion: nil)
+        }
     }
     
     @objc func sharetheApp() {
@@ -258,44 +259,5 @@ class SettingsCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
-    func loadProducts() {
-        let identifiers = Set([productIdentifiers])
-        let request = SKProductsRequest(productIdentifiers: identifiers)
-        request.delegate = self
-        request.start()
-    }
-
 }
 
-extension SettingsCollectionViewCell: SKProductsRequestDelegate {
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if response.products.count > 0 {
-            product =  response.products.first
-        }
-    }
-    
-    func purchase(product : SKProduct) {
-        let payment = SKPayment(product: product)
-        SKPaymentQueue.default().add(payment)
-    }
-    
-    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction in transactions {
-            switch transaction.transactionState {
-            case .purchasing:
-                print("Purchasing")
-                Analytics.logEvent(AnalyticsEventCheckoutProgress, parameters: nil)
-            case .purchased:
-                UserDefaults.standard.set(true, forKey: UserDefaultKey.purchased.rawValue)
-                Analytics.logEvent(AnalyticsEventEcommercePurchase, parameters: nil)
-            case .failed:
-                print("Faild")
-            case .restored:
-                print("restored")
-            case .deferred:
-                print("Nothing Happend")
-            }
-        }
-    }
-}

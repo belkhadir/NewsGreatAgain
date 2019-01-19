@@ -14,6 +14,11 @@ enum DataResponseError: Error {
     case decoding
     case dataDecodint(data: Data)
     case response
+    case missingAccountSecret
+    case invalidSession
+    case noActiveSubscription
+    case other(Error)
+    
     var reason: String {
         switch self {
         case .network:
@@ -24,7 +29,7 @@ enum DataResponseError: Error {
             return "DAATA"
         case .response:
             return "Comand invalid please contact the support"
-            
+        default: return ""
         }
     }
 }

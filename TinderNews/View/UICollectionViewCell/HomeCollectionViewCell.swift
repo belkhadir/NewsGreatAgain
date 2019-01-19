@@ -25,7 +25,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     fileprivate var page = Page.Position(current: 1,max: 0, next: 1, previous: 1)
     
-    fileprivate let loadingView = JGProgressHUD(style: JGProgressHUDStyle.light)
+    fileprivate let loadingView = JGProgressHUD(style: JGProgressHUDStyle.dark)
     
     fileprivate var topCard: CardView?
     
@@ -46,24 +46,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
         var previousCardView: CardView?
         topCard = nil
         
-        
-        
-//        articles.forEach { (article) in
-//            let cardView: ArticleView = ArticleView(frame: .zero)
-//            cardView.configure(cell: article)
-//            self.cardsView.addSubview(cardView)
-//            self.cardsView.sendSubviewToBack(cardView)
-//
-//            cardView.fillSuperView()
-//            cardView.delegate = self
-//            previousCardView?.nextCardView = cardView
-//            previousCardView = cardView
-//
-//            if topCard == nil {
-//                topCard = cardView
-//            }
-//        }
-        
+        let random = Int.random(in: 6...articles.count-1)
+
         for (index, article) in articles.enumerated() {
             let cardView: ArticleView = ArticleView(frame: .zero)
             cardView.configure(cell: article)
@@ -79,7 +63,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
                 topCard = cardView
             }
             
-            if index == 9 {
+            if index == random {
                 if !isFreeFromAds {
                     let ads = AdsView(frame: .zero)
                     ads.viewController = rootController
@@ -108,13 +92,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     func fetchmoreNews() {
-        if !isUnlocked {
-            if  page.current == 4{
-                // TODO: Tell the user if he want more news he need to subscribe
-                return
-            }
-        }
-
+        
+//        guard SubscriptionService.shared.currentSessionId != nil,
+//            SubscriptionService.shared.hasReceiptData else {
+//
+//                return
+//        }
         
         loadingView.show(in: self)
         if page.max == page.current {
@@ -123,13 +106,19 @@ class HomeCollectionViewCell: UICollectionViewCell {
             }
             return
         }
-        NewsService.getNewsFornext(page: page) { [weak self](result) in
+        
+        let sessionId = SubscriptionService.shared.currentSessionId ?? ""
+        
+        NewsService.shared.getNews(page: page, for: sessionId) { [weak self](result) in
             guard let weakSelf = self else {
                 return
             }
             switch result {
             case .failure(let error):
                 print(error)
+                call {
+                    weakSelf.loadingView.dismiss()
+                }
             case .success(let success):
                 let data = success.data.filter {
                     return !($0.urlToImage == nil && $0.title == nil)
@@ -142,6 +131,26 @@ class HomeCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
+        
+//        NewsService.getNewsFornext(page: page) { [weak self](result) in
+//            guard let weakSelf = self else {
+//                return
+//            }
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let success):
+//                let data = success.data.filter {
+//                    return !($0.urlToImage == nil && $0.title == nil)
+//                }
+//                weakSelf.articles.append(contentsOf: data)
+//                weakSelf.page = success.page.position
+//                DispatchQueue.main.async {
+//                    weakSelf.loadingView.dismiss()
+//                    weakSelf.addNewsTocard()
+//                }
+//            }
+//        }
     }
     
     fileprivate func addTarget() {

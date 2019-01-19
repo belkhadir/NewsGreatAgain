@@ -20,4 +20,5 @@ enum UserDefaultKey: String {
     case unlock // refer to number of article 50
     case day
     case subscription
+    case page
 }

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import UserNotifications
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        if let date = UserDefaults.standard.object(forKey: UserDefaultKey.day.rawValue) as? Date {
+            if Calendar.current.compare(date, to: Date(), toGranularity: .hour) == .orderedAscending {
+                TrackPageHelper.setToZero()
+            }
+        }
+        
         UserDefaults.standard.set(Date(), forKey: UserDefaultKey.day.rawValue)
         
         FirebaseApp.configure()
@@ -27,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.configure(withApplicationID: ADMOB_APP_ID)
         
         StoreReviewHelper.incrementAppOpenedCount()
-
+        SKPaymentQueue.default().add(self)
+        SubscriptionService.shared.loadSubscriptionOptions()
 
         window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -173,22 +181,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return  UserDefaults.standard.bool(forKey: UserDefaultKey.isLogged.rawValue)
     }
     
-    var isUnlocked: Bool {
-        
-        let subscription = UserDefaults.standard.bool(forKey: UserDefaultKey.subscription.rawValue)
-        if subscription == true {
-            return true
-        }
-        
-        guard let date = UserDefaults.standard.object(forKey: UserDefaultKey.day.rawValue) as? Date else {
-            return false
-        }
 
-        if Calendar.current.compare(Date(), to: date, toGranularity: .day) == .orderedDescending {
-           return true
-        }
+    
+}
+
+// MARK: - SKPaymentTransactionObserver
+
+extension AppDelegate: SKPaymentTransactionObserver {
+    
+    func paymentQueue(_ queue: SKPaymentQueue,
+                      updatedTransactions transactions: [SKPaymentTransaction]) {
         
-        return false
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchasing:
+                handlePurchasingState(for: transaction, in: queue)
+            case .purchased:
+                handlePurchasedState(for: transaction, in: queue)
+            case .restored:
+                handleRestoredState(for: transaction, in: queue)
+            case .failed:
+                handleFailedState(for: transaction, in: queue)
+            case .deferred:
+                handleDeferredState(for: transaction, in: queue)
+            }
+        }
     }
     
+    func handlePurchasingState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
+        print("User is attempting to purchase product id: \(transaction.payment.productIdentifier)")
+    }
+    
+    func handlePurchasedState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
+        print("User purchased product id: \(transaction.payment.productIdentifier)")
+        
+        queue.finishTransaction(transaction)
+        SubscriptionService.shared.uploadReceipt { (success) in
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: SubscriptionService.purchaseSuccessfulNotification, object: nil)
+            }
+        }
+    }
+    
+    func handleRestoredState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
+        print("Purchase restored for product id: \(transaction.payment.productIdentifier)")
+        queue.finishTransaction(transaction)
+        SubscriptionService.shared.uploadReceipt { (success) in
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: SubscriptionService.restoreSuccessfulNotification, object: nil)
+            }
+        }
+    }
+    
+    func handleFailedState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
+        print("Purchase failed for product id: \(transaction.payment.productIdentifier)")
+    }
+    
+    func handleDeferredState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
+        print("Purchase deferred for product id: \(transaction.payment.productIdentifier)")
+    }
 }

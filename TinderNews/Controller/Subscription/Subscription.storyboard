@@ -13,7 +13,7 @@
         <!--Subscribe-->
         <scene sceneID="IHo-FU-825">
             <objects>
-                <viewController id="zEV-Y7-AbM" customClass="SubscribeViewController" customModule="RW_Selfies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubscribeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zEV-Y7-AbM" customClass="SubscribeViewController" customModule="RW_Selfies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D1O-ns-ST9"/>
                         <viewControllerLayoutGuide type="bottom" id="hoT-7T-U5K"/>
@@ -22,14 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZNz-ng-Y0x">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="65" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZNz-ng-Y0x">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.14171932640000001" green="0.1607656032" blue="0.16874451939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="separatorColor" red="0.14171932640000001" green="0.1607656032" blue="0.16874451939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <inset key="separatorInset" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Option" rowHeight="90" id="o5y-T3-y5G" customClass="SubscriptionOptionTableViewCell" customModule="RW_Selfies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o5y-T3-y5G" id="OWk-eY-lZh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -41,13 +40,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAt-e5-JYI">
                                                             <rect key="frame" x="0.0" y="0.0" width="47" height="24.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGq-fo-QTb">
                                                             <rect key="frame" x="0.0" y="32.5" width="69.5" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="You are on this plan!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCD-lZ-puq">
@@ -61,7 +60,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zn-ZD-DDy">
                                                     <rect key="frame" x="326" y="10" width="41" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -74,7 +73,7 @@
                                                 <constraint firstItem="3Zn-ZD-DDy" firstAttribute="leading" secondItem="Bc0-LJ-nY9" secondAttribute="trailing" constant="8" id="yIX-Kc-yUe"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.1714001" green="0.40205124019999999" blue="0.23535977299999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="nGq-fo-QTb" id="uNE-ku-1YM"/>
                                             <outlet property="nameLabel" destination="SAt-e5-JYI" id="hu2-IF-SnT"/>
@@ -100,7 +99,14 @@
                         <viewLayoutGuide key="safeArea" id="xYm-Df-0Qx"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Subscribe" id="OSs-Qd-ois"/>
+                    <navigationItem key="navigationItem" title="Subscribe" id="OSs-Qd-ois">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ieu-qC-p2m">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="done:" destination="zEV-Y7-AbM" id="t5v-xz-Nd3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="ZNz-ng-Y0x" id="6g2-yx-kPn"/>

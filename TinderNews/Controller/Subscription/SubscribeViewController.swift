@@ -23,7 +23,9 @@
 import UIKit
 
 class SubscribeViewController: UIViewController {
-  
+  static let reuseIdentifier = "\(SubscribeViewController.self)"
+    
+    
   // MARK: - Outlets
   
   @IBOutlet var tableView: UITableView!
@@ -75,6 +77,11 @@ class SubscribeViewController: UIViewController {
   @IBAction func back(_ sender: UIButton) {
     dismiss(animated: true, completion: nil)
   }
+    
+    @IBAction func done(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - UITableViewDataSource

@@ -32,14 +32,21 @@ private let dateFormatter: DateFormatter = {
 public struct PaidSubscription {
   
   public enum Level {
-    case one
-    case all
+    case month
+    case sixmonth
+    case threemonth
+    case year
+    case none
     
     init?(productId: String) {
-      if productId.contains("oneaweek") {
-        self = .one
-      } else if productId.contains("allaccess") {
-        self = .all
+      if productId.contains("monthly") {
+        self = .month
+      } else if productId.contains("sixmonth") {
+        self = .sixmonth
+      }else if productId.contains("threemonth"){
+        self = .threemonth
+      }else if productId.contains("yearly") {
+        self = .year
       } else {
         return nil
       }
@@ -70,7 +77,7 @@ public struct PaidSubscription {
     self.productId = productId
     self.purchaseDate = purchaseDate
     self.expiresDate = expiresDate
-    self.level = Level(productId: productId) ?? .all // if we've botched the productId give them all access :]
+    self.level = Level(productId: productId) ?? .none // if we've botched the productId give them all access :]
     
   }
 }
