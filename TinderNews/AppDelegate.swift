@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         if let date = UserDefaults.standard.object(forKey: UserDefaultKey.day.rawValue) as? Date {
-            if Calendar.current.compare(date, to: Date(), toGranularity: .hour) == .orderedAscending {
+            if Calendar.current.compare(date, to: Date(), toGranularity: .day) == .orderedAscending {
                 TrackPageHelper.setToZero()
             }
         }

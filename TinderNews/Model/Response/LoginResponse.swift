@@ -10,7 +10,7 @@ import Foundation
 
 
 class LoginResponse: Codable {
-    var id: Int?
+    var id: Int
     var token: String?
     var userID: Int?
     var reason: String?
@@ -19,8 +19,10 @@ class LoginResponse: Codable {
     var email: String?
 }
 
-extension LoginResponse: CustomDebugStringConvertible {
-    var debugDescription: String {
-        return "id: \(id.debugDescription)" + "token: \(token?.debugDescription)" + "userID: \(userID)"
-    }
-}
+
+
+//extension LoginResponse: CustomDebugStringConvertible {
+//    var debugDescription: String {
+//        return "id: \(id.debugDescription)" + "token: \(token?.debugDescription)" + "userID: \(userID)"
+//    }
+//}

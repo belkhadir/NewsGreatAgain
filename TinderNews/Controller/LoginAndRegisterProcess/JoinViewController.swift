@@ -20,7 +20,7 @@ class JoinViewController: UIViewController {
 
     fileprivate let titleLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = NSAttributedString(string: "Join\n News Great Again (it's free)", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 35), NSAttributedString.Key.foregroundColor: UIColor.white])
+        label.attributedText = NSAttributedString(string: "Stop wasting time reading everyday news. It only wastes your time unnecessarily. Instead, go with the fast & intuitive News Great Again", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 21), NSAttributedString.Key.foregroundColor: UIColor.white])
         label.numberOfLines = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false

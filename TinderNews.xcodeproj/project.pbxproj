@@ -11,6 +11,10 @@
 		A90E5D7B21DD407900B04A23 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E5D7A21DD407900B04A23 /* Extension+Array.swift */; };
 		A90E5D8021DFF58100B04A23 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90E5D7F21DFF58100B04A23 /* StoreKit.framework */; };
 		A90E5D8221DFF5B400B04A23 /* AppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E5D8121DFF5B400B04A23 /* AppPurchases.swift */; };
+		A910A2D221F7B4B400F48863 /* PromoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D121F7B4B400F48863 /* PromoCollectionViewCell.swift */; };
+		A910A2D421F8A3D800F48863 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D321F8A3D800F48863 /* PriceView.swift */; };
+		A910A2D621F9D07400F48863 /* PriceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D521F9D07400F48863 /* PriceCollectionViewCell.swift */; };
+		A910A2D821FA4ADF00F48863 /* DialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D721FA4ADF00F48863 /* DialogController.swift */; };
 		A91E93A121BD4B2700AF4B77 /* NewsSerrvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E93A021BD4B2700AF4B77 /* NewsSerrvice.swift */; };
 		A924ECA821B3F95800321D2C /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924ECA721B3F95800321D2C /* Page.swift */; };
 		A924ECAA21B3F9EA00321D2C /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924ECA921B3F9EA00321D2C /* ResponseData.swift */; };
@@ -111,6 +115,10 @@
 		A90E5D7E21DF7C1300B04A23 /* TinderNews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TinderNews.entitlements; sourceTree = "<group>"; };
 		A90E5D7F21DFF58100B04A23 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A90E5D8121DFF5B400B04A23 /* AppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPurchases.swift; sourceTree = "<group>"; };
+		A910A2D121F7B4B400F48863 /* PromoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCollectionViewCell.swift; sourceTree = "<group>"; };
+		A910A2D321F8A3D800F48863 /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
+		A910A2D521F9D07400F48863 /* PriceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCollectionViewCell.swift; sourceTree = "<group>"; };
+		A910A2D721FA4ADF00F48863 /* DialogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogController.swift; sourceTree = "<group>"; };
 		A91E93A021BD4B2700AF4B77 /* NewsSerrvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSerrvice.swift; sourceTree = "<group>"; };
 		A924ECA721B3F95800321D2C /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		A924ECA921B3F9EA00321D2C /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
@@ -379,6 +387,8 @@
 				A941450221CBE78A00D362E0 /* HomeCollectionViewCell.swift */,
 				A941450421CBE97800D362E0 /* SettingsCollectionViewCell.swift */,
 				A941450621CBE98100D362E0 /* FavoriteCollectionViewCell.swift */,
+				A910A2D121F7B4B400F48863 /* PromoCollectionViewCell.swift */,
+				A910A2D521F9D07400F48863 /* PriceCollectionViewCell.swift */,
 			);
 			path = UICollectionViewCell;
 			sourceTree = "<group>";
@@ -501,6 +511,7 @@
 		A97C61EC21C410B500BBB3EB /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				A910A2D721FA4ADF00F48863 /* DialogController.swift */,
 				A97C61ED21C410E500BBB3EB /* BuyView.swift */,
 				A94144D021C965ED00D362E0 /* DetailHeaderView.swift */,
 				A94144F321CA981000D362E0 /* CardView.swift */,
@@ -508,6 +519,7 @@
 				A94144F721CAC4E200D362E0 /* ArticleView.swift */,
 				A941450A21CFD33A00D362E0 /* LineView.swift */,
 				A940F99921EA3EF600522677 /* JoinView.swift */,
+				A910A2D321F8A3D800F48863 /* PriceView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -759,6 +771,7 @@
 				A97C61E521C3DF7A00BBB3EB /* LoginResponse.swift in Sources */,
 				A94144F821CAC4E200D362E0 /* ArticleView.swift in Sources */,
 				A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */,
+				A910A2D421F8A3D800F48863 /* PriceView.swift in Sources */,
 				A97C5E9921C26DAA00BBB3EB /* UserDefaultKey.swift in Sources */,
 				A97C5E9321C26AE700BBB3EB /* LoginDelegate.swift in Sources */,
 				A90E5D8221DFF5B400B04A23 /* AppPurchases.swift in Sources */,
@@ -779,6 +792,7 @@
 				A941450721CBE98100D362E0 /* FavoriteCollectionViewCell.swift in Sources */,
 				A94144EE21CA909400D362E0 /* NavigationStackView.swift in Sources */,
 				A940F99621E79AC500522677 /* Favorite.swift in Sources */,
+				A910A2D621F9D07400F48863 /* PriceCollectionViewCell.swift in Sources */,
 				A97C61CC21C2E59C00BBB3EB /* DetailNewsTableViewController.swift in Sources */,
 				A97C5E9F21C26EC300BBB3EB /* UserResponse.swift in Sources */,
 				A92895C921A1FEC20051EBC5 /* NewsCollectionViewCell.swift in Sources */,
@@ -791,6 +805,7 @@
 				A941450521CBE97800D362E0 /* SettingsCollectionViewCell.swift in Sources */,
 				A9D061B821D265E00093FE04 /* TextField.swift in Sources */,
 				A94144D421C9685000D362E0 /* AdsTableViewCell.swift in Sources */,
+				A910A2D821FA4ADF00F48863 /* DialogController.swift in Sources */,
 				A997193521F0F851003868C0 /* Subscription.swift in Sources */,
 				A941450D21CFD3D200D362E0 /* SeperatorStackView.swift in Sources */,
 				A997ACD621E4BC0E007C897E /* SettingsTableViewController.swift in Sources */,
@@ -800,6 +815,7 @@
 				A997194721F265DD003868C0 /* TrackPageHelper.swift in Sources */,
 				A997ACDB21E4D0CC007C897E /* FrameworksTableViewController.swift in Sources */,
 				A90E5D7B21DD407900B04A23 /* Extension+Array.swift in Sources */,
+				A910A2D221F7B4B400F48863 /* PromoCollectionViewCell.swift in Sources */,
 				A97C5E9721C26CD000BBB3EB /* LoginViewController.swift in Sources */,
 				A941450321CBE78A00D362E0 /* HomeCollectionViewCell.swift in Sources */,
 				A997193E21F1DA67003868C0 /* SubscriptionOptionTableViewCell.swift in Sources */,

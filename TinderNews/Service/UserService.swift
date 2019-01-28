@@ -11,13 +11,11 @@ import Foundation
 
 class UserService {
 
-    
     static func login(user: User,
                              completion: @escaping (_ result: Result<LoginResponse, DataResponseError>)->Void) {
         if let json = user.dictionary {
             sendRequest(for: LoginResponse.self, host: "newsgreatagain.com", path: EndPath.login, port: 8080, query: [], httpMethod: .post, json: json) { completion($0) }
         }
-        
     }
     
     static func register(user: User,
