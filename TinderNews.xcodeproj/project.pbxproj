@@ -14,7 +14,6 @@
 		A910A2D221F7B4B400F48863 /* PromoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D121F7B4B400F48863 /* PromoCollectionViewCell.swift */; };
 		A910A2D421F8A3D800F48863 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D321F8A3D800F48863 /* PriceView.swift */; };
 		A910A2D621F9D07400F48863 /* PriceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D521F9D07400F48863 /* PriceCollectionViewCell.swift */; };
-		A910A2D821FA4ADF00F48863 /* DialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D721FA4ADF00F48863 /* DialogController.swift */; };
 		A91E93A121BD4B2700AF4B77 /* NewsSerrvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E93A021BD4B2700AF4B77 /* NewsSerrvice.swift */; };
 		A924ECA821B3F95800321D2C /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924ECA721B3F95800321D2C /* Page.swift */; };
 		A924ECAA21B3F9EA00321D2C /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924ECA921B3F9EA00321D2C /* ResponseData.swift */; };
@@ -84,7 +83,6 @@
 		A97C61E321C3DA9F00BBB3EB /* AdmobToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E221C3DA9F00BBB3EB /* AdmobToken.swift */; };
 		A97C61E521C3DF7A00BBB3EB /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E421C3DF7A00BBB3EB /* LoginResponse.swift */; };
 		A97C61E821C407EF00BBB3EB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61E721C407EF00BBB3EB /* ProfileViewController.swift */; };
-		A97C61EE21C410E500BBB3EB /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C61ED21C410E500BBB3EB /* BuyView.swift */; };
 		A97C622F21C52C0800BBB3EB /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C622E21C52C0800BBB3EB /* GradientButton.swift */; };
 		A97C623221C52FAD00BBB3EB /* BuyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C623121C52FAD00BBB3EB /* BuyController.swift */; };
 		A997192F21F097CF003868C0 /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997192E21F097CF003868C0 /* StoreReviewHelper.swift */; };
@@ -104,6 +102,7 @@
 		A997ACDF21E4D690007C897E /* DetailLicensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997ACDE21E4D690007C897E /* DetailLicensesViewController.swift */; };
 		A9D061B821D265E00093FE04 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D061B721D265E00093FE04 /* TextField.swift */; };
 		A9D461F321D160DB005969F5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D461F221D160DB005969F5 /* NavigationViewController.swift */; };
+		A9F22E662200FFB900598912 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F22E652200FFB900598912 /* SubscriptionViewController.swift */; };
 		A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */; };
 		A9F9FF6B21A436C300197766 /* TinderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6A21A436C300197766 /* TinderLayout.swift */; };
 		A9F9FF6D21A43D8000197766 /* TinderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6C21A43D8000197766 /* TinderDelegate.swift */; };
@@ -118,7 +117,6 @@
 		A910A2D121F7B4B400F48863 /* PromoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A910A2D321F8A3D800F48863 /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		A910A2D521F9D07400F48863 /* PriceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCollectionViewCell.swift; sourceTree = "<group>"; };
-		A910A2D721FA4ADF00F48863 /* DialogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogController.swift; sourceTree = "<group>"; };
 		A91E93A021BD4B2700AF4B77 /* NewsSerrvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSerrvice.swift; sourceTree = "<group>"; };
 		A924ECA721B3F95800321D2C /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		A924ECA921B3F9EA00321D2C /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 		A97C61E221C3DA9F00BBB3EB /* AdmobToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobToken.swift; sourceTree = "<group>"; };
 		A97C61E421C3DF7A00BBB3EB /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		A97C61E721C407EF00BBB3EB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		A97C61ED21C410E500BBB3EB /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		A97C622E21C52C0800BBB3EB /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		A97C623121C52FAD00BBB3EB /* BuyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyController.swift; sourceTree = "<group>"; };
 		A997192E21F097CF003868C0 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
@@ -210,6 +207,7 @@
 		A997ACDE21E4D690007C897E /* DetailLicensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLicensesViewController.swift; sourceTree = "<group>"; };
 		A9D061B721D265E00093FE04 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A9D461F221D160DB005969F5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		A9F22E652200FFB900598912 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9F9FF6A21A436C300197766 /* TinderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderLayout.swift; sourceTree = "<group>"; };
 		A9F9FF6C21A43D8000197766 /* TinderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderDelegate.swift; sourceTree = "<group>"; };
@@ -511,8 +509,6 @@
 		A97C61EC21C410B500BBB3EB /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				A910A2D721FA4ADF00F48863 /* DialogController.swift */,
-				A97C61ED21C410E500BBB3EB /* BuyView.swift */,
 				A94144D021C965ED00D362E0 /* DetailHeaderView.swift */,
 				A94144F321CA981000D362E0 /* CardView.swift */,
 				A94144F521CAC37B00D362E0 /* AdsView.swift */,
@@ -538,6 +534,7 @@
 				A997193D21F1DA67003868C0 /* SubscriptionOptionTableViewCell.swift */,
 				A997193B21F1DA4C003868C0 /* SubscribeViewController.swift */,
 				A997193F21F1DA92003868C0 /* Subscription.storyboard */,
+				A9F22E652200FFB900598912 /* SubscriptionViewController.swift */,
 			);
 			path = Subscription;
 			sourceTree = "<group>";
@@ -632,6 +629,7 @@
 				TargetAttributes = {
 					A928958821A183540051EBC5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -778,7 +776,7 @@
 				A941450F21CFD9D800D362E0 /* SocialMediaStack.swift in Sources */,
 				A97C61DB21C3D72100BBB3EB /* Extension+Encodable.swift in Sources */,
 				A97C61DF21C3D76400BBB3EB /* FromBackgroundToMain.swift in Sources */,
-				A97C61EE21C410E500BBB3EB /* BuyView.swift in Sources */,
+				A9F22E662200FFB900598912 /* SubscriptionViewController.swift in Sources */,
 				A94144F621CAC37B00D362E0 /* AdsView.swift in Sources */,
 				A92895BA21A1F9B70051EBC5 /* DataResponceError.swift in Sources */,
 				A91E93A121BD4B2700AF4B77 /* NewsSerrvice.swift in Sources */,
@@ -805,7 +803,6 @@
 				A941450521CBE97800D362E0 /* SettingsCollectionViewCell.swift in Sources */,
 				A9D061B821D265E00093FE04 /* TextField.swift in Sources */,
 				A94144D421C9685000D362E0 /* AdsTableViewCell.swift in Sources */,
-				A910A2D821FA4ADF00F48863 /* DialogController.swift in Sources */,
 				A997193521F0F851003868C0 /* Subscription.swift in Sources */,
 				A941450D21CFD3D200D362E0 /* SeperatorStackView.swift in Sources */,
 				A997ACD621E4BC0E007C897E /* SettingsTableViewController.swift in Sources */,
@@ -965,6 +962,7 @@
 			baseConfigurationReference = 88CEFFCE3C8FDC212AF62371 /* Pods-TinderNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TinderNews/TinderNews.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8GJLLZVYS;
@@ -975,6 +973,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newsgreatagain.newsgreatagain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -985,6 +984,7 @@
 			baseConfigurationReference = D517FEDF5D75EF4E64341158 /* Pods-TinderNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TinderNews/TinderNews.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8GJLLZVYS;

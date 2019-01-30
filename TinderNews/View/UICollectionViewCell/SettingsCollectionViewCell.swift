@@ -206,13 +206,19 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     
     
     @objc func handleSubscribe() {
-        let storyBoard = UIStoryboard(name: "Subscription", bundle: nil)
-        
-        let subscriptions = storyBoard.instantiateViewController(withIdentifier: SubscribeViewController.reuseIdentifier) as! SubscribeViewController
-        let navigation = UINavigationController(rootViewController: subscriptions)
+        let vc = SubscriptionViewController()
+        let navigation = UINavigationController(rootViewController: vc)
         DispatchQueue.main.async {
             self.rootController?.present(navigation, animated: true, completion: nil)
         }
+
+//        let storyBoard = UIStoryboard(name: "Subscription", bundle: nil)
+//
+//        let subscriptions = storyBoard.instantiateViewController(withIdentifier: SubscribeViewController.reuseIdentifier) as! SubscribeViewController
+//        let navigation = UINavigationController(rootViewController: subscriptions)
+//        DispatchQueue.main.async {
+//            self.rootController?.present(navigation, animated: true, completion: nil)
+//        }
     }
     
     @objc func sharetheApp() {

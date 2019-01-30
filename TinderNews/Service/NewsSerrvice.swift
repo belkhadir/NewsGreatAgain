@@ -95,11 +95,10 @@ class NewsService {
     /// Use sessionId to get selfies
     public func getNews(page: Page.Position, for sessionId: SessionId,  completion: @escaping articles) {
         
-        TrackPageHelper.incrementpageCount()
         
         
         guard let _ = sessions[sessionId] else {
-            if TrackPageHelper.count <= 4 {
+            if TrackPageHelper.count <= 60 {
                 NewsService.getNewsFornext(page: page) { completion($0) }
             }else {
                 completion(.failure(.noActiveSubscription))
@@ -123,6 +122,7 @@ class NewsService {
             }
             
             if article {
+                
                 NewsService.getNewsFornext(page: page) { completion($0) }
             }
         }else {

@@ -13,12 +13,12 @@ import StoreKit
 
 class MainViewController: UIViewController {
 
-    fileprivate var buyView = BuyView()
+//    fileprivate var buyView = BuyView()
     fileprivate let navigationStack = NavigationStackView()
     fileprivate let navigationView = UIView()
     
     fileprivate var leftAnchor: NSLayoutXAxisAnchor?
-    fileprivate let dialogController = DialogController()
+    
     fileprivate var firstTime = true
     
     fileprivate lazy var collectionView: UICollectionView = {
@@ -81,9 +81,9 @@ class MainViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         handleLogo()
-        buyView = BuyView(frame: CGRect(x: 16, y: 16, width: view.frame.width - 32, height: view.frame.height - 100))
-        buyView.layer.cornerRadius = 10
-        buyView.clipsToBounds = true
+//        buyView = BuyView(frame: CGRect(x: 16, y: 16, width: view.frame.width - 32, height: view.frame.height - 100))
+//        buyView.layer.cornerRadius = 10
+//        buyView.clipsToBounds = true
     }
     
     fileprivate func setupLayout() {
@@ -118,10 +118,10 @@ class MainViewController: UIViewController {
         collectionView.scrollToItem(at: indexPath, at: .right, animated: true)
     }
     @objc func handleLogo() {
+        state = State.home
         activeThenavigationStack(state: state)
         let indexPath = IndexPath(item: 0, section: 1)
         collectionView.scrollToItem(at: indexPath, at: state == State.settings ? .left: .right, animated: true)
-        state = State.home
     }
     
     @objc func handleSettings() {

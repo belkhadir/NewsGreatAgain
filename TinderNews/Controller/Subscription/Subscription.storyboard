@@ -13,7 +13,7 @@
         <!--Subscribe-->
         <scene sceneID="IHo-FU-825">
             <objects>
-                <viewController storyboardIdentifier="SubscribeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zEV-Y7-AbM" customClass="SubscribeViewController" customModule="RW_Selfies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubscribeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zEV-Y7-AbM" customClass="SubscribeViewController" customModule="TinderNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D1O-ns-ST9"/>
                         <viewControllerLayoutGuide type="bottom" id="hoT-7T-U5K"/>
@@ -27,7 +27,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Option" rowHeight="90" id="o5y-T3-y5G" customClass="SubscriptionOptionTableViewCell" customModule="RW_Selfies" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Option" rowHeight="90" id="o5y-T3-y5G" customClass="SubscriptionOptionTableViewCell" customModule="TinderNews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o5y-T3-y5G" id="OWk-eY-lZh">
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crS-Ca-KWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692" y="507"/>
+            <point key="canvasLocation" x="2618" y="340"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8tw-r7-V18">
@@ -132,7 +132,41 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtX-uj-Zsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="506.89655172413796"/>
+            <point key="canvasLocation" x="1831" y="340"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Tg8-Xu-abV">
+            <objects>
+                <viewController id="jr1-hJ-HCn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZZs-0I-pnb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RLs-Ct-v1h"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="btn-kP-Mqo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xN-xE-AkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2591" y="1041"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zsF-YS-yxb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xN3-BF-0cV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E0H-A3-3Rt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jr1-hJ-HCn" kind="relationship" relationship="rootViewController" id="9M3-vI-jEP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lda-j1-FBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1830" y="1042"/>
         </scene>
     </scenes>
 </document>

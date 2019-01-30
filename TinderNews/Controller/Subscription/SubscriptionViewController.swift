@@ -1,15 +1,32 @@
 //
-//  BuyView.swift
+//  SubscriptionViewController.swift
 //  TinderNews
 //
-//  Created by Belkhadir Anas on 12/14/18.
-//  Copyright © 2018 Belkhadir. All rights reserved.
+//  Created by xxx on 1/29/19.
+//  Copyright © 2019 Belkhadir. All rights reserved.
 //
 
 import UIKit
 
-class BuyView: UIView {
+class SubscriptionViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        options = SubscriptionService.shared.options
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleOptionsLoaded(notification:)),
+                                               name: SubscriptionService.optionsLoadedNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handlePurchaseSuccessfull(notification:)),
+                                               name: SubscriptionService.purchaseSuccessfulNotification,
+                                               object: nil)
+        setupLayout()
+    }
+    
     var options: [Subscription]?
     
     enum Section: CaseIterable {
@@ -74,30 +91,9 @@ class BuyView: UIView {
         return button
     }()
     
+    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    
     var callback: (()->Void)?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        options = SubscriptionService.shared.options
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(handleOptionsLoaded(notification:)),
-                                               name: SubscriptionService.optionsLoadedNotification,
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(handlePurchaseSuccessfull(notification:)),
-                                               name: SubscriptionService.purchaseSuccessfulNotification,
-                                               object: nil)
-        setupLayout()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupLayout()
- 
-    }
     
     @objc func handleOptionsLoaded(notification: Notification) {
         DispatchQueue.main.async { [weak self] in
@@ -107,7 +103,7 @@ class BuyView: UIView {
             }
             var index = 0
             var x: CGFloat =  0
-            let width: CGFloat = (self?.frame.width ?? 0)/4
+            let width: CGFloat = (self?.view.frame.width ?? 0)/4
             option.forEach{ o in
                 let button = UIButton(frame:  CGRect(x: x, y: 0, width: width, height:100))
                 button.setAttributedTitle(self?.getAttributeString(option: o), for: .normal)
@@ -122,7 +118,7 @@ class BuyView: UIView {
                 x = x + width
             }
             
-           
+            
         }
     }
     
@@ -134,10 +130,10 @@ class BuyView: UIView {
     
     @objc func handlePurchaseSuccessfull(notification: Notification) {
         UserDefaults.standard.set(true, forKey: UserDefaultKey.unlock.rawValue)
-//        DispatchQueue.main.async { [weak self] in
-//            self?.tableView.reloadData()
-            //Dismiss the view
-//        }
+        //        DispatchQueue.main.async { [weak self] in
+        //            self?.tableView.reloadData()
+        //Dismiss the view
+        //        }
     }
     
     fileprivate func setupLayout() {
@@ -150,18 +146,18 @@ class BuyView: UIView {
         overAllStack.distribution = .fill
         overAllStack.axis = .vertical
         
-        addSubview(overAllStack)
+        view.addSubview(overAllStack)
         
         overAllStack.fillSuperView()
         
-        collectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 3/5).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 3/5).isActive = true
         
         
         
         continueButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         continueButton.layer.cornerRadius = 50/2
         continueButton.clipsToBounds = true
-
+        
         priceStackView.alignment = .fill
         priceStackView.axis = .horizontal
         priceStackView.distribution = .fillEqually
@@ -194,6 +190,11 @@ class BuyView: UIView {
         pageControl.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor, constant: 64).isActive = true
         pageControl.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor, constant: -64).isActive = true
         pageControl.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        
+//        overAllStack.isLayoutMarginsRelativeArrangement = true
+//        overAllStack.layoutMargins = .init(top: 32, left: 8, bottom: 100, right: 8)
+        
     }
     
     func getAttributeString(option: Subscription) -> NSMutableAttributedString {
@@ -215,7 +216,7 @@ class BuyView: UIView {
     
 }
 
-extension BuyView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension SubscriptionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -231,8 +232,8 @@ extension BuyView: UICollectionViewDataSource, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = frame.height * (3/5)
-        return CGSize(width: frame.width, height: height)
+        let height = view.frame.height * (3/5)
+        return CGSize(width: view.frame.width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -240,3 +241,4 @@ extension BuyView: UICollectionViewDataSource, UICollectionViewDelegate, UIColle
     }
     
 }
+

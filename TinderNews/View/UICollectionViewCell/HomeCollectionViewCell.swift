@@ -233,7 +233,7 @@ extension HomeCollectionViewCell: CardViewDelegate {
         }
         
         StoreReviewHelper.checkAndAskForReview()
-        
+        TrackPageHelper.incrementpageCount()
         
     }
     

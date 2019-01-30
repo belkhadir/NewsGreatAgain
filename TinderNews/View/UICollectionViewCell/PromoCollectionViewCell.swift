@@ -9,10 +9,10 @@
 import UIKit
 
 class PromoCollectionViewCell: UICollectionViewCell, Configurable {
-    typealias T = BuyView.Section
+    typealias T = SubscriptionViewController.Section
     
     
-    func configure(cell with: BuyView.Section) {
+    func configure(cell with: SubscriptionViewController.Section) {
         benifitLabel.text = with.benifit
         imageView.image = with.image
 //        backgroundColor = with.backgroundColor
