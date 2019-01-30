@@ -208,6 +208,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 extension MainViewController: UNUserNotificationCenterDelegate {
     // Receive displayed notifications for iOS 10 devices.
+    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -223,6 +224,7 @@ extension MainViewController: UNUserNotificationCenterDelegate {
         // Change this to your preferred presentation option
         completionHandler([])
     }
+    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {

@@ -33,7 +33,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     fileprivate let settingsButton = UIButton(type: .system)
     fileprivate let aboutButton = UIButton(type: .system)
     fileprivate let inviteButton = UIButton(type: .system)
-    fileprivate let subscribeButton = UIButton(type: .system)
+//    fileprivate let subscribeButton = UIButton(type: .system)
     
     weak var rootController: UIViewController?
     
@@ -67,7 +67,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func configureButton() {
-        subscribeButton.addTarget(self, action: #selector(handleSubscribe), for: .touchUpInside)
+//        subscribeButton.addTarget(self, action: #selector(handleSubscribe), for: .touchUpInside)
         inviteButton.addTarget(self, action: #selector(sharetheApp), for: .touchUpInside)
         settingsButton.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
         settingsButton.setImage(UIImage(named: "settings")?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -83,7 +83,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         inviteButton.layer.borderColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1).cgColor
         inviteButton.layer.borderWidth = 1
         
-        setButtonConfiguration(button: subscribeButton, text: "News Great Again + PLUS")
+//        setButtonConfiguration(button: subscribeButton, text: "News Great Again + PLUS")
     }
     
     fileprivate func addLoginView() {
@@ -168,7 +168,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         topStack.autoLayout(topAnchor: topView.topAnchor, bottomAnchor: topView.bottomAnchor, leadingAnchor: topView.leadingAnchor, trailingAnchor: topView.trailingAnchor, inset: .init(top: 32, left: 32, bottom: 32, right: 32))
 
         
-        let stackReferal = UIStackView(arrangedSubviews: [inviteButton, orLabel, subscribeButton])
+        let stackReferal = UIStackView(arrangedSubviews: [inviteButton, orLabel])
         stackReferal.alignment = .fill
         stackReferal.axis = .vertical
         stackReferal.distribution = .fill
@@ -182,8 +182,6 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         inviteButton.translatesAutoresizingMaskIntoConstraints = false
         
         
-        subscribeButton.translatesAutoresizingMaskIntoConstraints = false
-        subscribeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         stackReferal.autoLayout(topAnchor: bottomView.topAnchor, bottomAnchor: bottomView.bottomAnchor, leadingAnchor: bottomView.leadingAnchor, trailingAnchor: bottomView.trailingAnchor, inset: .init(top: 32, left: 32, bottom: 64, right: 32))
     }

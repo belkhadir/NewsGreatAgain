@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderNews/View/UICollectionViewCell/HomeCollectionViewCell.swift"
-            timestampString = "570542334.37602"
+            timestampString = "570572074.728374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "fetchmoreNews()"
             landmarkType = "7">
          </BreakpointContent>

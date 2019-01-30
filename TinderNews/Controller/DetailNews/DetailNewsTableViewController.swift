@@ -108,10 +108,18 @@ class DetailNewsTableViewController: UITableViewController {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         if let window = UIApplication.shared.keyWindow {
             window.addSubview(bannerView)
-            bannerView.bottomAnchor.constraint(equalTo: window.safeAreaLayoutGuide.bottomAnchor).isActive = true
-            bannerView.leadingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.leadingAnchor).isActive = true
-            bannerView.trailingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.trailingAnchor).isActive = true
-            bannerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+            if #available(iOS 11, *) {
+                bannerView.bottomAnchor.constraint(equalTo: window.safeAreaLayoutGuide.bottomAnchor).isActive = true
+                bannerView.leadingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.leadingAnchor).isActive = true
+                bannerView.trailingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.trailingAnchor).isActive = true
+                bannerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+            }else {
+                bannerView.bottomAnchor.constraint(equalTo: window.bottomAnchor).isActive = true
+                bannerView.leadingAnchor.constraint(equalTo: window.leadingAnchor).isActive = true
+                bannerView.trailingAnchor.constraint(equalTo: window.trailingAnchor).isActive = true
+                bannerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+            }
+            
             
         }
 

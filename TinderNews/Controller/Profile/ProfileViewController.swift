@@ -41,8 +41,14 @@ class ProfileViewController: UIViewController {
         stackView.distribution = .fill
         stackView.axis = .horizontal
         
-        let safeArea = view.safeAreaLayoutGuide
-        stackView.autoLayout(topAnchor: safeArea.topAnchor, bottomAnchor: safeArea.bottomAnchor, leadingAnchor: safeArea.leadingAnchor, trailingAnchor: safeArea.trailingAnchor)
+        
+        if #available(iOS 11, *) {
+            let safeArea = view.safeAreaLayoutGuide
+            stackView.autoLayout(topAnchor: safeArea.topAnchor, bottomAnchor: safeArea.bottomAnchor, leadingAnchor: safeArea.leadingAnchor, trailingAnchor: safeArea.trailingAnchor)
+        }else {
+            stackView.autoLayout(topAnchor: view.topAnchor, bottomAnchor: view.bottomAnchor, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor)
+        }
+        
         
     }
 

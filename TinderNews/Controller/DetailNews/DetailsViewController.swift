@@ -14,13 +14,19 @@ class DetailsViewController: UIViewController {
     fileprivate let extraSwipingHeight: CGFloat = 80
     fileprivate var bannerView: GADBannerView!
     
+    
     fileprivate lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .white
         scrollView.alwaysBounceVertical = true
         scrollView.alwaysBounceHorizontal = false
         scrollView.delegate = self
-        scrollView.contentInsetAdjustmentBehavior = .never
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = .never
+        }else {
+            
+        }
+        
         return scrollView
     }()
     
@@ -74,9 +80,15 @@ class DetailsViewController: UIViewController {
         imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
         
         scrollView.addSubview(imageView)
+        if #available(iOS 11.0, *) {
+            let safeArea = view.safeAreaLayoutGuide
+            closeButton.autoLayout(topAnchor: safeArea.topAnchor, bottomAnchor: nil, leadingAnchor: nil, trailingAnchor: safeArea.trailingAnchor, inset: .init(top: 8, left: 0, bottom: 0, right: 8))
+            
+        }else {
+            closeButton.autoLayout(topAnchor: view.topAnchor, bottomAnchor: nil, leadingAnchor: nil, trailingAnchor: view.trailingAnchor, inset: .init(top: 8, left: 0, bottom: 0, right: 8))
+        }
         
-        let safeArea = view.safeAreaLayoutGuide
-        closeButton.autoLayout(topAnchor: safeArea.topAnchor, bottomAnchor: nil, leadingAnchor: nil, trailingAnchor: safeArea.trailingAnchor, inset: .init(top: 8, left: 0, bottom: 0, right: 8))
+        
         closeButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
@@ -117,9 +129,16 @@ class DetailsViewController: UIViewController {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         
         scrollView.addSubview(bannerView)
-        bannerView.bottomAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        bannerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        bannerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        if #available(iOS 11, *) {
+            bannerView.bottomAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+            bannerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            bannerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        }else {
+            bannerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+            bannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            bannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        }
+
         bannerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         bannerView.adUnitID = ADMOB_BANNER_ID

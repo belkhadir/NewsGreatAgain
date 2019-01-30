@@ -38,13 +38,13 @@ class PriceView: UIView {
    
     
     func configure(option: Subscription) {
-        guard let period = option.product.subscriptionPeriod?.unit else {
-            return 
-        }
-        let text = option.product.localizedTitle.components(separatedBy: " ")
-        durationLabel.text = text[0]
-        monthLabel.text = text[1]
-        pricePermonth.text = option.formattedPrice
+//        guard let period = option.product.subscriptionPeriod?.unit else {
+//            return 
+//        }
+//        let text = option.product.localizedTitle.components(separatedBy: " ")
+//        durationLabel.text = text[0]
+//        monthLabel.text = text[1]
+//        pricePermonth.text = option.formattedPrice
     }
     
     override init(frame: CGRect) {

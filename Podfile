@@ -16,4 +16,6 @@ target 'TinderNews' do
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/Performance'
   pod 'Firebase/Messaging'
+#  pod 'Firebase/RemoteConfig'
+
 end

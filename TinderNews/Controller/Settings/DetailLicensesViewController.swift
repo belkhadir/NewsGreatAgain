@@ -24,8 +24,14 @@ class DetailLicensesViewController: UIViewController {
         textView.textColor = UIColor.black
         textView.font = UIFont.systemFont(ofSize: 17)
         view.addSubview(textView)
-        let safe = view.safeAreaLayoutGuide
-        textView.autoLayout(topAnchor: safe.topAnchor, bottomAnchor: safe.bottomAnchor, leadingAnchor: safe.leadingAnchor, trailingAnchor: safe.trailingAnchor, inset: .init(top: 16, left: 16, bottom: 16, right: 16))
+        if #available(iOS 11.0, *) {
+            let safe = view.safeAreaLayoutGuide
+            textView.autoLayout(topAnchor: safe.topAnchor, bottomAnchor: safe.bottomAnchor, leadingAnchor: safe.leadingAnchor, trailingAnchor: safe.trailingAnchor, inset: .init(top: 16, left: 16, bottom: 16, right: 16))
+        }else {
+            textView.autoLayout(topAnchor: view.topAnchor, bottomAnchor: view.bottomAnchor, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor, inset: .init(top: 16, left: 16, bottom: 16, right: 16))
+        }
+        
+        
     }
     
     func addText() {

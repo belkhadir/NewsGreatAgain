@@ -107,38 +107,18 @@ class HomeCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        let sessionId = SubscriptionService.shared.currentSessionId ?? ""
-        
-        NewsService.shared.getNews(page: page, for: sessionId) { [weak self](result) in
-            guard let weakSelf = self else {
-                return
-            }
-            switch result {
-            case .failure(let error):
-                print(error)
-                call {
-                    weakSelf.loadingView.dismiss()
-                }
-            case .success(let success):
-                let data = success.data.filter {
-                    return !($0.urlToImage == nil && $0.title == nil)
-                }
-                weakSelf.articles.append(contentsOf: data)
-                weakSelf.page = success.page.position
-                DispatchQueue.main.async {
-                    weakSelf.loadingView.dismiss()
-                    weakSelf.addNewsTocard()
-                }
-            }
-        }
-        
-//        NewsService.getNewsFornext(page: page) { [weak self](result) in
+//        let sessionId = SubscriptionService.shared.currentSessionId ?? ""
+//
+//        NewsService.shared.getNews(page: page, for: sessionId) { [weak self](result) in
 //            guard let weakSelf = self else {
 //                return
 //            }
 //            switch result {
 //            case .failure(let error):
 //                print(error)
+//                call {
+//                    weakSelf.loadingView.dismiss()
+//                }
 //            case .success(let success):
 //                let data = success.data.filter {
 //                    return !($0.urlToImage == nil && $0.title == nil)
@@ -151,6 +131,26 @@ class HomeCollectionViewCell: UICollectionViewCell {
 //                }
 //            }
 //        }
+        
+        NewsService.getNewsFornext(page: page) { [weak self](result) in
+            guard let weakSelf = self else {
+                return
+            }
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let success):
+                let data = success.data.filter {
+                    return !($0.urlToImage == nil && $0.title == nil)
+                }
+                weakSelf.articles.append(contentsOf: data)
+                weakSelf.page = success.page.position
+                DispatchQueue.main.async {
+                    weakSelf.loadingView.dismiss()
+                    weakSelf.addNewsTocard()
+                }
+            }
+        }
     }
     
     fileprivate func addTarget() {

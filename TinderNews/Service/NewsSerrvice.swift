@@ -93,42 +93,42 @@ class NewsService {
     
     
     /// Use sessionId to get selfies
-    public func getNews(page: Page.Position, for sessionId: SessionId,  completion: @escaping articles) {
-        
-        
-        
-        guard let _ = sessions[sessionId] else {
-            if TrackPageHelper.count <= 60 {
-                NewsService.getNewsFornext(page: page) { completion($0) }
-            }else {
-                completion(.failure(.noActiveSubscription))
-            }
-            return
-        }
-
-        let paidSubscriptions = paidSubcriptions(since: simulatedStartDate, for: sessionId)
-        
-        if paidSubscriptions.count > 0 {
-            var article = false
-            for subscription in paidSubscriptions {
-                switch subscription.level {
-                case .none:
-                    completion(.failure(.noActiveSubscription))
-                default:
-                    article = true
-                    break
-                    
-                }
-            }
-            
-            if article {
-                
-                NewsService.getNewsFornext(page: page) { completion($0) }
-            }
-        }else {
-            completion(.failure(.noActiveSubscription))
-        }
-    }
+//    public func getNews(page: Page.Position, for sessionId: SessionId,  completion: @escaping articles) {
+//        
+//        
+//        
+//        guard let _ = sessions[sessionId] else {
+//            if TrackPageHelper.count <= 60 {
+//                NewsService.getNewsFornext(page: page) { completion($0) }
+//            }else {
+//                completion(.failure(.noActiveSubscription))
+//            }
+//            return
+//        }
+//
+//        let paidSubscriptions = paidSubcriptions(since: simulatedStartDate, for: sessionId)
+//        
+//        if paidSubscriptions.count > 0 {
+//            var article = false
+//            for subscription in paidSubscriptions {
+//                switch subscription.level {
+//                case .none:
+//                    completion(.failure(.noActiveSubscription))
+//                default:
+//                    article = true
+//                    break
+//                    
+//                }
+//            }
+//            
+//            if article {
+//                
+//                NewsService.getNewsFornext(page: page) { completion($0) }
+//            }
+//        }else {
+//            completion(.failure(.noActiveSubscription))
+//        }
+//    }
     
     
     private func paidSubcriptions(since date: Date, for sessionId: SessionId) -> [PaidSubscription] {

@@ -42,10 +42,18 @@ extension UIView {
     }
     
     func fillSuperView() {
-        guard let superview = superview?.safeAreaLayoutGuide else {
-            return
+        if #available(iOS 11, *) {
+            guard let superview = superview?.safeAreaLayoutGuide else {
+                return
+            }
+            autoLayout(topAnchor: superview.topAnchor, bottomAnchor: superview.bottomAnchor, leadingAnchor: superview.leadingAnchor, trailingAnchor: superview.trailingAnchor)
+        }else {
+            guard let superview = superview else {
+                return
+            }
+            autoLayout(topAnchor: superview.topAnchor, bottomAnchor: superview.bottomAnchor, leadingAnchor: superview.leadingAnchor, trailingAnchor: superview.trailingAnchor)
         }
-        autoLayout(topAnchor: superview.topAnchor, bottomAnchor: superview.bottomAnchor, leadingAnchor: superview.leadingAnchor, trailingAnchor: superview.trailingAnchor)
+        
     }
     
 }

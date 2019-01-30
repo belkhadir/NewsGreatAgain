@@ -35,7 +35,7 @@ class PriceCollectionViewCell: UICollectionViewCell {
     
     
     func configure(option: Subscription) {
-        durationLabel.text = "\(option.product.subscriptionPeriod?.unit.rawValue)"
+//        durationLabel.text = "\(option.product.subscriptionPeriod?.unit.rawValue)"
         pricePermonth.text = option.formattedPrice
     }
     
