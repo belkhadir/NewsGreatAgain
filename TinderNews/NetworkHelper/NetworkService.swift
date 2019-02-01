@@ -39,7 +39,7 @@ func sendRequest<T: Decodable>(for type: T.Type,
                                   completion: @escaping (Result<T, DataResponseError>) -> Void) {
     
     var compenents = URLComponents()
-    compenents.scheme = "http"
+    compenents.scheme = "https"
     compenents.host = host //"api.coinmarketcap.com"
     compenents.path = "/" + path.rawValue
     compenents.queryItems = query
