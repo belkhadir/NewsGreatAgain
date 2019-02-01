@@ -56,6 +56,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             
             cardView.fillSuperView()
             cardView.delegate = self
+            cardView.linkDelegate = self
             previousCardView?.nextCardView = cardView
             previousCardView = cardView
             
@@ -75,6 +76,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             }
         }
     }
+
     
     fileprivate func setupLayout() {
         backgroundColor = .white
@@ -237,4 +239,14 @@ extension HomeCollectionViewCell: CardViewDelegate {
         
     }
     
+}
+
+extension HomeCollectionViewCell: LinkDelegate {
+    func didTapLink(cardView: CardView, artilce: Article) {
+        let webView = WebViewController()
+        guard let url = artilce.url else { return }
+        webView.urlString = url
+        let navigation = UINavigationController(rootViewController: webView)
+        rootController?.present(navigation, animated: true, completion: nil)
+    }
 }

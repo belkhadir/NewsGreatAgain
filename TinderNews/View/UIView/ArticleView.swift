@@ -14,14 +14,24 @@ class ArticleView: CardView, Configurable {
     func configure(cell with: Article) {
         article = with
         titleLabel.text = with.title
+        guard let urlContent = with.url else {
+            return
+        }
+        linkButton.setTitle(urlContent, for: .normal)
+        
         guard let urlString = with.urlToImage else {
             return
         }
         let url = URL(string: urlString)
         let placeHolder = UIImage(named: "placeHolder")
         imageView.sd_setImage(with: url, placeholderImage: placeHolder, options: .retryFailed, completed: nil)
+
+        
+        
         titleLabel.sizeToFit()
     }
+    
+    weak var linkDelegate: LinkDelegate?
     
     // Mark: - Propeties
     
@@ -43,23 +53,40 @@ class ArticleView: CardView, Configurable {
         return label
     }()
     
+    let linkButton = UIButton()
+    
     fileprivate let gradientLayer = CAGradientLayer()
+    
     
     override func setupLayout() {
         super.setupLayout()
+        addTarget()
         addSubview(imageView)
         setupGradientLayer()
         imageView.layer.cornerRadius = cornerRadius
         imageView.fillSuperView()
-        
+        linkButton.translatesAutoresizingMaskIntoConstraints = false
+        linkButton.setTitle("LINK", for: .normal)
         addSubview(titleLabel)
-        titleLabel.autoLayout(topAnchor: nil, bottomAnchor: bottomAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, inset: .init(top: 0, left: 16, bottom: 16, right: 0))
+        addSubview(linkButton)
+        titleLabel.autoLayout(topAnchor: nil, bottomAnchor: nil, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, inset: .init(top: 0, left: 16, bottom: 0, right: 0))
+        
+        linkButton.autoLayout(topAnchor: titleLabel.bottomAnchor, bottomAnchor: bottomAnchor, leadingAnchor: titleLabel.leadingAnchor, trailingAnchor: trailingAnchor, inset: .init(top: 8, left: 0, bottom: 16, right: 8))
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         gradientLayer.frame = imageView.frame //CGRect(x: 0, y: frame.maxY, width: frame.width, height: frame.height)
+    }
+    
+    fileprivate func addTarget() {
+        linkButton.addTarget(self, action: #selector(handleLinkButton), for: .touchUpInside)
+    }
+    
+    @objc func handleLinkButton() {
+        guard let article = article else { return }
+        linkDelegate?.didTapLink(cardView: self, artilce: article)
     }
     
     fileprivate func setupGradientLayer() {
@@ -76,5 +103,6 @@ class ArticleView: CardView, Configurable {
         guard let article = article else { return }
         delegate?.didTapMoreInfo(cardView: self, artilce: article)
     }
+    
     
 }

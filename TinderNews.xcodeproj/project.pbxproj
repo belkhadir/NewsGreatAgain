@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		70826DD17F7F9AE0E0AD6FFF /* Pods_TinderNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC412A933E6A512F2952AE1A /* Pods_TinderNews.framework */; };
 		A90E5D7B21DD407900B04A23 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E5D7A21DD407900B04A23 /* Extension+Array.swift */; };
-		A90E5D8021DFF58100B04A23 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90E5D7F21DFF58100B04A23 /* StoreKit.framework */; };
 		A90E5D8221DFF5B400B04A23 /* AppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E5D8121DFF5B400B04A23 /* AppPurchases.swift */; };
 		A910A2D221F7B4B400F48863 /* PromoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D121F7B4B400F48863 /* PromoCollectionViewCell.swift */; };
 		A910A2D421F8A3D800F48863 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910A2D321F8A3D800F48863 /* PriceView.swift */; };
@@ -102,6 +101,7 @@
 		A997ACDF21E4D690007C897E /* DetailLicensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997ACDE21E4D690007C897E /* DetailLicensesViewController.swift */; };
 		A9D061B821D265E00093FE04 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D061B721D265E00093FE04 /* TextField.swift */; };
 		A9D461F321D160DB005969F5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D461F221D160DB005969F5 /* NavigationViewController.swift */; };
+		A9DB942D2204755400DDEF59 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DB942C2204755300DDEF59 /* WebViewController.swift */; };
 		A9F22E662200FFB900598912 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F22E652200FFB900598912 /* SubscriptionViewController.swift */; };
 		A9F9FF6821A435B800197766 /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */; };
 		A9F9FF6B21A436C300197766 /* TinderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9FF6A21A436C300197766 /* TinderLayout.swift */; };
@@ -112,7 +112,6 @@
 		88CEFFCE3C8FDC212AF62371 /* Pods-TinderNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinderNews/Pods-TinderNews.debug.xcconfig"; sourceTree = "<group>"; };
 		A90E5D7A21DD407900B04A23 /* Extension+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Array.swift"; sourceTree = "<group>"; };
 		A90E5D7E21DF7C1300B04A23 /* TinderNews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TinderNews.entitlements; sourceTree = "<group>"; };
-		A90E5D7F21DFF58100B04A23 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A90E5D8121DFF5B400B04A23 /* AppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPurchases.swift; sourceTree = "<group>"; };
 		A910A2D121F7B4B400F48863 /* PromoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A910A2D321F8A3D800F48863 /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
@@ -207,6 +206,7 @@
 		A997ACDE21E4D690007C897E /* DetailLicensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLicensesViewController.swift; sourceTree = "<group>"; };
 		A9D061B721D265E00093FE04 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A9D461F221D160DB005969F5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		A9DB942C2204755300DDEF59 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A9F22E652200FFB900598912 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		A9F9FF6721A435B800197766 /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9F9FF6A21A436C300197766 /* TinderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderLayout.swift; sourceTree = "<group>"; };
@@ -220,7 +220,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A90E5D8021DFF58100B04A23 /* StoreKit.framework in Frameworks */,
 				A97C5E8F21C1BF8E00BBB3EB /* AdSupport.framework in Frameworks */,
 				70826DD17F7F9AE0E0AD6FFF /* Pods_TinderNews.framework in Frameworks */,
 			);
@@ -313,6 +312,7 @@
 		A92895A121A1F80C0051EBC5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A9DB942B2204754000DDEF59 /* WebView */,
 				A997193A21F1DA20003868C0 /* Subscription */,
 				A997ACD721E4BC15007C897E /* Settings */,
 				A9D461F121D160C5005969F5 /* Navigation */,
@@ -568,6 +568,14 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		A9DB942B2204754000DDEF59 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				A9DB942C2204755300DDEF59 /* WebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		A9F9FF6921A4368E00197766 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,7 +587,6 @@
 		B02BFE16DAFD1A758D7E80A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A90E5D7F21DFF58100B04A23 /* StoreKit.framework */,
 				A97C5E8E21C1BF8E00BBB3EB /* AdSupport.framework */,
 				BC412A933E6A512F2952AE1A /* Pods_TinderNews.framework */,
 			);
@@ -632,7 +639,7 @@
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -745,6 +752,7 @@
 				A940F99D21EA49A700522677 /* DismissButton.swift in Sources */,
 				A92895C021A1FB550051EBC5 /* OnboardingViewController.swift in Sources */,
 				A924ECAA21B3F9EA00321D2C /* ResponseData.swift in Sources */,
+				A9DB942D2204755400DDEF59 /* WebViewController.swift in Sources */,
 				A94144F221CA91B900D362E0 /* BasicView.swift in Sources */,
 				A9670FFA21D644860059ECD3 /* EchecResponse.swift in Sources */,
 				A97C5E9521C26B3200BBB3EB /* User.swift in Sources */,

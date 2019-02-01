@@ -14,3 +14,7 @@ protocol CardViewDelegate: class {
     func didDislike(_ cell: CardView)
     func didLike(_ cell: CardView)
 }
+
+protocol LinkDelegate: class {
+    func didTapLink(cardView: CardView, artilce: Article)
+}
