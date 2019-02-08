@@ -51,4 +51,12 @@ class UserService {
         }
     }
 
+    static func deleteUser(completio: @escaping (_ result: Result<HTTPStatus, DataResponseError>) -> Void) {
+        guard let userID = UserDefaults.standard.string(forKey: UserDefaultKey.userID.rawValue),
+        let bear = UserDefaults.standard.string(forKey: UserDefaultKey.token.rawValue) else { return }
+        let path = "\(userID)"
+        sendRequest(for: HTTPStatus.self, host: EndURL.host.rawValue, stringPath: path, port: 8080, query: [], httpMethod: HTTPMethod.delete, bear: bear) { (result) in
+            print(result)
+        }
+    }
 }

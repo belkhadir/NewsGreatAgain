@@ -222,9 +222,12 @@ extension HomeCollectionViewCell: CardViewDelegate {
     }
     
     func didTapMoreInfo(cardView: CardView, artilce: Article) {
-        let detail = DetailsViewController()
-        detail.article = artilce
-        rootController?.present(detail, animated: true, completion: nil)
+//        let detail = DetailsViewController()
+//        detail.article = artilce
+//        rootController?.present(detail, animated: true, completion: nil)
+        guard let urlString = artilce.url else { return }
+        guard let url = URL(string: urlString) else { return }
+        UIApplication.shared.open(url)
     }
     
     func didRemoveCardView(cardView: CardView) {

@@ -150,9 +150,12 @@ extension FavoriteCollectionViewCell: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detail = DetailsViewController()
-        detail.article = Article(article: favoriteArticles[indexPath.item])
-        rootController?.present(detail, animated: true, completion: nil)
+//        let detail = DetailsViewController()
+//        detail.article = Article(article: favoriteArticles[indexPath.item])
+//        rootController?.present(detail, animated: true, completion: nil)
+        guard let urlString = Article(article: favoriteArticles[indexPath.item]).url else { return }
+        guard let url = URL(string: urlString) else { return }
+        UIApplication.shared.open(url)
     }
 
     

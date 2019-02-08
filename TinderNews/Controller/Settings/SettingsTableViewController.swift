@@ -10,7 +10,6 @@ import UIKit
 import JGProgressHUD
 import MessageUI
 import Firebase
-import StoreKit
 
 class SettingsTableViewController: UITableViewController {
     static var  reuseIdentifier = "\(SettingsTableViewController.self)"
@@ -43,9 +42,6 @@ class SettingsTableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func restorePurchase(_ sender: UIButton) {
-        SKPaymentQueue.default().restoreCompletedTransactions()
-    }
     
     @IBAction func shareNewsGreatAgain(_ sender: UIButton) {
         createLink()
@@ -89,7 +85,21 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func deleteAccount(_ sender: Any) {
-        
+        UserService.deleteUser { (result) in
+            switch result {
+            case .failure(let error): print(error)
+            case .success:
+                UserDefaults.standard.removeObject(forKey: UserDefaultKey.email.rawValue)
+                UserDefaults.standard.removeObject(forKey: UserDefaultKey.token.rawValue)
+                UserDefaults.standard.removeObject(forKey: UserDefaultKey.fullName.rawValue)
+                UserDefaults.standard.removeObject(forKey: UserDefaultKey.isLogged.rawValue)
+                let join = JoinViewController()
+                let controller = UINavigationController(rootViewController: join)
+                DispatchQueue.main.async {
+                    self.present(controller, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

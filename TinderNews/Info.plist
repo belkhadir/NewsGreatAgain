@@ -37,19 +37,8 @@
 			</array>
 		</dict>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSExceptionDomains</key>
-        <dict>
-            <key>localhost</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-            </dict>
-        </dict>
-    </dict>
 	<key>CFBundleVersion</key>
-	<string>7</string>
+	<string>10</string>
 	<key>FacebookAppID</key>
 	<string>1031173567084571</string>
 	<key>FacebookDisplayName</key>

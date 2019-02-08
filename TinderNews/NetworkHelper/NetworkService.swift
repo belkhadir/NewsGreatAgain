@@ -24,6 +24,7 @@ enum RequestError: Error {
 enum HTTPMethod: String{
     case post = "POST"
     case get = "GET"
+    case delete = "DELETE"
 }
 
 let baseURL = "https://api.darksky.net/forecast/"
