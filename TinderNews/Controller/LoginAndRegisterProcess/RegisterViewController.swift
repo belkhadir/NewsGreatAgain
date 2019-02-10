@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController {
     @objc func handleRegister() {
         if verify {
             
-            let user = User(email: emailTextField.text!, password: passwordTextField.text!, fullName: fullNameTextField.text!)
+            let user = User(email: emailTextField.text!.lowercased(), password: passwordTextField.text!, fullName: fullNameTextField.text!)
             register = Login.register(user: user)
             register.userDidlogin(delegate: self)
         }else {
@@ -108,7 +108,7 @@ extension RegisterViewController: UITextFieldDelegate {
         }else if textField.isEqual(emailTextField) {
             passwordTextField.becomeFirstResponder()
         }else if textField.isEqual(passwordTextField) {
-            
+            handleRegister()
         }
         
         return true

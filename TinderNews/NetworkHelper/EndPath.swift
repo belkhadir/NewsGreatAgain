@@ -18,4 +18,5 @@ enum EndPath: String {
     case unfavorite
     case referal
     case purchase
+    case delete
 }

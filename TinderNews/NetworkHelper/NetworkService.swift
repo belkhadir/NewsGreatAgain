@@ -27,7 +27,6 @@ enum HTTPMethod: String{
     case delete = "DELETE"
 }
 
-let baseURL = "https://api.darksky.net/forecast/"
 
 func sendRequest<T: Decodable>(for type: T.Type,
                                   host: String,
@@ -78,7 +77,7 @@ func sendRequest<T: Decodable>(for type: T.Type,
                                completion: @escaping (Result<T, DataResponseError>) -> Void) {
     
     var compenents = URLComponents()
-    compenents.scheme = "http"
+    compenents.scheme = "https"
     compenents.host = host //"api.coinmarketcap.com"
     compenents.path = "/" + stringPath
     compenents.queryItems = query
@@ -115,7 +114,7 @@ func sendRequestStatus(host: String,
                        completion: @escaping (Result<Any, DataResponseError>) -> Void) {
     
     var compenents = URLComponents()
-    compenents.scheme = "http"
+    compenents.scheme = "https"
     compenents.host = host //"api.coinmarketcap.com"
     compenents.path = "/" + path.rawValue
     compenents.queryItems = query
