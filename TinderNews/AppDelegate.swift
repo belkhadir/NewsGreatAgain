@@ -44,7 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarApearace.tintColor = .white
         navigationBarApearace.barTintColor = #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1)
         
-        window?.rootViewController = isLogged ? MainViewController() : UINavigationController(rootViewController: JoinViewController())
+        let subscription = SubscriptionViewController()
+        window?.rootViewController = subscription //isLogged ? MainViewController() : UINavigationController(rootViewController: JoinViewController())
         
         window?.makeKeyAndVisible()
         
