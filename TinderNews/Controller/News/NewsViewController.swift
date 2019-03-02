@@ -111,7 +111,7 @@ class NewsViewController: UIViewController {
     fileprivate func addTarget() {
         navigationStack.favoriteButton.addTarget(self, action: #selector(handleFavorite), for: .touchUpInside)
         navigationStack.logoButton.addTarget(self, action: #selector(handleLogo), for: .touchUpInside)
-        navigationStack.settingsButton.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
+//        navigationStack.settingsButton.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
         homebottomStack.likeButton.addTarget(self, action: #selector(handleLike), for: .touchUpInside)
         homebottomStack.dislikeButton.addTarget(self, action: #selector(handleDisLike), for: .touchUpInside)
     }

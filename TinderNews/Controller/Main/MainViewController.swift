@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     }()
     
     private enum State: Int, CaseIterable {
-        case settings
+//        case settings
         case home
         case favorite
     }
@@ -78,13 +78,13 @@ class MainViewController: UIViewController {
     private func configureView() {
         
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        handleLogo()
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        handleLogo()
 //        buyView = BuyView(frame: CGRect(x: 16, y: 16, width: view.frame.width - 32, height: view.frame.height - 100))
 //        buyView.layer.cornerRadius = 10
 //        buyView.clipsToBounds = true
-    }
+//    }
     
     fileprivate func setupLayout() {
         view.backgroundColor = .white
@@ -101,7 +101,7 @@ class MainViewController: UIViewController {
     fileprivate func addTarget() {
         navigationStack.favoriteButton.addTarget(self, action: #selector(handleFavorite), for: .touchUpInside)
         navigationStack.logoButton.addTarget(self, action: #selector(handleLogo), for: .touchUpInside)
-        navigationStack.settingsButton.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
+//        navigationStack.settingsButton.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
 
     }
     
@@ -114,19 +114,19 @@ class MainViewController: UIViewController {
     @objc func handleFavorite() {
         state = State.favorite
         activeThenavigationStack(state: state)
-        let indexPath = IndexPath(item: 0, section: 2)
+        let indexPath = IndexPath(item: 0, section: 1)
         collectionView.scrollToItem(at: indexPath, at: .right, animated: true)
     }
     @objc func handleLogo() {
         state = State.home
         activeThenavigationStack(state: state)
-        let indexPath = IndexPath(item: 0, section: 1)
-        collectionView.scrollToItem(at: indexPath, at: state == State.settings ? .left: .right, animated: true)
+        let indexPath = IndexPath(item: 0, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
     
     @objc func handleSettings() {
-        state = State.settings
-        activeThenavigationStack(state: state)
+//        state = State.settings
+//        activeThenavigationStack(state: state)
         let indexPath = IndexPath(item: 0, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         let halfWidth = view.frame.width/2
@@ -144,7 +144,7 @@ class MainViewController: UIViewController {
     }
     
     private func activeThenavigationStack(state: State) {
-        navigationStack.settingsButton.tintColor = state == .settings ?  #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1) :UIColor.lightGray
+//        navigationStack.settingsButton.tintColor = state == .settings ?  #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1) :UIColor.lightGray
         navigationStack.logoButton.tintColor = state == .home ?  #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1) :UIColor.lightGray
         navigationStack.favoriteButton.tintColor =  state == .favorite ?  #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1) :UIColor.lightGray
         
@@ -187,10 +187,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseIdentifier, for: indexPath) as! HomeCollectionViewCell
             cell.rootController = self
             return cell
-        case .settings:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsCollectionViewCell.reuseIdentifier, for: indexPath) as! SettingsCollectionViewCell
-            cell.rootController = self
-            return cell
+//        case .settings:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsCollectionViewCell.reuseIdentifier, for: indexPath) as! SettingsCollectionViewCell
+//            cell.rootController = self
+//            return cell
         case .favorite:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteCollectionViewCell.reuseIdentifier, for: indexPath) as! FavoriteCollectionViewCell
             cell.rootController = self
