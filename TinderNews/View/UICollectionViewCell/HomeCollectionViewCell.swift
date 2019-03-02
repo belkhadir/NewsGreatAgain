@@ -209,7 +209,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
 extension HomeCollectionViewCell: CardViewDelegate {
     func didDislike(_ cell: CardView) {
         if let first = articles.first {
-            NewsService.addTofavorite(favorite: false, article: first)
+//            NewsService.addTofavorite(favorite: false, article: first)
         }
     }
     
@@ -217,7 +217,7 @@ extension HomeCollectionViewCell: CardViewDelegate {
         if let first = articles.first {
             let _ = Favorite(article: first, insertInto: CoreDataStackManager.shared.managedObjectContext)
             CoreDataStackManager.shared.saveContext()
-            NewsService.addTofavorite(favorite: true, article: first)
+//            NewsService.addTofavorite(favorite: true, article: first)
         }
     }
     
